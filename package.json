@@ -1,0 +1,25 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "a small webserver",
+  "main": "server.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReticulatedSpline/blog.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "ReticulatedSpline",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/ReticulatedSpline/blog/issues"
+  },
+  "homepage": "https://github.com/ReticulatedSpline/blog#readme",
+  "devDependencies": {
+    "roast.it": "1.0.4"
+  }
+}
