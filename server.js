@@ -10,6 +10,7 @@ const style_mime = {'Content-Type': 'text/css' };
 const favicon_uri = 'resources/favicon.png';
 const favicon_mime = {'Content-Type': 'image/png' };
 const first_post = './posts/2020-10-1'
+const port = process.env.PORT || 5000;
 
 function readFile(relativePath, mime, fn) {
 	let fullPath = path.join(__dirname, relativePath);
@@ -77,5 +78,5 @@ let server = http.createServer(function (req, res) {
 	}
 });
 
-server.listen(80);
-console.log('Server online and listening at port 5000...');
+server.listen(port);
+console.log('Server online and listening at port ' + port);
