@@ -18,6 +18,18 @@ function readFile(relativePath, mime, fn) {
 	});
 }
 
+function formatPost(html, post) {
+	let content_regex = /{{content}}/;
+	post = html.replace(content_regex, post);
+	console.log("---1----")
+	console.log(post)
+	let title_regex = /#\s(.+)/g;
+	post = post.replace(title_regex, '<h1>$1</h1><br>');
+	console.log("---2----")
+	console.log(post)
+	return post;
+}
+
 function getPost(res) {
 	let html_path = path.join(__dirname, 'resources/page.html');
 	fs.readFile(html_path, 'utf8', function (html_error, html) {
@@ -30,9 +42,7 @@ function getPost(res) {
 			if (post_error) {
 				return console.log(post_error);
 			}
-			let regex = new RegExp('{{content}}', 'g');
-			let formatted_post = html.replace(regex, post);
-			res.end(formatted_post);
+			res.end(formatPost(html, post));
 		})
 	})
 }
