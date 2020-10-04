@@ -1,7 +1,32 @@
 body {
 	margin-top: 10%;
-	margin-left:30%;
-	margin-right:30%;
+	margin-left: 30%;
+	margin-right: 30%;
+	margin-bottom: 10%;
 	color: whitesmoke;
 	background-color: dimgray;
 }
+
+a {
+	color: peru;
+	text-decoration: none;
+}
+
+img {
+	border: 1px solid white;
+}
+
+#next {
+	float: right;
+}
+
+#last {
+	float: left;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+  }
