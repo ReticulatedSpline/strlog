@@ -4,8 +4,10 @@ const ansi_green = "\x1b[42m";
 let passed = 0;
 let failed = 0;
 
+const format = require('./format.js');
+
 tests = [
-	mock,
+	contentReplace,
 ]
 
 for (let test of tests) {
@@ -17,8 +19,8 @@ for (let test of tests) {
 	}
 }
 
-function mock() {
-	return true;
+function contentReplace() {
+	let html = '<html><body>{{content}}';
 }
 
 let color = failed ? ansi_red_blink : ansi_green;

@@ -1,16 +1,16 @@
 const fs = require('fs');
 const http = require('http');
 const path = require('path');
+const format = require('./format.js');
 
-const bad_request = "Invalid Request!"
-const page_uri = 'resources/page.html';
-const page_mime = {'Content-Type': 'text/html' };
-const style_uri = 'resources/style.css';
+const page_uri = '../resources/page.html';
+const style_uri = '../resources/style.css';
+const favicon_uri = '../resources/favicon.png';
 const style_mime = {'Content-Type': 'text/css' };
-const favicon_uri = 'resources/favicon.png';
+const page_mime = {'Content-Type': 'text/html' };
 const png_mime = {'Content-Type': 'image/png' };
 const jpg_mime = {'Content-Type': 'image/jpg' };
-const first_post = './posts/2020-10-01'
+const first_post = '../posts/2020-10-01'
 const port = process.env.PORT || 5000;
 
 function readFile(relativePath, mime, fn) {
@@ -20,20 +20,8 @@ function readFile(relativePath, mime, fn) {
 	});
 }
 
-function formatPost(html, post) {
-	let content_regex = /{{content}}/;
-	post = html.replace(content_regex, post);
-	let title_regex = /#\s(.+)/g;
-	post = post.replace(title_regex, '<h1>$1</h1>');
-	let link_regex = /[^!]\[(.+?)\]\((.+?)\)/g;
-	post = post.replace(link_regex, ' <a href="$2">$1</a>');
-	let image_regex = /!\[(.*?)\]\((.+?)\)/g;
-	post = post.replace(image_regex, '<br><br><img class="center" src="$2" alt="$1"><br>');
-	return post;
-}
-
 function getPost(res) {
-	let html_path = path.join(__dirname, 'resources/page.html');
+	let html_path = path.join(__dirname, page_uri);
 	fs.readFile(html_path, 'utf8', function (html_error, html) {
 		if (html_error) {
 			return console.log(html_error);
@@ -44,7 +32,7 @@ function getPost(res) {
 			if (post_error) {
 				return console.log(post_error);
 			}
-			res.end(formatPost(html, post));
+			res.end(format.formatPost(html, post));
 		})
 	})
 }
@@ -78,7 +66,7 @@ let server = http.createServer(function (req, res) {
 		readFile(favicon_uri, png_mime, respond);
 	}
 	else if (req.url.endsWith('.jpg')) {
-		readFile(req.url, jpg_mime, respond);
+		readFile(path.join('../', req.url), jpg_mime, respond);
 	}
 });
 
