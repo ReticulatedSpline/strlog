@@ -77,5 +77,5 @@ let server = http.createServer(function (req, res) {
 	}
 });
 
-server.listen(5000);
+server.listen(80);
 console.log('Server online and listening at port 5000...');
