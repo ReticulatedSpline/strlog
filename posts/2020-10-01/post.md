@@ -1,6 +1,6 @@
 # a blog
 
-If you're reading this, the blog server is running and successfully hosted!. New blog posts can be added to blog/posts with an accompanying JSON file of the same name containing metadata like post date. 
+If you're reading this, the blog server is running and successfully hosted!. New blog posts can be added to /posts with an accompanying JSON file of the same name containing metadata like post date. 
 
 Posts consist of a directory added to ./posts, which contain an .md file with text, as well as any additional resources (such as images). [Markdown](https://www.markdownguide.org/) syntax is supported, which allows for quick formatting.
 

@@ -54,9 +54,8 @@ let server = http.createServer(function (req, res) {
 			// check for matching post
 			let postIndex = 0;
 			for (const [index, post] of files.entries()) {
-				console.log(index, post, req.url)
 				if (post === req.url.substring(1)) {
-					console.log("Found ", post, " at index ", postIndex);
+					console.log("Found post directory", post, "at index", postIndex);
 					postIndex = index;
 				}
 			}
