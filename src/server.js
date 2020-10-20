@@ -4,21 +4,23 @@ const path = require('path');
 const format = require('./format.js');
 const util = require('util');
 
-const CSS_MIME = {'Content-Type': 'text/css' };
-const HTML_MIME = {'Content-Type': 'text/html' };
-const PNG_MIME = {'Content-Type': 'image/png' };
-const JPG_MIME = {'Content-Type': 'image/jpg' };
+const CSS_MIME = { 'Content-Type': 'text/css' };
+const HTML_MIME = { 'Content-Type': 'text/html' };
+const PNG_MIME = { 'Content-Type': 'image/png' };
+const JPG_MIME = { 'Content-Type': 'image/jpg' };
 const appRoot = path.join(__dirname, '../');
 const port = process.env.PORT || 5000;
 
-function readPost(dir, fn) {
-	const postMarkdown = path.join(appRoot, 'posts', dir, 'post.md');
+function readPost(index, posts, fn) {
+	const postMarkdown = path.join(appRoot, 'posts', posts[index], 'post.md');
 	const postHTML = path.join(appRoot, 'resources', 'page.html');
+	const lastPost = index > 0 ? posts[index - 1] : null;
+	const nextPost = posts.length > index ? posts[index + 1] : null;
 	fs.readFile(postHTML, 'utf8', (err, html) => {
 		fs.readFile(postMarkdown, 'utf8', (err, post) => {
-			format.formatPost(html, post, fn);
-		})
-	})
+			format.formatPost(html, post, lastPost, nextPost, fn);
+		});
+	});
 }
 
 function getPostsByDate(fn) {
@@ -39,24 +41,37 @@ function sendContent(content, mime, res) {
 }
 
 let server = http.createServer(function (req, res) {
-
+	// redirect to most recent post
 	if (req.url == '/') {
 		getPostsByDate((files) => {
-			readPost(files[0], (postContent) => {
+			res.writeHead(302, {'Location': files[0]});
+			res.end();
+		});
+	}
+	// load a generic post
+	else if (req.url.match(/\d{4}-\d{2}-\d{2}$/)) {
+		getPostsByDate((files) => {
+			// check for matching post
+			let postIndex = 0;
+			for (const [index, post] of files.entries()) {
+				console.log(index, post, req.url)
+				if (post === req.url.substring(1)) {
+					console.log("Found ", post, " at index ", postIndex);
+					postIndex = index;
+				}
+			}
+			readPost(postIndex, files, (postContent) => {
 				sendContent(postContent, HTML_MIME, res);
 			});
-		});
+		})
 	}
-
-	else if (req.url == '/style.css')
-	{
+	else if (req.url == '/style.css') {
 		let uri = path.join(appRoot, 'resources', 'style.css');
 		fs.readFile(uri, 'utf8', (err, data) => {
-			sendContent(data , CSS_MIME, res);
+			sendContent(data, CSS_MIME, res);
 		});
 	}
-	else if (req.url == '/favicon.png')
-	{
+	else if (req.url == '/favicon.png') {
 		let uri = path.join(appRoot, 'resources', 'favicon.ico');
 		fs.readFile(uri, (err, data) => {
 			sendContent(data, PNG_MIME, res);

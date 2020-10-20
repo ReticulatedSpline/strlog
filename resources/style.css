@@ -3,6 +3,7 @@ body {
 	margin-left: 30%;
 	margin-right: 30%;
 	margin-bottom: 10%;
+	line-height: 1.6;
 	color: whitesmoke;
 	background-color: dimgray;
 }
@@ -29,4 +30,8 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
+}
+
+.grey {
+	color: grey;
 }

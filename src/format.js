@@ -19,11 +19,30 @@ function subImages(post) {
 	return post.replace(image_regex, image_html);
 }
 
-function formatPost (html, post, fn) {
+function subFooter(post, lastPost, nextPost) {
+	let footer_regex = /{{footer}}/;
+	let footer = "";
+	if (lastPost) {
+		footer = '<a id="last" href=' + lastPost + '>last</a>';
+	} else {
+		footer = '<span class="grey" id="last">//last</span>';
+	}
+
+	if (nextPost) {
+		footer = footer + '<a id="next" href=' + nextPost + '>next</a>';
+	} else {
+		footer = footer + '<span class="grey" id="next">//next</span>';
+	}
+
+	return post.replace(footer_regex, footer);
+}
+
+function formatPost (html, post, lastPost, nextPost, fn) {
 	post = subContent(html, post);
-	post = subTitles(post)
-	post = subLinks(post)
-	post = subImages(post)
+	post = subTitles(post);
+	post = subLinks(post);
+	post = subImages(post);
+	post = subFooter(post, lastPost, nextPost);
 	fn(post);
 }
 
