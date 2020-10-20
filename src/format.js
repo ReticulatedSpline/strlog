@@ -19,18 +19,14 @@ function subImages(post) {
 	return post.replace(image_regex, image_html);
 }
 
-function formatPost (html, post) {
+function formatPost (html, post, fn) {
 	post = subContent(html, post);
 	post = subTitles(post)
 	post = subLinks(post)
 	post = subImages(post)
-	return post;
+	fn(post);
 }
 
 module.exports = {
-	subContent: subContent,
-	subTitles: subTitles,
-	subLinks: subLinks,
-	subImages: subImages,
-	formatPost: formatPost,
+	formatPost: formatPost
 };

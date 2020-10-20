@@ -2,71 +2,71 @@ const fs = require('fs');
 const http = require('http');
 const path = require('path');
 const format = require('./format.js');
+const util = require('util');
 
-const page_uri = '../resources/page.html';
-const style_uri = '../resources/style.css';
-const favicon_uri = '../resources/favicon.png';
-const style_mime = {'Content-Type': 'text/css' };
-const page_mime = {'Content-Type': 'text/html' };
-const png_mime = {'Content-Type': 'image/png' };
-const jpg_mime = {'Content-Type': 'image/jpg' };
-const first_post = '../posts/2020-10-01'
+const CSS_MIME = {'Content-Type': 'text/css' };
+const HTML_MIME = {'Content-Type': 'text/html' };
+const PNG_MIME = {'Content-Type': 'image/png' };
+const JPG_MIME = {'Content-Type': 'image/jpg' };
+const appRoot = path.join(__dirname, '../');
 const port = process.env.PORT || 5000;
 
-function readFile(relativePath, mime, fn) {
-	let fullPath = path.join(__dirname, relativePath);
-	fs.readFile(fullPath, function fileRead(err, text) {
-			fn(err, mime, text);
-	});
-}
-
-function getPost(res) {
-	let html_path = path.join(__dirname, page_uri);
-	fs.readFile(html_path, 'utf8', function (html_error, html) {
-		if (html_error) {
-			return console.log(html_error);
-		}
-
-		let post_path = path.join(__dirname, first_post + '/post.md')
-		fs.readFile(post_path, 'utf8', function (post_error, post) {
-			if (post_error) {
-				return console.log(post_error);
-			}
-			res.end(format.formatPost(html, post));
+function readPost(dir, fn) {
+	const postMarkdown = path.join(appRoot, 'posts', dir, 'post.md');
+	const postHTML = path.join(appRoot, 'resources', 'page.html');
+	fs.readFile(postHTML, 'utf8', (err, html) => {
+		fs.readFile(postMarkdown, 'utf8', (err, post) => {
+			format.formatPost(html, post, fn);
 		})
 	})
 }
 
+function getPostsByDate(fn) {
+	fs.readdir(path.join(appRoot, 'posts'), (err, files) => {
+		if (err) {
+			console.log('Error fetching files: ', err);
+		}
+		else {
+			files.sort((a, b) => a - b);
+			fn(files);
+		}
+	});
+}
+
+function sendContent(content, mime, res) {
+	res.writeHead(200, mime);
+	res.end(content);
+}
+
 let server = http.createServer(function (req, res) {
 
-	function respond(err, mime, raw_content) {
-		if (err) {
-			console.log(err);
-			return;
-		} else {
-			res.writeHead(200, mime);
-		}
-
-		if (mime === page_mime) {
-			getPost(res);
-		} else {
-			res.end(raw_content);
-		}
-	}
-	
 	if (req.url == '/') {
-		readFile(page_uri, page_mime, respond);
+		getPostsByDate((files) => {
+			readPost(files[0], (postContent) => {
+				sendContent(postContent, HTML_MIME, res);
+			});
+		});
 	}
+
 	else if (req.url == '/style.css')
 	{
-		readFile(style_uri, style_mime, respond);
+		let uri = path.join(appRoot, 'resources', 'style.css');
+		fs.readFile(uri, 'utf8', (err, data) => {
+			sendContent(data , CSS_MIME, res);
+		});
 	}
 	else if (req.url == '/favicon.png')
 	{
-		readFile(favicon_uri, png_mime, respond);
+		let uri = path.join(appRoot, 'resources', 'favicon.ico');
+		fs.readFile(uri, (err, data) => {
+			sendContent(data, PNG_MIME, res);
+		});
 	}
 	else if (req.url.endsWith('.jpg')) {
-		readFile(path.join('../', req.url), jpg_mime, respond);
+		let uri = path.join(appRoot, req.url);
+		fs.readFile(uri, (err, data) => {
+			sendContent(data, JPG_MIME, res);
+		});
 	}
 });
 
