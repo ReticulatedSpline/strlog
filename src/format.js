@@ -14,7 +14,7 @@ function subLinks(post) {
 
 function subImages(post) {
 	const image_regex = /!\[(.*?)\]\((.+?)\)/g;
-	const image_html = '<br><br><img class="center" src="$2" alt="$1"><br>';
+	const image_html = '<img src="$2" alt="$1">';
 	return post.replace(image_regex, image_html);
 }
 
@@ -23,7 +23,7 @@ function addParagraphs(post) {
 	return post.replace(paragraph_regex, '<p>$1</p>');
 }
 
-function addRule(post) {
+function subRulers(post) {
 	const rule_regex = /\n---\n/g;
 	return post.replace(rule_regex, '\n<hr>\n');
 }
@@ -53,6 +53,26 @@ function subPreText(post) {
 	return post.replace(pre_regex, '<pre>$1</pre>')
 }
 
+function subUnorderedLists(post) {
+	const list_shell_regex = /((?:\n-\s.*)+)/gm;
+	const list_item_regex = /\n-\s([^\n]+)/m;
+	post = post.replace(list_shell_regex, '\n<ul>\n$1\n</ul>');
+	while (results = post.match(list_item_regex)) {
+		post = post.replace(list_item_regex, '\n<li>$1</li>')
+	}
+	return post;
+}
+
+function subOrderedLists(post) {
+	const list_shell_regex = /((?:\n\d\.\s.*)+)/gm;
+	const list_item_regex = /\n\d\.\s([^\n]+)/m;
+	post = post.replace(list_shell_regex, '<ol>\n$1\n</ol>');
+		while (results = post.match(list_item_regex)) {
+		post = post.replace(list_item_regex, '\n<li>$1</li>')
+	}
+	return post;
+}
+
 function subFooter(post, lastPost, nextPost) {
 	const footer_regex = /{{footer}}/;
 	let footer = "";
@@ -77,18 +97,20 @@ function subContent (html, post) {
 }
 
 function formatPost (html, post, lastPost, nextPost, fn) {
-	// remove carriage returns
+	// remove all carriage returns
 	post = post.replace(/\r/g, '');
 	post = subTitles(post);
 	post = subLinks(post);
 	post = subImages(post);
+	post = subPreText(post);
 	post = addParagraphs(post);
-	post = addRule(post);
 	post = subBoldItalicText(post);
 	post = subBoldText(post);
 	post = subItalicText(post);
 	post = subBlockQuotes(post);
-	post = subPreText(post);
+	post = subUnorderedLists(post);
+	post = subOrderedLists(post);
+	post = subRulers(post);
 	post = subContent(html, post);
 	post = subFooter(post, lastPost, nextPost);
 	fn(post);

@@ -1,4 +1,4 @@
-# A Markdown test page
+# markdown test
 
 This blog engine supports a partial set of Markdown features, including titles, line breaks, bold text, italics, quotes, lists, and preformatted text.
 
@@ -11,19 +11,22 @@ This blog engine supports a partial set of Markdown features, including titles, 
 ---
 
 ## Line Breaks
-Lets test out line breaks:
+Any two consecutive newlines should be visually separated.
 
-This line should be visually separated!
+This line should be visually separated from the one above it!
 This line should not be.
 
 ---
 
-## Bold Text
-Okay, now let's see if we can generate **bold text**. It should work even in the middle of a word: like**this**text!
+## Images
+![succulent macro](./posts/2020-10-02/image.jpg)
+*One of my echiaveras before etiolating in the weak sun of a Minnesota winter*
 
 ---
 
-## Italics
+## Bold & Italic Text
+Okay, now let's see if we can generate **bold text**. It should work even in the middle of a word: like**this**text!
+
 *Asterisks form italic text*, even in the middle of word: like*this*text!
 
 ***The parser should allow for mixed bold and italic styling.***
@@ -38,8 +41,6 @@ Okay, now let's see if we can generate **bold text**. It should work even in the
 ---
 
 ## Lists
-(todo)
-
 Ordered lists:
 1. Yamaha Bolt
 2. Indian Scout
@@ -48,11 +49,11 @@ Ordered lists:
 5. Triumph T100
 
 Unordered lists:
-- The Monster at our Door (Mike Davis)
-- El Principito (Antoine de Saint-Exupery)
-- Stranger in a Strange Land (Robert A. Heinlein)
-- Southern Reach (Jeff VanderMeer)
-- The Terror (Dan Simmons)
+- *The Monster at our Door* (Mike Davis)
+- *El Principito* (Antoine de Saint-Exupery)
+- *Stranger in a Strange Land* (Robert A. Heinlein)
+- *Southern Reach* (Jeff VanderMeer)
+- *The Terror* (Dan Simmons)
 
 ---
 
