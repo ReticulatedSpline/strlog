@@ -17,6 +17,10 @@ img {
 	border: 1px solid white;
 }
 
+hr {
+	border-top: 2px solid white;
+}
+
 #next {
 	float: right;
 }
@@ -30,6 +34,13 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
+}
+
+.quote {
+	display: block;
+	padding-left: 1em;
+	background-color: steelblue;
+	border-left: 3px solid lightblue;
 }
 
 .grey {
