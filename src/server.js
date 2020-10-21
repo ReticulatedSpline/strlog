@@ -6,7 +6,7 @@ const util = require('util');
 
 const CSS_MIME = { 'Content-Type': 'text/css' };
 const HTML_MIME = { 'Content-Type': 'text/html' };
-const PNG_MIME = { 'Content-Type': 'image/png' };
+const ICO_MIME = { 'Content-Type': 'image/x-icon' };
 const JPG_MIME = { 'Content-Type': 'image/jpg' };
 const appRoot = path.join(__dirname, '../');
 const port = process.env.PORT || 5000;
@@ -70,10 +70,10 @@ let server = http.createServer(function (req, res) {
 			sendContent(data, CSS_MIME, res);
 		});
 	}
-	else if (req.url == '/favicon.png') {
+	else if (req.url == '/favicon.ico') {
 		let uri = path.join(appRoot, 'resources', 'favicon.ico');
 		fs.readFile(uri, (err, data) => {
-			sendContent(data, PNG_MIME, res);
+			sendContent(data, ICO_MIME, res);
 		});
 	}
 	else if (req.url.endsWith('.jpg')) {
