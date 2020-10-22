@@ -26,6 +26,13 @@
 		margin-right: 25%;
 		margin-bottom: 10%;
 	}
+	#next {
+		font-size: 1em;
+	}
+	
+	#last {
+		font-size: 1em;
+	}
 }
 
 body {
