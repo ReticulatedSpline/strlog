@@ -8,6 +8,7 @@ const CSS_MIME = { 'Content-Type': 'text/css' };
 const HTML_MIME = { 'Content-Type': 'text/html' };
 const ICO_MIME = { 'Content-Type': 'image/x-icon' };
 const JPG_MIME = { 'Content-Type': 'image/jpg' };
+const PNG_MIME = { 'Content-Type': 'image/png' };
 const appRoot = path.join(__dirname, '../');
 const port = process.env.PORT || 5000;
 
@@ -44,7 +45,7 @@ let server = http.createServer(function (req, res) {
 	// redirect to most recent post
 	if (req.url == '/') {
 		getPostsByDate((files) => {
-			res.writeHead(302, {'Location': files[0]});
+			res.writeHead(302, {'Location': files[files.length - 1]});
 			res.end();
 		});
 	}
@@ -80,6 +81,12 @@ let server = http.createServer(function (req, res) {
 		let uri = path.join(appRoot, req.url);
 		fs.readFile(uri, (err, data) => {
 			sendContent(data, JPG_MIME, res);
+		});
+	}
+	else if (req.url.endsWith('.png')) {
+		let uri = path.join(appRoot, req.url);
+		fs.readFile(uri, (err, data) => {
+			sendContent(data, PNG_MIME, res);
 		});
 	}
 });

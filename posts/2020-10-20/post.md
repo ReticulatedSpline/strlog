@@ -21,7 +21,7 @@ Getting there was hairy. the traffic here has no western comparison. At least in
 
 Everywhere there are tiny shops offering noodle dishes. Much of it is prepared right off the side of the street. There’s a good number of wild, exotic trees on the street and especially surrounding the lake. Their gnarled bark splits off into branches that merge back into the trunk, and large fruit hangs from many of them. I can't name any of them.
 
-![epiphitic tree](./posts/2020-10-20/image.jpg)
+![epiphitic tree](./posts/2020-10-20/epiphytes.png)
 *Epiphytes cover the trunk of a tree in Bach Thao Park.*
 
 I continued on to West Lake (Hồ Tây), stopping  at the Hanoi Bontanical garden on the way. Admittance was a cool eight cents (2,000₫). It was a welcome break from the cacophony of the street. Inside were many palms and a carpet of thick grass. Most enticingly there were also very few other people. There were also a few sad looking peacocks and macaques (con khỉ). I also managed to scammed on the way and paid $8 for a few slices of fried banana bread, which was more than my 22km taxi ride to the Hostel. I wasn't yet adjusted to the hustle and noise, so I decided to take a Grab bike back instead of walking. A biker in a green Grab jacket pulls up, hands you a helmet, you get on the back, and then you're off! This did not feel very safe, but it was very fun. Plus, it only cost 22k₫, which was less than a dollar. 
@@ -30,7 +30,7 @@ After lunch I settled into the hostel commons for awhile. The man working the fr
 
 From there we departed to ‘Train Street’, a narrow alleyway with train tracks leaving a spare foot on each side. We enjoyed Bia Hanoi and waited for the train to come. When it did, a loud honk startled us out of our tipsy conversation and rattled the buildings as it went by. We stopped for a butter pastry on the way back to the hostel and a hard earned nights’ sleep.
 
-![train alley](./posts/2020-10-20/image.jpg)
+![train alley](./posts/2020-10-20/train_street.png)
 *It's no joke. When the train comes, there's less than two feet of clearance on either side.*
 
 ### Wednesday, May 8
@@ -80,7 +80,7 @@ The bus ride to Hà Giang is a little uncomfortable. I develop a mild case of fo
 
 Hà Giang was *easily* the highlight of the trip. After suffering a little to get there, I found the scenery of this region was worth it. I remember bits and pieces... initially I fell in with a group leaving the hostel at the same time. A few Australians who were nice enough, but I eventually left for preference of solitude. The roads became steep and winding. Jungle coats the hills here, like a verdant blanket stitched together by massive, prehistoric ferns. I end up on a bike again, and it's a huge improvement over my first. The feeling of riding a semiautomatic bike through Vietnam is hard to capture.
 
-![my new bike](./posts/2020-10-20/bike.png)
+![my new bike](./posts/2020-10-20/bike.jpg)
 *The venerable Honda Blade*
 
 The first day is cold and misty. I'm still with the Australians as we get higher and higher into the mountains. My cheap plastic poncho is not doing much against the cold and damp. My glasses are totally obscured by rain and steam: Impossibly steep cliffs start cropping up. On a slick, mossy switchback one of the Australians wipes out. He asks me if I thought he was going too fast (you crashed, didn't you?). I hold my tongue and leave them behind after awhile.
@@ -93,9 +93,10 @@ I continue on to Lung Cu -- the tip of the bike loop and officially my furthest 
 
 The Vietnamese here are not exactly on great terms with their northern Chinese neighbors. They haven't forgotten the 1979 Chinese invasion during the Sino-Vietnamese war, in which the Chinese retaliated against the Vietnamese for helping to topple the Khmer Rouge in neighboring Cambodia. I was told to stay off the border as it might still have land mines. Duly noted. In Lung Cu they've constructed a massive granite flag tower overlooking China. I climb to the top. Two young army officers are working on replacing the massive one-starred Vietnamese flag with an even larger one.
 
-I ride on, past cinderblock houses with chickens in front; past a moonscape of twisted black igneous rock and neon green algae; past a valley entirely planted with corn, where the local houses are shaded by the tall stalks. I see the China border, supposedly containing uncleared mines and festooned with skull and crossbones.
+I ride on, past cinderblock houses with chickens in front; past a moonscape of twisted black igneous rock and neon green algae; past a valley entirely planted with corn, where the local houses are shaded by the tall stalks. I see the China border, supposedly containing uncleared mines left from the [Sino-Vietnamese war](https://en.wikipedia.org/wiki/Sino-Vietnamese_War) in 1979.
 
-~[china border](./posts/2020-10-20)
+![china border](./posts/2020-10-20/border.jpg)
+*Vietnam won this war only a decade after besting the United States, and only a few years after defeating the bloodthirsty dictatorship of the Khmer Rouge.*
 
 I stop for gas and water at strangely western road stop. The shop is set up very professionally, but a team of six close friends or family are manning it. They're playing karaoke. I'm the only person there. They offer me rice wine, and demand I sing. I do my best, but it's a rough show.
 
