@@ -105,6 +105,6 @@ I stop for gas and water at strangely western road stop. The shop is set up very
 
 The rest of the ride is uneventful. Knowing the trip is over was painful. On the bus back, I meet a (white, western) Cambodian journalist and a German who's been traveling for six months. They're both on the tail end of their trips and none of us make an effort to know each other. The driver switches on very loud house music. It's going to be a long ride. Incredibly, the German is already asleep. When she woke up, she explained that a prescription for sleeping pills is not required in Vietnam.
 
-I'm grateful to be back among my many creature comforts, but sitting at a cubicle makes me wistful. Now in the grip of COVID-19 travel seems like a very remote possibility. I'm not sure why I wrote this all down; maybe as a way of venting frustration. It was a very privileged act. International travel for leisure is perhaps the pinnacle of wealthy privilege. I left for selfish reasons. There are no lessons here. Just observations.
+I'm grateful to be back among my many creature comforts, but sitting at a cubicle makes me wistful. Now in the grip of COVID-19 travel seems like a very remote possibility. I'm not sure why I wrote this all down; maybe as a way of venting frustration. It was a very privileged act. International travel for leisure is perhaps the pinnacle of wealthy privilege. I left for selfish reasons.
 
 Vietnam is hard to describe. It's somewhat easier with video. I'll leave the reader with a [small montage](https://vimeo.com/356092347) of my time there.
