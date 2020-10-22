@@ -1,6 +1,6 @@
 # markdown test
 
-This blog engine supports a partial set of Markdown features, including titles, line breaks, bold text, italics, quotes, lists, and preformatted text.
+This blog engine supports a subset of Markdown features, including titles, line breaks, bold text, italics, quotes, lists, and preformatted text.
 
 ## Titles
 ### h3 title

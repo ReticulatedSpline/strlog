@@ -1,13 +1,43 @@
+@media (min-width:30.063em) { 
+	body {
+		font-size: 2em;
+		margin-top: 2%;
+		margin-left: 5%;
+		margin-right: 5%;
+		margin-bottom: 0;
+	}
+	h1 {
+		font-size: 2em;
+	}
+	#next {
+		font-size: 3em;
+	}
+	
+	#last {
+		font-size: 3em;
+	}
+}
+
+@media (min-width:64.063em) { 
+	body {
+		font-size: 1em;
+		margin-top: 5%;
+		margin-left: 25%;
+		margin-right: 25%;
+		margin-bottom: 10%;
+	}
+}
+
 body {
-	margin-top: 5%;
-	margin-left: 25%;
-	margin-right: 25%;
-	margin-bottom: 10%;
 	line-height: 1.6;
 	font-weight: lighter;
 	color: whitesmoke;
 	background-color: dimgray;
 	font-family: 'Ubuntu', sans-serif;
+}
+
+h5 {
+	color: gray;
 }
 
 a {

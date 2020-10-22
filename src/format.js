@@ -91,12 +91,13 @@ function subFooter(post, lastPost, nextPost) {
 	return post.replace(footer_regex, footer);
 }
 
-function subContent (html, post) {
-	let content_regex = /{{content}}/;
-	return html.replace(content_regex, post);
+
+function subContent (html, post, date) {
+	html = html.replace(/{{date}}/, '<h5>' + date + '</h5>');
+	return html.replace(/{{content}}/, post);
 }
 
-function formatPost (html, post, lastPost, nextPost, fn) {
+function formatPost (html, post, date, lastPost, nextPost, fn) {
 	// remove all carriage returns
 	post = post.replace(/\r/g, '');
 	post = subTitles(post);
@@ -111,7 +112,7 @@ function formatPost (html, post, lastPost, nextPost, fn) {
 	post = subUnorderedLists(post);
 	post = subOrderedLists(post);
 	post = subRulers(post);
-	post = subContent(html, post);
+	post = subContent(html, post, date);
 	post = subFooter(post, lastPost, nextPost);
 	fn(post);
 }

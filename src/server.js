@@ -19,7 +19,7 @@ function readPost(index, posts, fn) {
 	const nextPost = posts.length > index ? posts[index + 1] : null;
 	fs.readFile(postHTML, 'utf8', (err, html) => {
 		fs.readFile(postMarkdown, 'utf8', (err, post) => {
-			format.formatPost(html, post, lastPost, nextPost, fn);
+			format.formatPost(html, post, posts[index], lastPost, nextPost, fn);
 		});
 	});
 }
