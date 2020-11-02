@@ -1,3 +1,4 @@
+/* small screen rules */
 @media (min-width:30.063em) { 
 	body {
 		font-size: 2em;
@@ -18,9 +19,10 @@
 	}
 }
 
+/* large screen rules */
 @media (min-width:64.063em) { 
 	body {
-		font-size: 1em;
+		font-size: 1.2em;
 		margin-top: 5%;
 		margin-left: 25%;
 		margin-right: 25%;
@@ -66,6 +68,9 @@ pre {
 	display: inline;
 }
 
+strong {
+	font-weight: 900;
+}
 #next {
 	float: right;
 }
@@ -82,7 +87,10 @@ pre {
 }
 
 .quote {
+	font-style: italic;
 	display: block;
+	padding-top: .5em;
+	padding-bottom: .5em;
 	padding-left: 1em;
 	background-color: steelblue;
 	border-left: 3px solid lightblue;
