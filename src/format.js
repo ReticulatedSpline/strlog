@@ -9,12 +9,13 @@ function subTitles(post) {
 
 function subLinks(post) {
 	const link_regex = /[^!]\[(.+?)\]\((.+?)\)/g;
-	return post.replace(link_regex, ' <a href="$2">$1</a>');
+	return post.replace(link_regex, ' <a href="$2" target="_blank">$1</a>');
 }
 
-function subImages(post) {
+function subImages(post, date) {
 	const image_regex = /!\[(.*?)\]\((.+?)\)/g;
-	const image_html = '<img src="$2" alt="$1">';
+	// TODO: This should probably use path.join()
+	const image_html = '<img src="' + './posts/' + date + '/$2" alt="$1">';
 	return post.replace(image_regex, image_html);
 }
 
@@ -102,7 +103,7 @@ function formatPost (html, post, date, lastPost, nextPost, fn) {
 	post = post.replace(/\r/g, '');
 	post = subTitles(post);
 	post = subLinks(post);
-	post = subImages(post);
+	post = subImages(post, date);
 	post = subPreText(post);
 	post = addParagraphs(post);
 	post = subBoldItalicText(post);
