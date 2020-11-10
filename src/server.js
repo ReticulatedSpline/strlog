@@ -77,7 +77,7 @@ let server = http.createServer(function (req, res) {
 			sendContent(data, ICO_MIME, res);
 		});
 	}
-	else if (req.url.endsWith('.jpg')) {
+	else if (req.url.endsWith('.jpg') || req.url.endsWith('.jpeg')) {
 		let uri = path.join(appRoot, req.url);
 		fs.readFile(uri, (err, data) => {
 			sendContent(data, JPG_MIME, res);
