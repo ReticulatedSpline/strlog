@@ -2,7 +2,7 @@
 ## Opinions from a Bernie Bro that nobody asked for
 
 
-Make no mistake about it: I see both the 2016 and 2020 democratic presidential nominations as sham elections, both [by design](https://en.wikipedia.org/wiki/Superdelegate) and through a coordinated effort by the candidates to maintain the neoliberal flavor of the party.
+Make no mistake about it: I see both the 2016 and 2020 democratic presidential nominations as sham elections, both [by design](https://en.wikipedia.org/wiki/Superdelegate) and through [a coordinated effort by the candidates](https://www.salon.com/2019/11/27/obama-privately-vowed-to-intervene-in-primary-to-stop-bernie-sanders-from-winning-nomination-report/) to maintain the neoliberal flavor of the party.
 
 Consider that within three days of Super Tuesday [all the moderate candidates dropped out](https://en.wikipedia.org/wiki/2020_Democratic_Party_presidential_primaries#March_2020) to shore up the Biden campaign. This left Biden alone on the moderate side, leaving Warren and Sanders to split the progressive vote. I find it difficult to take Warren in good faith considering her [conservative past](https://fedsoc.org/contributors/elizabeth-warren) and the fact that [Sanders asked her to run in 2018](https://thehill.com/blogs/ballot-box/presidential-races/190544-bernie-sanders-wont-rule-out-presidential-bid-touts), joining the race only after she first declined to take the reins.
 
