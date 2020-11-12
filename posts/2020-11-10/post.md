@@ -1,4 +1,4 @@
-# Ballot Boxing and *The Jakarta Method*
+# Ballot Boxing and The Jakarta Method
 
 Well, here we are, post-election. The democrats won the presidential cause célèbre, yet the outcome was far closer than it was supposed to be. It seems the models were correct, but skewed to the "worst case" scenarios for democrats. The presidential race, expected to be a landslide referendum, became a nail-biter. Control of the senate, considered likely, is now up in the air. Ground was lost in the house. All in all, a disappointing performance and setup for an even more disappointing two years of Mitch McConnell blocking anything that crosses his desk. Despite this, Biden will have the opportunity to make *some* progress via executive orders.
 
