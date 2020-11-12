@@ -16,6 +16,11 @@ Democrats raised record setting campaign funds, including [seven of the most exp
 
 Just for fun, I'll throw in one more comically doomed senate race: Kentucky democrat Amy McGrath [raised almost $88 million](https://www.opensecrets.org/races/summary?cycle=2020&id=KYS1) to challenge senate majority leader Mitch McConnell only to lose by 20 percentage points. In these eight races alone, democrats spent *over $400 million* on losing races. Republicans spent *half* that amount to win six of the seven called races, and usually by large margins. Perhaps the problem is not the volume of messaging, but the message itself.
 
+### The Big Lyft Grift
+California likes to do [ballot propositions](https://en.wikipedia.org/wiki/California_ballot_proposition), which are a direct democracy, plebiscite-style question asking voters if they would like to amend a law. This cycle had a fair number, including a particularly sinister one with the catchy title Proposition 22. Here's how it appeared on the ballot:
+> EXEMPTS APP-BASED TRANSPORTATION AND DELIVERY COMPANIES FROM PROVIDING EMPLOYEE BENEFITS TO CERTAIN DRIVERS.  INITIATIVE STATUTE.  Classifies app-based drivers as “independent contractors,” instead of “employees,” and provides independent-contractor drivers other compensation, unless certain criteria are met.  Fiscal Impact:  Minor increase in state income taxes paid by rideshare and delivery company drivers and investors.
+It's a fairly thick couple of sentences. The effect, however, is simple: it's a loophole that allows companies to avoid paying benefits for full-time workers. This is of course advantagous to companies like Postmates, Instacart, Lyft and Uber who won't have to provide health insurance, paid sick leave, disability, the right to unionize, or any of the other hard-won worker's rights just by labeling them contractors even if they're working full time. To me, this is the worst news to come from the election cycle as it provides a glimpse into the world American tech companies would prefer to live in. Despite neither Uber nor Lyft reporting a dime in profit, they managed to spend [$185 million](https://www.cnn.com/2020/10/08/tech/proposition-22-california/index.html) in propaganda for the ballot measure. The measure passed with 58% approval, sending Uber and Lyft shares up 11%.
+
 ---
 
 ### The Jakarta Method
