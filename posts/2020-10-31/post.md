@@ -32,10 +32,9 @@ This is one of his stronger areas to me, but still has many flaws.
 - The idea of a minimum 15% corporate tax is nice.
 
 ## Foreign Policy
-Mostly platitudes. 
 - One stated policy is ending family separation at the southern border. This is obviously desirable, but again I feel obliged to mention that many of these kinds of policies were started under [the Obama administration, including quotas](https://en.wikipedia.org/wiki/Immigration_detention_in_the_United_States#Immigration_detention_under_Obama), and were simply accelerated under Trump.
 - Talk of ending torture but no mention of Guantanamo.
-- No mention of ending the insane Cuban embargo.
+- No mention of ending the Cuban embargo.
 - Talk of slowing nuclear proliferation, which is always humorous from the most heavily armed nation on Earth.
 - Some mentioned positives: ending [Global Gag Rule](https://www.plannedparenthoodaction.org/communities/planned-parenthood-global/end-global-gag-rule), ending support for the Saudi genocide in Yemen, and ending the [Muslim travel ban](https://en.wikipedia.org/wiki/Executive_Order_13769).
 
