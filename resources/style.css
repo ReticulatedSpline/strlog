@@ -1,5 +1,6 @@
 /* small screen rules */
-@media (min-width:30.063em) { 
+
+@media (min-width:30.063em) {
 	body {
 		font-size: 2em;
 		margin-top: 2%;
@@ -7,20 +8,31 @@
 		margin-right: 5%;
 		margin-bottom: 0;
 	}
+
 	h1 {
 		font-size: 2em;
 	}
+
+	h2 {
+		font-size: 1.7em;
+	}
+
+	h3 {
+		font-size: 1.3em;
+	}
+
 	#next {
 		font-size: 3em;
 	}
-	
+
 	#last {
 		font-size: 3em;
 	}
 }
 
 /* large screen rules */
-@media (min-width:64.063em) { 
+
+@media (min-width:64.063em) {
 	body {
 		font-size: 1.2em;
 		margin-top: 5%;
@@ -31,7 +43,6 @@
 	#next {
 		font-size: 1em;
 	}
-	
 	#last {
 		font-size: 1em;
 	}
@@ -71,6 +82,7 @@ pre {
 strong {
 	font-weight: 900;
 }
+
 #next {
 	float: right;
 }
