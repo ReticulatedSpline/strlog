@@ -29,16 +29,12 @@ In unrelated news, I stumbled upon [a new artist on Spotify](https://open.spotif
 `00110100 01010100`
 
 Hmm. Who could it be? You probably knew this already, but it appears to be binary. Let's convert it, one chunk at a time:
-`0    0    1    1    0    1    0    0  `
-`2⁷   2⁶    2⁵   2⁴   2³   2²   2¹   2⁰`
-`0 +  0 +  32 + 16 + 0 +  4 +  0 +  0  `
-`                  52                  `
-
-`0    1    0    1    0    1    0    0 `
-` 2⁷   2⁶    2⁵   2⁴   2³   2²   2¹   2⁰`
-`0 + 64 +  0  + 16 + 0 +  4 +  0 +  0 `
-`                 84               `
-
+```
+0    0    1    1    0    1    0    0           0    1    0    1    0    1    0    0
+2⁷   2⁶   2⁵   2⁴   2³   2²   2¹   2⁰          2⁷   2⁶   2⁵   2⁴   2³   2²   2¹   2⁰
+0 +  0 +  32 + 16 + 0 +  4 +  0 +  0           0 +  64 + 0  + 16 + 0 +  4 +  0 +  0
+                  52                                             84
+```
 Taking a *wild* guess, this is probably encoded with [ASCII](https://en.wikipedia.org/wiki/Ascii), a very simple text encoding. Let me just consult my ASCII table for the numbers 52 and 84, and we get...
 `4 T`
 Ah. I should have known. It's [Four Tet](https://en.wikipedia.org/wiki/Four_Tet)! For anyone listening along at home, my favorite bit is the end of track number five (0181 0005), and the transition into track number six (0181 0006). This isn't really a new or secretive album (it's listed on [his Discogs entry](https://www.discogs.com/artist/3543-Four-Tet)), but I still thought it was a fun puzzle. For further incognito entertainment, check out Four Tet's [Wing Dings](https://open.spotify.com/artist/1TIbqr0x8HoKzKBNtNN8wf?si=mU8FoicbR32Etr4NjhmBTw) album.

@@ -50,7 +50,10 @@ function subBlockQuotes(post) {
 }
 
 function subPreText(post) {
+	// can't use backticks in code blocks with this regex
 	const pre_regex = /`([^`]+)`/g;
+	const fence_regex = /```([^`]+)```/gm
+	post = post.replace(fence_regex, '<pre>$1</pre>')
 	return post.replace(pre_regex, '<pre>$1</pre>')
 }
 
