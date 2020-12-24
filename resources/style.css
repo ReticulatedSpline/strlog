@@ -1,5 +1,4 @@
 /* small screen rules */
-
 @media (min-width:30.063em) {
 	body {
 		font-size: 2em;
@@ -31,7 +30,6 @@
 }
 
 /* large screen rules */
-
 @media (min-width:64.063em) {
 	body {
 		font-size: 1.2em;
