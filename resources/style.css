@@ -50,7 +50,7 @@ body {
 	line-height: 1.6;
 	font-weight: lighter;
 	color: whitesmoke;
-	background-color: rgb(65, 65, 65);
+	background-color: #3a404b;
 	font-family: 'Ubuntu', sans-serif;
 }
 
@@ -68,9 +68,13 @@ a:hover {
 }
 
 img {
+	display: block;
 	border: 1px solid white;
-	width: 100%;
-	height: auto;
+	max-height: 50vh;
+	width: auto;
+	margin-top: 1%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 hr {
