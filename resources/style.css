@@ -71,6 +71,7 @@ img {
 	display: block;
 	border: 1px solid white;
 	max-height: 50vh;
+	max-width:100%;
 	width: auto;
 	margin-top: 1%;
 	margin-left: auto;
