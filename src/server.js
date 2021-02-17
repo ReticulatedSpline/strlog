@@ -2,7 +2,6 @@ const fs = require('fs');
 const http = require('http');
 const path = require('path');
 const format = require('./format.js');
-const util = require('util');
 
 const CSS_MIME = { 'Content-Type': 'text/css' };
 const HTML_MIME = { 'Content-Type': 'text/html' };
@@ -30,7 +29,14 @@ function getPostsByDate(fn) {
 			console.log('Error fetching files: ', err);
 		}
 		else {
-			files.sort((a, b) => a - b);
+			// natural sort file names (should be ISO dates!)
+			files.sort(function(a, b) {
+				return a.localeCompare(b, undefined, {
+					numeric: true,
+					sensitivity: 'base'
+				});
+			});
+			console.log(files)
 			fn(files);
 		}
 	});
@@ -49,7 +55,7 @@ let server = http.createServer(function (req, res) {
 			res.end();
 		});
 	}
-	// load a generic post
+	// load a specific post
 	else if (req.url.match(/\d{4}-\d{2}-\d{2}$/)) {
 		getPostsByDate((files) => {
 			// check for matching post
@@ -77,7 +83,7 @@ let server = http.createServer(function (req, res) {
 			sendContent(data, ICO_MIME, res);
 		});
 	}
-	else if (req.url.endsWith('.jpg')) {
+	else if (req.url.endsWith('.jpg') || req.url.endsWith('.jpeg')) {
 		let uri = path.join(appRoot, req.url);
 		fs.readFile(uri, (err, data) => {
 			sendContent(data, JPG_MIME, res);
