@@ -1,5 +1,5 @@
 /* small screen rules */
-@media (min-width:30.063em) {
+@media (max-width:1440px) {
 	body {
 		font-size: 2em;
 		margin-top: 2%;
@@ -10,12 +10,10 @@
 
 	h1 {
 		font-size: 2.4em;
-		color: darkorange;
 	}
 
 	h2 {
 		font-size: 1.3em;
-		color: darkorange;
 	}
 
 	h3 {
@@ -32,7 +30,7 @@
 }
 
 /* large screen rules */
-@media (min-width:64.063em) {
+@media (min-width:1441px) {
 	body {
 		font-size: 1.3em;
 		margin-top: 5%;
@@ -62,8 +60,8 @@ body {
 	font-family: 'Ubuntu', sans-serif;
 }
 
-h5 {
-	color: gray;
+h1, h2, h3 {
+	color: darkorange;
 }
 
 a {
