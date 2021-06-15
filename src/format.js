@@ -48,7 +48,7 @@ function subItalicText(post) {
 
 function subBlockQuotes(post) {
 	const bold_regex = /^>\s([^\n]+)/gm;
-	return post.replace(bold_regex, '<div class="quote">$1</div>');
+	return post.replace(bold_regex, '<p class="quote">$1</p>');
 }
 
 function subPreText(post) {

@@ -124,13 +124,12 @@ strong {
 }
 
 .quote {
-	font-style: italic;
+	font-style: oblique;
 	display: block;
 	padding-top: .5em;
 	padding-bottom: .5em;
 	padding-left: 1em;
-	background-color: steelblue;
-	border-left: 3px solid lightblue;
+	border-left: 3px solid darkorange;
 }
 
 .grey {
