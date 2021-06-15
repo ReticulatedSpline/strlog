@@ -1,5 +1,5 @@
 /* small screen rules */
-@media (max-width:1440px) {
+@media (max-width:1000px) {
 	body {
 		margin-top: 2%;
 		margin-left: 5%;
@@ -29,7 +29,7 @@
 }
 
 /* large screen rules */
-@media (min-width:1441px) {
+@media (min-width:1001px) {
 	body {
 		margin-top: 5%;
 		margin-left: 25%;
