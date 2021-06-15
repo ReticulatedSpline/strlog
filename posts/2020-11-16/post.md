@@ -1,5 +1,5 @@
 # Bites and Bits
-### Gamifying micronutrients
+## Gamifying micronutrients
 
 I recently got an ad for a multivitamin aimed specifically at vegetarians. The concept seems sound: vegetarians like myself [have a harder time coming by certain nutrients like the B vitamins](https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/vegetarian-diet/art-20046446). When someone learns I don't consume meat, there is a good chance I'll be asked about protein. Where do you get it from without meat? Until now, I've always just shrugged. I've been entirely meat-free for over 16 years and I've never had trouble running, biking, or climbing. I haven't dropped dead, so surely I'm doing *alright*! When I started looking into multivitamins, however, I found a distinct lack of studies correlating them with wellbeing or a lowered mortality rate, even for vegetarians. Unless you're seriously deficient, most studies conclude that multivitamins are, at best, harmless. The Mayo Clinic agrees, [stating that whole foods are usually a better source of nutrients than multivitamins](https://newsnetwork.mayoclinic.org/discussion/multivitamins-and-supplements-to-take-or-not-to-take/), and appear to be absorbed more efficiently and yield better benefits.
 
@@ -22,7 +22,7 @@ There is of course room for more improvement: particularly concerning vitamins D
 
 ---
 
-### Mystery Music
+## Mystery Music
 
 In unrelated news, I stumbled upon [a new artist on Spotify](https://open.spotify.com/artist/5ZzXaAuivVXuQaHCaRuxlD?si=ACmMUE-EQOqPCYru0mFWvg) that I really liked. When I checked the name, all I was presented with was this:
 
@@ -37,4 +37,4 @@ Hmm. Who could it be? You probably knew this already, but it appears to be binar
 ```
 Taking a *wild* guess, this is probably encoded with [ASCII](https://en.wikipedia.org/wiki/Ascii), a very simple text encoding. Let me just consult my ASCII table for the numbers 52 and 84, and we get...
 `4 T`
-Ah. I should have known. It's [Four Tet](https://en.wikipedia.org/wiki/Four_Tet)! For anyone listening along at home, my favorite bit is the end of track number five (0181 0005), and the transition into track number six (0181 0006). This isn't really a new or secretive album (it's listed on [his Discogs entry](https://www.discogs.com/artist/3543-Four-Tet)), but I still thought it was a fun puzzle. For further incognito entertainment, check out Four Tet's [Wing Dings](https://open.spotify.com/artist/1TIbqr0x8HoKzKBNtNN8wf?si=mU8FoicbR32Etr4NjhmBTw) album. ▣
+Ah. I should have known. It's [Four Tet](https://en.wikipedia.org/wiki/Four_Tet)! For anyone listening along at home, my favorite bit is the end of track number five (0181 0005), and the transition into track number six (0181 0006). This isn't really a new or secretive album (it's listed on [his Discogs entry](https://www.discogs.com/artist/3543-Four-Tet)), but I still thought it was a fun puzzle. For further incognito entertainment, check out Four Tet's [Wing Dings](https://open.spotify.com/artist/1TIbqr0x8HoKzKBNtNN8wf?si=mU8FoicbR32Etr4NjhmBTw) album.

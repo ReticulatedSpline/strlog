@@ -10,14 +10,16 @@
 
 	h1 {
 		font-size: 2.4em;
+		color: darkorange;
 	}
 
 	h2 {
-		font-size: 2em;
+		font-size: 1.3em;
+		color: darkorange;
 	}
 
 	h3 {
-		font-size: 1.8em;
+		font-size: 1.6em;
 	}
 
 	#next {

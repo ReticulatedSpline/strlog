@@ -2,7 +2,7 @@
 
 Well, here we are, post-election. The democrats won the presidential cause célèbre, yet the outcome was far closer than it was supposed to be. It seems the models were correct, but skewed to the "worst case" scenarios for democrats. The presidential race, expected to be a landslide referendum, became a nail-biter. Control of the senate, considered likely, is now up in the air. Ground was lost in the house. All in all, a disappointing performance and setup for an even more disappointing two years of Mitch McConnell blocking anything that crosses his desk. Despite this, Biden will have the opportunity to make *some* progress via executive orders.
 
-### Money isn't everything
+## Money isn't everything
 
 Democrats raised record setting campaign funds, including [seven of the most expensive senate campaigns in US history](https://www.cnn.com/2020/10/15/politics/senate-races-fundraising-2020-election/index.html). In each of these races democrats had larger coffers, usually by a factor of two or more. Despite these impressive fundraising numbers, democrats did not fair well in those races:
 
@@ -16,14 +16,14 @@ Democrats raised record setting campaign funds, including [seven of the most exp
 
 Just for fun, I'll throw in one more comically doomed senate race: Kentucky democrat Amy McGrath [raised almost $88 million](https://www.opensecrets.org/races/summary?cycle=2020&id=KYS1) to challenge senate majority leader Mitch McConnell only to lose by 20 percentage points. In these eight races alone, democrats spent *over $400 million* on losing races. Republicans spent *half* that amount to win six of the seven called races, and usually by large margins. Perhaps the problem is not the volume of messaging, but the message itself.
 
-### The Big Lyft Grift
+## The Big Lyft Grift
 California likes to do [ballot propositions](https://en.wikipedia.org/wiki/California_ballot_proposition), which are a direct democracy, plebiscite-style question asking voters if they would like to amend a law. This cycle had a fair number, including a particularly sinister one with the catchy title Proposition 22. Here's how it appeared on the ballot:
 > EXEMPTS APP-BASED TRANSPORTATION AND DELIVERY COMPANIES FROM PROVIDING EMPLOYEE BENEFITS TO CERTAIN DRIVERS.  INITIATIVE STATUTE.  Classifies app-based drivers as “independent contractors,” instead of “employees,” and provides independent-contractor drivers other compensation, unless certain criteria are met.  Fiscal Impact:  Minor increase in state income taxes paid by rideshare and delivery company drivers and investors.
 It's a fairly thick couple of sentences. The effect, however, is simple: it's a loophole that allows companies to avoid paying benefits for full-time workers. This is of course advantagous to companies like Postmates, Instacart, Lyft and Uber who won't have to provide health insurance, paid sick leave, disability, the right to unionize, or any of the other hard-won worker's rights just by labeling them contractors... even if they're working full time! To me, this is the worst news to come from the election cycle as it provides a glimpse into the future of the American gig economy. Despite both Uber and Lyft [hemorrhaging money](https://www.nytimes.com/2019/10/30/technology/lyft-earnings-profitability.html) and reporting $0 profit, they managed to spend [$185 million](https://www.cnn.com/2020/10/08/tech/proposition-22-california/index.html) in propaganda for the ballot measure. The measure passed with 58% approval, sending Uber and Lyft shares up 11%.
 
 ---
 
-### The Jakarta Method
+## The Jakarta Method
 In unrelated news, I just finished reading *The Jakarta Method*, and it was an excellent, nearly unbelievable primer on America's most fervent anticommunist operations during the cold war. It is named after the bloody protocol developed in Jakarta, Indonesia for efficient removal of communists and slamming the [Overton window](https://en.wikipedia.org/wiki/Overton_window) shut on politics left of center. By bankrolling fascist pockets of the military, the United States found a much neater method of cracking open hesitant foreign markets than the messy, hands-on approach used in [Guatemala](https://en.wikipedia.org/wiki/Guatemalan_Civil_War), [Viet Nam](https://en.wikipedia.org/wiki/Vietnam_War), or [South Korea](https://en.wikipedia.org/wiki/Korean_War). What's perhaps most striking is the sheer scale and number of involvements:
 
 ![graphic of US-led anticommunism programs around the world](anticommunism.jpeg)

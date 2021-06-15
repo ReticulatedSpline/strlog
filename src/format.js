@@ -41,7 +41,7 @@ function subBoldText(post) {
 
 function subItalicText(post) {
 	const italic_regex1 = /\*([^*]+)\*/g;
-	const italic_regex2 = /\_([^_]+)\_/g;
+	const italic_regex2 = /\_([^_.]+)\_/g;
 	post = post.replace(italic_regex1, '<em>$1</em>');
 	return post.replace(italic_regex2, '<em>$1</em>');
 }
@@ -103,6 +103,10 @@ function subContent (html, post, date) {
 	return html.replace(/{{content}}/, post);
 }
 
+function addEndMark(post) {
+	return post + ' ' + '▣';
+}
+
 function formatPost (html, post, date, lastPost, nextPost, fn) {
 	// remove all carriage returns
 	post = post.replace(/\r/g, '');
@@ -110,6 +114,7 @@ function formatPost (html, post, date, lastPost, nextPost, fn) {
 	post = subLinks(post);
 	post = subImages(post, date);
 	post = subPreText(post);
+	post = addEndMark(post);
 	post = addParagraphs(post);
 	post = subBoldItalicText(post);
 	post = subBoldText(post);

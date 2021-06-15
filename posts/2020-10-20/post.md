@@ -4,19 +4,19 @@
 
 *I visited Vietnam in May of 2019 for an all-too-brief two weeks. This following is a smattering of notes I took in hostels, trains, and planes along the way.*
 
-### Sunday, May 5th
+## Sunday, May 5th
 The first day was... not ideal.  The morning of initially went smoothly; I arrived at MSP on time, didn't forget anything, and I was feeling calm and collected. That is until I went up to get my boarding pass for LAX. The attendant casually informed that I had missed the flight. Oops. In my all my careful spreadsheeting of dates and times, I had mistakenly swapped the arrival and departure times!
 
 In the end, I was able to find a flight to LAX in time to catch the connection to Guangzhou and avoided salvaging an entirely new itinerary. A single Delta flight fit the bill, and at just the right time too! Still, it was a $418 mistake. Not how I had hoped to start this trip.
 
 The Delta flight and layover at LAX were smooth in comparison. It still didn't feel real, even as I sitting in California watching the heat ripple off the pavement. The next flight crosses the Pacific and should plunk me down in Asia. Am I really about to fly across the Pacific? To *China*? In my head, Asia was still an abstract idea.
 
-### Monday, May 6th
+## Monday, May 6th
 Boy, nothing screws up your internal clock like an international flight. The flight served only beef (no thanks), and I was not able to sleep much during the 14 hour flight. However, once in  Guangzhou, the international transfer process was so easy a sleepy foreigner could do it. The airport was clean with a pleasant abundance of real, live plants. This even an included a entire wall of bromeliads and ferns. I was able to (wordlessly) order one of the few vegetarian options available at midnight: okra and beer. Yum!
 
 The final leg of the flight was on a smaller Southern China airbus to Hanoi, where I arrived at midnight local time. I told myself I'd have planned out some smaller details by this point (such as reaching the hostel from the airport), but I still don’t have a real plan. My itinerary just had a single word for tonight: "taxi". At this point, without a SIM card, it seems my only option is to withdraw cash wherever I can and hope the taxis idling out front don't rip me off too hard. I *probably* could have planned this a little better. Tuesday should be more telling and set the tone of the trip proper. Very much looking forward to a bed where I can sleep, horizontally, like a human being and not whatever airplane designers think people are.
 
-### Tuesday, May 7th
+## Tuesday, May 7th
 Even in the early morning hours I was able to buy a SIM card in the very quiet Nội Bài International Airport. The modern way to get a ride in Vietnam is apparently an app called Grab, like our version of Uber or Lyft. A few clicks get you a ride on your choice of car or motorbike (more on that later). A short ride later, and I was plunked in front of my destination. The hostel was clean and air conditioned. A blessing. I tossed my bag on the bunk and fell asleep on top of it. In the morning I took a shower, and feeling like a human again, decided to take a walk around the legendary [Hoàn Kiếm lake](https://en.wikipedia.org/wiki/Ho%C3%A0n_Ki%E1%BA%BFm_Lake). 
 
 Getting there was hairy. the traffic here has no western comparison. At least in the old quarter, there are no center lines, dividers, or rules. Driving on the right side of the street is a suggestion. Driving on the street at all is a suggestion. The sidewalk works just as well, after all. Despite the apparent chaos accidents seem relatively rare. My first encounter with Hanoian traffic was startling, but went smoothly. The strategy is something like this: pick a relatively quiet time to cross, say a prayer, and just start walking. The locals will weave around you.
@@ -35,10 +35,10 @@ From there we departed to ‘Train Street’, a narrow alleyway with train track
 ![train alley](train_street.jpg)
 *It's no joke. When the train comes, there's less than two feet of clearance on either side.*
 
-### Wednesday, May 8
+## Wednesday, May 8
 I woke early and headed downstairs for a free breakfast and to plan out what I was doing next. I had decided after talking with some hostel mates the night before that [Ninh Bình](https://en.wikipedia.org/wiki/Ninh_B%C3%ACnh_Province) was next on the docket. Ninh Bình is a smaller and more rural province south of Hanoi. I booked a hostel outside of the city of Ninh Binh and a train ticket to get there. I decided to kill some time around Hoàn Kiếm lake and got to try the famed coffee and condensed milk (Cá Phê Sữa) on the way. Shortly after arriving at the lake, a woman ran after me and begged for help -- first I thought she might be a scammer, but she just wanted homework help! It turns out English fluency is a hot commodity here. After only a year of study, she was already nearly fluent. Conjugation is a tough topic because the Vietnamese language does not do much of it. I tried to explain how prepositions work (turns out she knew more than I did), and in return she helped me a little with my Vietnamese pronunciation. A lost cause, unfortunately. When I told her I had accidentally spent $8 on a fried banana the day before she didn’t believe me at first. She informed me I could have purchased *one hundred bananas* for that price. First, she brought me to a local supermarket and told me to only buy from similar places. Then she gave me some good advice: always refuse the street vendors. We said goodbye and I took a Grab bike to the station and found my train without issue.
 
-### Thursday, May 9
+## Thursday, May 9
 I ended up next to a Vinh local (Quang) on his way back to university. He spoke a little English, but we conversed mostly through Google Translate. When a trolley came around with snacks, I tried to buy a bag of what I thought were plums with a large note (500,000₫, $21), which is all the ATMs dispense (get foreign cash from your bank before leaving). The woman working the trolley cart shook her head no. I think I had offered an outrageous sum. I was embarrassed and motioned to return the snacks, but my new friend paid for me. We chatted a little more. He asked if I know what Buddhism was, and I tried to explain I knew *of* it, but not much *about* it. Google struggles with Vietnamese a lot, in no small part to the tendency of the Vietnamese to omit diacritics while typing. That can't be an easy mapping for Google to make with a tonal language! He eventually reached into his bag and handed me a necklace of prayer beads and insisted I keep them. He demonstrated how to slowly count the beads to cultivate calmness. When we rolled into Ninh Bình, he said goodbye watched me through the window as the train lurched forward once again.
 
 Right away I was besieged by taxi operators offering to take me places. Remembering my lesson on street venders earlier, I turned them all down (multiple times). For the most part this works, but in this case one persistent man followed me outside. Despite my better judgments, I relented and asked what his prices were. He offered a motorbike rental for “today, tomorrow, and second tomorrow” for a 2,000,000₫ ($86). A great deal, he claimed. In the end he was right; it was a better price than my hostel was offering. He let me take it around the block, showed me how to operate the lights, and where the gas tank was. When I explained my destination his face lit up. He told me he lived that way and I could follow him halfway there! 
@@ -51,7 +51,7 @@ Suddenly, I was following a stranger through the bustling Ninh Bình traffic on 
 
 I conversed for awhile with the other guests. I even played pool with two fellow solo travelers named Florian and Nikolas (from France and Switzerland) respectively. Nico and I decide to see see the town and the scenery at Hang Múa in the morning. After a decent meal of fried tofu, I fell asleep in the extremely hot and humid bunk room.
 
-### Friday, May 10th
+## Friday, May 10th
 It is 4:30am and the entire jungle is awake. The roosters started half an hour before. The dogs next door are fighting. It is already 72° and the humidity is pushing 97%. I gave up sleeping anymore and went for an early shower, which I shared with an enormous banana slug.
 
 I killed some time and watch the neighborhood wake up. A tiny cat yowled at me for awhile. A few hours later, Nico wakes up and we chat, deciding to get breakfast at the hostel. We make a rough plan to stock up in Ninh Binh (I don’t need anything but motorbike practice) and head off. The riding is easy, but Ninh Binh is relatively dusty and not as enjoyable as the countryside. At least it’s calmer than Hanoi!` After Nico finds all his supplies (and I find some bandages for my blistered feet) we continue on to Hang Múa, taking a leisurely route though the rice fields. Hang Múa is a little expensive and touristy, but very picturesque. Our version of exploring this area involved climbing a small karst mountain. At the top, there are incredible views of Vietnam's signature topography and the statue of a slender dragon snaking across the peak. Beside the dragon is a small Buddhist shrine. Almost everyone there is a tourist, but at least one visitor pays respects.
@@ -66,14 +66,14 @@ On the train, my seat is next to an older Vietnamese woman who insists on teachi
 
 In Hanoi I’m once again feeling tired and feeling overwhelmed. Even after living on one of the busiest streets in Minneapolis for a year, the cacophony of Hanoi is a lot to handle. I walk around awhile decide to splurge at a high end restaurant. The one I find is spectacular: It's tucked away and unassuming. Diners can sit on small islands in an indoor koi pond surrounded by live plant walls, entirely isolated from the bustle of Hanoi. I'm the only patron at 6pm on a Friday night.
 
-### Saturday, May 11th
+## Saturday, May 11th
 The next morning I book a bus to Cat Ba island east of Hanoi.
 
 A man on a scooter leads me out to the street where me and another woman wait for almost half an hour for the bus to appear. It’s a long drive out into the country. I sit next to a Ukrainian woman who alternates between flirting and showing me photos of her wedding (last month). An interesting character. The next leg of trip requires a ferry. The bus ride is pretty comfortable, and it's a shock to leave the quiet cocoon of the bus.
 
 The ferry dock is crazy. We get off the bus into the searing heat and are herded towards the boat. It’s dirty and smelly. After the ferry we get on a second bus, where I booked a room the nearest hostel. It happens to be called ‘Woodstock’. Interesting. I thought I had booked a *room* of some kind. Maybe even a ceiling. It turns out what I actually booked was a tent on the beach for some all-night festival. Marijuana and LSD are on sale at the front desk. No judgement, but it wasn't what I came for for. I decided to book an all-day tour of the nearby [Hạ Long Bay](https://en.wikipedia.org/wiki/H%E1%BA%A1_Long_Bay) the very next day.
 
-### Sunday, May 12th
+## Sunday, May 12th
 The tour leaves at 8am. We’re all taken to a dock where I was asked if I planned to be back by 4pm (that was the deal, wasn't it?). Turns out the itinerary is different than I thought. If I wanted to be on the 4pm bus to Hà Giang the next day (yes please), then I should have brought my luggage with me! Whoops. Hạ Long bay is beautiful, but touristy. We stop at a floating dock to kayak (lots of tourists) and and a beach to swim where I got do a little climbing. Our last stop somewhere aptly named "monkey island", where the monkeys were firmly in control of a food court set up near the beach. My first sight off the boat: a macaque shotgunning a Coca Cola. Interesting.
 
 ![ha long](halong.jpg)
@@ -87,7 +87,7 @@ I change boats once, and someone picks me up in a van from the ferry dock. He sp
 
 The bus ride to Hà Giang is a little uncomfortable. I develop a mild case of food poisoning, and the bus is bumpy and uncomfortable. It's a six hour drive. Night comes, and in some Hanoian suburb I'm ordered off the bus. The replacement/transfer bus is even worse, smelling of mildew, cigarettes, and incredibly humid. I spend most of this time queasy, feeling like I might die, and trying to decide whether or not to throw up. When we arrive I find out the city of Hà Giang is sprawling, and my hostel is tens of kilometers away. I'm not sure if my bus ticket has covered fair to the hostel, and it's now 3am. Two Australians greet me at the bus stop, presumably working for the hostel we're now standing in. They arrange for someone's brother to pick me up in a taxi. I can't remember if I paid him or not. I arrive at the hostel and a woman opens the door. I'm once again exhausted and sleep on top of my backpack.
 
-### Addendum
+## Addendum
 
 *At this point I fell of the schedule of keeping a daily log. The following was written almost a year afterward.*
 
