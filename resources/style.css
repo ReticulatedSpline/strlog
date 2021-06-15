@@ -1,7 +1,6 @@
 /* small screen rules */
 @media (max-width:1440px) {
 	body {
-		font-size: 2em;
 		margin-top: 2%;
 		margin-left: 5%;
 		margin-right: 5%;
@@ -9,49 +8,57 @@
 	}
 
 	h1 {
-		font-size: 2.4em;
+		font-size: 8em;
 	}
 
 	h2 {
-		font-size: 1.3em;
+		font-size: 6em;
 	}
-
+	
 	h3 {
-		font-size: 1.6em;
+		font-size: 4em;
 	}
 
-	#next {
+	p {
 		font-size: 3em;
 	}
 
-	#last {
-		font-size: 3em;
+	#next, #last {
+		font-size: 5em;
 	}
 }
 
 /* large screen rules */
 @media (min-width:1441px) {
 	body {
-		font-size: 1.3em;
 		margin-top: 5%;
 		margin-left: 25%;
 		margin-right: 25%;
 		margin-bottom: 10%;
 	}
+
+	h1 {
+		font-size: 3em;
+	}
+
 	h2 {
-		font-size: 1.6em;
+		font-size: 2em;
 	}
+
 	h3 {
-		font-size: 1.9em;
+		font-size: 2em;
 	}
-	#next {
-		font-size: 1em;
+
+	p {
+		font-size: 1.3em;
 	}
-	#last {
-		font-size: 1em;
+
+	#next, #last {
+		font-size: 2em;
 	}
 }
 
+/* general rules */
 body {
 	line-height: 1.6;
 	font-weight: lighter;
@@ -60,12 +67,16 @@ body {
 	font-family: 'Ubuntu', sans-serif;
 }
 
-h1, h2, h3 {
+h1, h2 {
 	color: darkorange;
 }
 
+h3 {
+	color: lightgray;
+}
+
 a {
-	color: peru;
+	color: darkorange;
 	text-decoration: none;
 }
 

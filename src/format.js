@@ -99,7 +99,7 @@ function subFooter(post, lastPost, nextPost) {
 
 
 function subContent (html, post, date) {
-	html = html.replace(/{{date}}/, '<h5>' + date + '</h5>');
+	html = html.replace(/{{date}}/, '<h3>' + date + '</h3>');
 	return html.replace(/{{content}}/, post);
 }
 
