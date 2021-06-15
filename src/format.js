@@ -40,8 +40,10 @@ function subBoldText(post) {
 }
 
 function subItalicText(post) {
-	const bold_regex = /\*([^*]+)\*/g;
-	return post.replace(bold_regex, '<em>$1</em>');
+	const italic_regex1 = /\*([^*]+)\*/g;
+	const italic_regex2 = /\_([^_]+)\_/g;
+	post = post.replace(italic_regex1, '<em>$1</em>');
+	return post.replace(italic_regex2, '<em>$1</em>');
 }
 
 function subBlockQuotes(post) {
