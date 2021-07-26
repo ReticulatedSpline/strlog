@@ -1,6 +1,6 @@
 /* small screen rules */
 @media (max-width:1000px) {
-	body {
+	#body {
 		margin-top: 2%;
 		margin-left: 5%;
 		margin-right: 5%;
@@ -19,7 +19,7 @@
 		font-size: 4em;
 	}
 
-	p, ol, li {
+	p, ol, li.body_list {
 		font-size: 3em;
 	}
 
@@ -30,7 +30,7 @@
 
 /* large screen rules */
 @media (min-width:1001px) {
-	body {
+	#body {
 		margin-top: 5%;
 		margin-left: 25%;
 		margin-right: 25%;
@@ -49,12 +49,18 @@
 		font-size: 2em;
 	}
 
-	p, ol, li {
+	p, ol, li.body_list {
 		font-size: 1.3em;
 	}
 
 	#next, #last {
 		font-size: 2em;
+	}
+
+	.post_list_entry {
+		font-size: 2em;
+		font-weight: bold;
+		color: gray;
 	}
 }
 
@@ -76,8 +82,11 @@ h3 {
 }
 
 a {
-	color: darkorange;
 	text-decoration: none;
+}
+
+a.body_link {
+	color: darkorange;
 }
 
 a:hover {
@@ -114,10 +123,19 @@ ul {
 
 #next {
 	float: right;
+	color:darkorange;
 }
 
 #last {
 	float: left;
+	color:darkorange;
+}
+
+#post_list {
+	width: 15%;
+	margin-top: 0;
+	float: left;
+	list-style: none;
 }
 
 .center {
@@ -137,5 +155,5 @@ ul {
 }
 
 .grey {
-	color: grey;
+	color: grey !important;
 }

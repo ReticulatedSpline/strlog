@@ -11,14 +11,14 @@ const PNG_MIME = { 'Content-Type': 'image/png' };
 const appRoot = path.join(__dirname, '../');
 const port = process.env.PORT || 5000;
 
-function readPost(index, posts, fn) {
+function readPost(index, host, posts, fn) {
 	const postMarkdown = path.join(appRoot, 'posts', posts[index], 'post.md');
 	const postHTML = path.join(appRoot, 'resources', 'page.html');
 	const lastPost = index > 0 ? posts[index - 1] : null;
 	const nextPost = posts.length > index ? posts[index + 1] : null;
 	fs.readFile(postHTML, 'utf8', (err, html) => {
 		fs.readFile(postMarkdown, 'utf8', (err, post) => {
-			format.formatPost(html, post, posts[index], lastPost, nextPost, fn);
+			format.formatPost(html, host, post, posts[index], lastPost, nextPost, posts, fn);
 		});
 	});
 }
@@ -48,6 +48,8 @@ function sendContent(content, mime, res) {
 }
 
 let server = http.createServer(function (req, res) {
+	const host = req.headers.host;
+
 	// redirect to most recent post
 	if (req.url == '/') {
 		getPostsByDate((files) => {
@@ -66,7 +68,7 @@ let server = http.createServer(function (req, res) {
 					postIndex = index;
 				}
 			}
-			readPost(postIndex, files, (postContent) => {
+			readPost(postIndex, host, files, (postContent) => {
 				sendContent(postContent, HTML_MIME, res);
 			});
 		})
