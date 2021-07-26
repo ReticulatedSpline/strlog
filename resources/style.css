@@ -26,6 +26,10 @@
 	#next, #last {
 		font-size: 5em;
 	}
+
+	#post_list {
+		display: none;
+	}
 }
 
 /* large screen rules */
@@ -55,6 +59,13 @@
 
 	#next, #last {
 		font-size: 2em;
+	}
+
+	#post_list {
+		width: 15%;
+		margin-top: 0;
+		float: left;
+		list-style: none;
 	}
 
 	.post_list_entry {
@@ -129,13 +140,6 @@ ul {
 #last {
 	float: left;
 	color:darkorange;
-}
-
-#post_list {
-	width: 15%;
-	margin-top: 0;
-	float: left;
-	list-style: none;
 }
 
 .center {
