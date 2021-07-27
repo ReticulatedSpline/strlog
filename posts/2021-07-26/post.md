@@ -1,0 +1,17 @@
+# july media roundup (and the car rant)
+Okay, here we go. July post. Posting for July. I'll start with the media roundup because that's always the easiest to write.
+
+## caste: the origins of our discontent
+I read Times bestseller & Oprah-recommended book *Caste: The Origins of our Discontent*, by Isabel Wilkerson. To be more precise, I read a little over half of Caste. It had an interesting premise and set out to show that America's racial problems were better suited to the Indian style of [caste](https://en.wikipedia.org/wiki/Caste) than to the American idea of racism. Wilkerson attempts to show this by defining caste's components and pointing them out in the American social landscape. Where things went wrong were the presentation. *Caste* had two distinct problems heavier than the premise could carry. The first issue was an overly ornate style of writing plastered in particularly unhelpful analogies. Caste is like the mudsill of a house. Caste is like The Matrix. Caste is like a computer program. A wolf pack. A Broadway play. Marionettes. Each chapter opened with an anecdote or analogy, and almost every analogy was unhelpful. The concept of enforced social stratification isn't a difficult concept and these references only served to water down the narrative. 
+
+My second main qualm with the book was the Liberal attitudes it conveyed. In many spots I would have agreed completely with the premise if only the word "Caste" were to replace "Caste". Wilkerson does actually touch on the differences briefly:
+
+> Class is an altogether separate measure of one's standing in a society [than caste], marked by level of education, income, and occupation, as well as the attendant characteristics, such as accent, taste, and manners, that flow from the socioeconomic status. These can be acquired through hard work and ingenuity or lost through poor decisions or calamity. If yo can act your way out of it, then it is class, not caste.
+
+I don't particularly disagree with her on this, but I can only say that because the paragraph is carefully arranged to be irrefutable. Is it true that class mobility exists? Yes. Is it true that class can be lost in a calamity? Yes. Is it, however, common? No. This takes into account slim possibilities and presents them as equal to near certainties. America's upper class rarely faces and real challenges, and class mobility is almost always limited to the lower and middle classes. Here, I believe, Wilkerson is missing the economic reality that the class divide is just too large for most to cross. In retrospect that [big-L Liberalism](https://en.wikipedia.org/wiki/Liberalism) shouldn't have been surprising since it came heartily endorsed by Oprah Winfrey, a woman worth over $3 billion.
+
+## the yiddish policeman's union
+This one is an easy recommendation because it's nonfiction, an interesting premise and just plain fun. In an alt-history autonomous Alaskan zone, loose-cannon-but-damn-fine Yiddish cop Meyer Landsman must unravel the secrets of the displaced Israeli Mafia after a role-reversed Arab-Israeli war. How's that for an elevator pitch? Interestingly, the premise is based on the real-life [Slattery Report](https://en.wikipedia.org/wiki/Slattery_Report). This one comes highly recommended -- bake some challah, pour a glass, and turn off your brain long enough catch some action and learn a bit of Hebrew on the way.
+
+## the car rant
+/ / todo
