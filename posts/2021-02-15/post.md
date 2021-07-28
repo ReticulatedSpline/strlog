@@ -8,7 +8,7 @@ Here in Minnesota you'll find a few standard varieties of succulents in greenhou
 For true cacti you're likely to find grafted (hybrid) moon cacti, prickly pears, and barrel cacti.
 
 From top to bottom and left to right, the pot below holds a prickly pear, a haworthia (retusa), a crassula (hen and chicks), lithops (living stone), and a cactus. The white material is perlite, discussed below.
-![a pot of different succulents](pot.jpg)
+![A perlite mixed pot of with different succulents](pot.jpg)
 
 Thankfully, these all share the same requirements.
 
@@ -20,13 +20,13 @@ The key is in quantity; a handful of perlite in a pot won't do it. Water poured 
 ## light
 These plants need a lot of light. Light is usually the limiting factor of where you can grow them and how many you can keep. The best location is on a windowsill with a "view of the sky", keeping them in the sun for many hours a day. In the northern hemisphere they are best suited to south and west facing windows where the sun is brightest. This doesn't mean they can't be displayed on a shady kitchen counter or dark bathroom, but you must rotate them in and out of a brighter location if you want them to thrive. Many will die outright if they don't receive *direct* sunlight. Others will stretch and grow towards the brightest point they detect, a process called [etiolation](https://en.wikipedia.org/wiki/Etiolation). While not biologically harmful, it indicates the plant would benefit from more light, and it is often not as desirable as the tightly bunched leaf clusters you'll find for sale in a greenhouse. The crassula below shows both periods of dense, well-lit growth as well as periods of etiolation.
 
-![a succulent with the spread growth etiolation pattern](etiolation.jpg)
+![Succulent displaying etiolated growth](etiolation.jpg)
 
 The solution to etiolation is to increase the amount of light the plant receives. This is not as easy as it sounds - unless you live near the equator! In Minnesota, for example, grow lights are the only way to prevent etiolation in the winter and often even in the summer. Cheap LED panels saturate Amazon starting around $20. They may emit a purple hue, claiming to bias the light spectrum towards what plants need. However, [all plants benefit from a full light spectrum](https://www.youtube.com/watch?v=P2bw4cgkh9c) (i.e. white light). Despite *appearing* bright, these cheap panels are likely orders of magnitude less bright than the sun. Visual appearance won't help you determine a good grow light because [our eyes don't process light linearly](https://en.wikipedia.org/wiki/Human_eye#Dynamic_range). The only way to really determine how much light is enough is to use a measured value like lumens or foot-candles. Wattage is also helpful, but it's only a measure of power consumption so efficiency matters there. You can assume anything sold without such values listed is insufficient.
 
 Unfortunately, good grow lights are still expensive. LEDs have made these cheaper and more efficient, but they are not yet cheap. To keep a plant shelf free of etiolation expect to spend between $150 and $300. I use a [240 watt array](https://www.migrolight.com/product/migro-aray-240w-iiii-bar-light/) which does an excellent job.
 
-![migro light array](lights.jpg)
+![Migro ARay 4-bar, 240W grow lights](lights.jpg)
 
 At the high end of the lighting spectrum you may start to see sun blush or sun stress as the plant adapts to the high quantity of light. This can create a wide range of beautiful red, orange, and yellow colors especially at leaf tips. On its own this is not harmful. Too much light will eventually singe the leaf tips and turn them brown.
 

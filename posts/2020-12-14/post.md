@@ -1,6 +1,6 @@
 # Lessons on the apocalypse
 I recently finished two novels about the end of a world: the first is a nonfictional account of the Russian revolution by China Miéville; the second is a fictional anthology from before and after an apocalypse.
-![book covers for October and Station eleven](books.png)
+![Covers for October and Station Eleven](books.png)
 
 ## October
 October covers the Russian revolution in a unique way. Instead of taking the factual, textbook-style approach, Miéville spins it into an opinionated adventure, a narrative history. In his own words: 

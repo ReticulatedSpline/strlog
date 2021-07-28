@@ -34,8 +34,10 @@ function subLinks(post) {
 
 function subImages(post, date) {
 	const image_regex = /!\[(.*?)\]\((.+?)\)/g;
-	// TODO: This should probably use path.join()
-	const image_html = '<img src="' + './posts/' + date + '/$2" alt="$1">';
+	const image_html =
+	'<div class="body_photo_div">' +
+	'<img class="body_photo" src="' + './posts/' + date + '/$2" alt="$1">' +
+	'<p class="body_alt_text">*$1*</p></div>';
 	return post.replace(image_regex, image_html);
 }
 
