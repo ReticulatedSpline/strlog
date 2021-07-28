@@ -74,5 +74,4 @@ They can't resist a jab a China here, and correctly note that it is the world's 
 
 ---
 
-That's about all the focus group intern speak I can handle for the time being. These proposals are much milder than I'd prefer, but as a friend of mine succinctly put it: 
-> If Biden can actually complete all his listed campaign website agenda, he'd be the greatest president of all time.
+That's about all the focus group intern-speak I can handle for the time being. These proposals are much milder than I'd prefer, but hey, if he actually pulls them all off he'd be a top ten president. Capitulation to the right in a vain attempt to build the largest possible tent on Earth might, however, get in the way.
