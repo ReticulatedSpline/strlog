@@ -84,7 +84,7 @@ function subPreText(post) {
 function subUnorderedLists(post) {
 	const list_shell_regex = /((?:\n-\s.*)+)/gm;
 	const list_item_regex = /\n-\s([^\n]+)/m;
-	post = post.replace(list_shell_regex, '\n<ul class=\"body_list\>\n$1\n</ul>');
+	post = post.replace(list_shell_regex, '\n<ul class=\"body_list\">$1\n</ul>');
 	while (results = post.match(list_item_regex)) {
 		post = post.replace(list_item_regex, '\n<li>$1</li>')
 	}
@@ -94,7 +94,7 @@ function subUnorderedLists(post) {
 function subOrderedLists(post) {
 	const list_shell_regex = /((?:\n\d\.\s.*)+)/gm;
 	const list_item_regex = /\n\d\.\s([^\n]+)/m;
-	post = post.replace(list_shell_regex, '<ol class=\"body_list\">\n$1\n</ol>');
+	post = post.replace(list_shell_regex, '\n<ol class=\"body_list\">$1\n</ol>');
 		while (results = post.match(list_item_regex)) {
 		post = post.replace(list_item_regex, '\n<li>$1</li>')
 	}
@@ -120,7 +120,7 @@ function subFooter(post, lastPost, nextPost) {
 }
 
 
-function subContent (html, post, date) {
+function subContent(html, post, date) {
 	html = html.replace(/{{date}}/, '<h3>' + date + '</h3>');
 	return html.replace(/{{content}}/, post);
 }
@@ -155,5 +155,10 @@ function formatPost (html, host, post, date, lastPost, nextPost, post_list, fn) 
 }
 
 module.exports = {
-	formatPost: formatPost
+	formatPost: formatPost,
+	subContent: subContent,
+	subTitles: subTitles,
+	subImages: subImages,
+	subOrderedLists: subOrderedLists,
+	subUnorderedLists: subUnorderedLists
 };
