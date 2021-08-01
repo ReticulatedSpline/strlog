@@ -84,7 +84,7 @@ function subPreText(post) {
 function subUnorderedLists(post) {
 	const list_shell_regex = /((?:\n-\s.*)+)/gm;
 	const list_item_regex = /\n-\s([^\n]+)/m;
-	post = post.replace(list_shell_regex, '\n<ul class=\"body_list\">$1\n</ul>');
+	post = post.replace(list_shell_regex, '\n<ul>$1\n</ul>');
 	while (results = post.match(list_item_regex)) {
 		post = post.replace(list_item_regex, '\n<li>$1</li>')
 	}
@@ -94,7 +94,7 @@ function subUnorderedLists(post) {
 function subOrderedLists(post) {
 	const list_shell_regex = /((?:\n\d\.\s.*)+)/gm;
 	const list_item_regex = /\n\d\.\s([^\n]+)/m;
-	post = post.replace(list_shell_regex, '\n<ol class=\"body_list\">$1\n</ol>');
+	post = post.replace(list_shell_regex, '\n<ol>$1\n</ol>');
 		while (results = post.match(list_item_regex)) {
 		post = post.replace(list_item_regex, '\n<li>$1</li>')
 	}

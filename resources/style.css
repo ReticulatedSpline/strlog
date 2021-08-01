@@ -19,7 +19,7 @@
 		font-size: 4em;
 	}
 
-	p, ol, li.body_list {
+	p, ol, ul {
 		font-size: 3em;
 	}
 
@@ -53,7 +53,7 @@
 		font-size: 2em;
 	}
 
-	p, ol, li.body_list {
+	p, ol, ul {
 		font-size: 1.3em;
 	}
 

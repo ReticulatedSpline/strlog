@@ -37,14 +37,14 @@ function testSubImages() {
 function testSubUnorderedLists() {
 	let post = '\n- item 1\n- item 2\n- item 3';
 	let actual = format.subUnorderedLists(post);
-	let expected = '\n<ul class=\"body_list\">\n<li>item 1</li>\n<li>item 2</li>\n<li>item 3</li>\n</ul>';
+	let expected = '\n<ul>\n<li>item 1</li>\n<li>item 2</li>\n<li>item 3</li>\n</ul>';
 	runTest(testSubUnorderedLists, expected, actual);
 }
 
 function testSubOrderedLists() {
 	let post = '\n1. item 1\n2. item 2\n3. item 3';
 	let actual = format.subOrderedLists(post);
-	let expected = '\n<ol class=\"body_list\">\n<li>item 1</li>\n<li>item 2</li>\n<li>item 3</li>\n</ol>';
+	let expected = '\n<ol>\n<li>item 1</li>\n<li>item 2</li>\n<li>item 3</li>\n</ol>';
 	runTest(testSubUnorderedLists, expected, actual);
 }
 
