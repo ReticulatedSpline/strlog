@@ -1,5 +1,4 @@
 # july media roundup (and the car rant)
-Okay, here we go. July post. Posting for July. I'll start with the media roundup because that's always the easiest to write.
 ![Covers](books.jpg)
 
 ## caste: the origins of our discontent
