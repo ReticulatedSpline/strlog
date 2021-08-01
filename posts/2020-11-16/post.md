@@ -1,5 +1,5 @@
-# Bites and Bits
-## Gamifying micronutrients
+# bites/bytes
+### gamifying micronutrients (the bites)
 
 I recently got an ad for a multivitamin aimed specifically at vegetarians. The concept seems sound: vegetarians like myself [have a harder time coming by certain nutrients like the B vitamins](https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/vegetarian-diet/art-20046446). When someone learns I don't consume meat, there is a good chance I'll be asked about protein. Where do you get it from without meat? Until now, I've always just shrugged. I've been entirely meat-free for over 16 years and I've never had trouble running, biking, or climbing. I haven't dropped dead, so surely I'm doing *alright*! When I started looking into multivitamins, however, I found a distinct lack of studies correlating them with wellbeing or a lowered mortality rate, even for vegetarians. Unless you're seriously deficient, most studies conclude that multivitamins are, at best, harmless. The Mayo Clinic agrees, [stating that whole foods are usually a better source of nutrients than multivitamins](https://newsnetwork.mayoclinic.org/discussion/multivitamins-and-supplements-to-take-or-not-to-take/), and appear to be absorbed more efficiently and yield better benefits.
 
@@ -22,7 +22,7 @@ There is of course room for more improvement: particularly concerning vitamins D
 
 ---
 
-## Mystery Music
+## mystery music (the bytes)
 
 In unrelated news, I stumbled upon [a new artist on Spotify](https://open.spotify.com/artist/5ZzXaAuivVXuQaHCaRuxlD?si=ACmMUE-EQOqPCYru0mFWvg) that I really liked. When I checked the name, all I was presented with was this:
 

@@ -1,6 +1,5 @@
-# Biden Campaign Website Unboxing & Review
-## Opinions from a Bernie Bro that nobody asked for
-
+# what does decency in the whitehouse mean?
+### opinions from the dirtbag left
 
 Make no mistake about it: I see both the 2016 and 2020 democratic presidential nominations as sham elections, both [by design](https://en.wikipedia.org/wiki/Superdelegate) and through [a coordinated effort by the candidates](https://www.salon.com/2019/11/27/obama-privately-vowed-to-intervene-in-primary-to-stop-bernie-sanders-from-winning-nomination-report/) to maintain the neoliberal flavor of the party.
 
@@ -8,9 +7,9 @@ Consider that within three days of Super Tuesday [all the moderate candidates dr
 
 However, putting my cynicism and suspicions aside, it's time to take a look at our presumptive nominee's [campaign website](https://joebiden.com/joes-vision/) and give it a review in good faith. 
 
-![bernie sanders campaign poster](bernie.jpg)
+![a throwback from my freshman year organizing](bernie.jpg)
 
-## COVID-19
+### the pandemic
 Biden's plan is (on paper) of course a marked improvement over the scattered attempts of the Trump administration. It's a 7 point plan:
 
 1. Fix Trump’s testing-and-tracing fiasco to ensure all Americans have access to regular, reliable, and free testing.
@@ -25,27 +24,27 @@ Mostly boilerplate stuff. A few things that stands out to me as missing from the
 
 Another qualm: a linked page mentions a patchwork of ways people booted off employer's insurance can receive temporary coverage. Nobody wants to deal with that. Medicare for all is popular and there has never been a better time to propose it.
 
-## Tax Policy
+### taxes
 This is one of his stronger areas to me, but still has many flaws.
 - The plan correctly mentions Trump's current corporate tax rate of 21% is insane and proposes raising it to 28%. This in itself is fine, but I can't help but notice that is [still a net -7% from the Obama administration's 35%](https://tradingeconomics.com/united-states/corporate-tax-rate).
 - Joe's plan involves a meager 2.6% bump to the top marginal income tax rate from 37% to 39.6%. This doesn't reflect the moving of tax brackets, but it is still a far cry from the [pre-Reagan era of 90+%](https://www.taxpolicycenter.org/statistics/historical-highest-marginal-income-tax-rates).
 - The idea of a minimum 15% corporate tax is nice.
 
-## Foreign Policy
+### foreign policy
 - One stated policy is ending family separation at the southern border. This is obviously desirable, but again I feel obliged to mention that many of these kinds of policies were started under [the Obama administration, including quotas](https://en.wikipedia.org/wiki/Immigration_detention_in_the_United_States#Immigration_detention_under_Obama), and were simply accelerated under Trump.
 - Talk of ending torture but no mention of Guantanamo.
 - No mention of ending the Cuban embargo.
 - Talk of slowing nuclear proliferation, which is always humorous from the most heavily armed nation on Earth.
 - Some mentioned positives: ending [Global Gag Rule](https://www.plannedparenthoodaction.org/communities/planned-parenthood-global/end-global-gag-rule), ending support for the Saudi genocide in Yemen, and ending the [Muslim travel ban](https://en.wikipedia.org/wiki/Executive_Order_13769).
 
-## The Economy
+### the money number (economy)
 There are some positives to be had here. He acknowledges the of reality massive, chronic wage theft:
 > Yet employers steal about $15 billion a year from working people just by paying workers less than the minimum wage.
 However, he stops short of proposing anything specific to fix this.
 
 Another nice idea is expanding collective bargaining law to independent contractors. Encouragingly, Biden supports a $15 minimum wage, a $3/hr increase from the concession Clinton was willing to make in 2016. However, the Pell grant meme 
 
-## Immigration
+### immigration
 This section make a good point: 
 > Critically, the Obama-Biden administration recognized that irregular migration from the Northern Triangle countries of Central America cannot be effectively addressed if solutions only focus on our southern border. The better answer lies in addressing the root causes that push desperate people to flee their homes in the first place: violence and insecurity, lack of economic opportunity, and corrupt governance. As Vice President, Biden spearheaded the administration’s efforts in El Salvador, Guatemala, and Honduras.
 However, it would be nice to hear recognition that this instability was *directly* caused by CIA backed coups and death squads in [El Salvador](https://en.wikipedia.org/wiki/Salvadoran_Civil_War#JRG_coup_October_1979), [Guatemala](https://en.wikipedia.org/wiki/1954_Guatemalan_coup_d%27%C3%A9tat), and [Honduras](https://en.wikipedia.org/wiki/CIA_activities_in_Guatemala)!
@@ -57,10 +56,10 @@ Some positives:
 However, this section is entirely undermined by the failure to push for the dissolution of ICE and CBP. This section, in particular, must be some kind of satirical joke:
 > Ensure that Immigration and Customs Enforcement (ICE) and Customs and Border Protection (CBP) personnel abide by professional standards and are held accountable for inhumane treatment. **Biden will increase resources** for training and demand transparency in and independent oversight over ICE and CBP’s activities.
 
-## Healthcare
+### healthcare
 How many different ways can dance around Medicare For All? Tax credits are useless when they come *yearly* and the rent is due *monthly*.
 
-## Climate & Energy
+### climate
 Biden starts off with a bold claim:
 > Ensure the U.S. achieves a 100% clean energy economy and reaches net-zero emissions no later than 2050. 
 This is a surprisingly aggressive timeline, even in a more authoritarian state like China. It's also a more complete proposal than what the democrats floated in 2016, which was [half carbon neutral *just in the generation sector* by 2030](https://ballotpedia.org/Hillary_Clinton_presidential_campaign,_2016/Climate_change). Biden also mentions attacking some of the largest polluters, but declines to name any names. Nationalizing these would be a key first step for any serious climate plan.

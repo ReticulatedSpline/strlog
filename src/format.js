@@ -1,15 +1,26 @@
-function subPostList(post, host, post_list) {
+function subPostList(post, host, post_list, date) {
 	const list_regex = /{{posts}}/;
 	const post_list_reversed = post_list.reverse();
 	let post_list_string = "<ul id=\"post_list\">";
 	let opacity = 1;
-	for (let post_title of post_list_reversed) {
+	
+	for (let post_date of post_list_reversed) {
 		if (opacity <= 0) {
 			break;
 		}
+		
+		let css = 'class = \"post_list_entry\" ';
+		let url = 'http://' + host + "/" + post_date;
+		let end = '';
+
+		if (date == post_date) {
+			css = 'id = \"post_list_current\" ';
+			end = '<span id=\"chevron\"> «</span>';
+		}
+
 		post_list_string += "<li style=\"opacity: " + opacity + "\">" + 
-		"<a class=\"post_list_entry\" href=http://" +
-		host + "/" + post_title + ">" + post_title + "</a></li>";
+							"<a " + css + "href=" + url + ">" + post_date +
+							"</a>" + end + "</li>";
 		opacity -= 0.1;
 		opacity = opacity.toFixed(1);
 	}
@@ -120,8 +131,7 @@ function subFooter(post, lastPost, nextPost) {
 }
 
 
-function subContent(html, post, date) {
-	html = html.replace(/{{date}}/, '<h3>' + date + '</h3>');
+function subContent(html, post) {
 	return html.replace(/{{content}}/, post);
 }
 
@@ -148,8 +158,8 @@ function formatPost (html, host, post, date, lastPost, nextPost, post_list, fn) 
 	post = subUnorderedLists(post);
 	post = subOrderedLists(post);
 	post = subRulers(post);
-	post = subContent(html, post, date);
-	post = subPostList(post, host, post_list);
+	post = subContent(html, post);
+	post = subPostList(post, host, post_list, date);
 	post = subFooter(post, lastPost, nextPost);
 	fn(post);
 }

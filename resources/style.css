@@ -97,6 +97,18 @@
 		font-weight: bold;
 		color: gray;
 	}
+
+	#post_list_current {
+		font-size: 2em;
+		font-weight: bold;
+		color: lightgray;
+	}
+
+	#chevron {
+		font-size: 2em;
+		font-weight: bold;
+		color: lightgray;
+	}
 }
 
 /* general rules */
