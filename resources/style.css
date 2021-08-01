@@ -1,61 +1,149 @@
-@media (min-width:30.063em) { 
-	body {
-		font-size: 2em;
+/* small screen rules */
+@media (max-width:1000px) {
+	#body {
 		margin-top: 2%;
 		margin-left: 5%;
 		margin-right: 5%;
 		margin-bottom: 0;
 	}
+
 	h1 {
-		font-size: 2em;
+		font-size: 6em;
 	}
-	#next {
-		font-size: 3em;
+
+	h2 {
+		font-size: 4em;
 	}
 	
-	#last {
+	h3 {
+		font-size: 4em;
+	}
+
+	h4 {
+		font-size: 3.5em;
+	}
+
+	h5 {
+		font-size: 3.3em;
+	}
+
+	h5 {
 		font-size: 3em;
+	}
+
+	p, ol, ul, pre {
+		font-size: 3em;
+	}
+
+	#next, #last {
+		font-size: 5em;
+	}
+
+	#post_list {
+		display: none;
 	}
 }
 
-@media (min-width:64.063em) { 
-	body {
-		font-size: 1em;
+/* large screen rules */
+@media (min-width:1001px) {
+	#body {
 		margin-top: 5%;
 		margin-left: 25%;
 		margin-right: 25%;
 		margin-bottom: 10%;
 	}
-	#next {
-		font-size: 1em;
+
+	h1 {
+		font-size: 3em;
 	}
-	
-	#last {
-		font-size: 1em;
+
+	h2 {
+		font-size: 2em;
+	}
+
+	h3 {
+		font-size: 2em;
+	}
+
+	h4 {
+		font-size: 1.8em;
+	}
+
+	h5 {
+		font-size: 1.6em;
+	}
+
+	h6 {
+		font-size: 1.3em;
+	}
+
+	p, ol, ul, pre {
+		font-size: 1.3em;
+	}
+
+	#next, #last {
+		font-size: 2em;
+	}
+
+	#post_list {
+		width: 15%;
+		margin-top: 0;
+		float: left;
+		list-style: none;
+	}
+
+	.post_list_entry {
+		font-size: 2em;
+		font-weight: bold;
+		color: gray;
 	}
 }
 
+/* general rules */
 body {
 	line-height: 1.6;
 	font-weight: lighter;
 	color: whitesmoke;
-	background-color: dimgray;
+	background-color: #3a404b;
 	font-family: 'Ubuntu', sans-serif;
 }
 
-h5 {
-	color: gray;
+h1, h2 {
+	color: darkorange;
+}
+
+h3, h4, h5, h6 {
+	color: lightgray;
 }
 
 a {
-	color: peru;
 	text-decoration: none;
 }
 
-img {
-	border: 1px solid white;
+a.body_link {
+	color: darkorange;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.body_photo {
 	width: 100%;
-	height: auto;
+	object-fit: contain;
+	border: 1px solid white;
+}
+
+.body_photo_div {
+	margin-top: 1%;
+	display: block;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.body_alt_text {
+	margin-top: 0%;
 }
 
 hr {
@@ -63,15 +151,26 @@ hr {
 }
 
 pre {
-	display: inline;
+	overflow: auto;
+	font-family: 'Ubuntu Mono', monospace;
+}
+
+strong {
+	font-weight: 900;
+}
+
+ul {
+	list-style-type: square;
 }
 
 #next {
 	float: right;
+	color:darkorange;
 }
 
 #last {
 	float: left;
+	color:darkorange;
 }
 
 .center {
@@ -82,12 +181,14 @@ pre {
 }
 
 .quote {
+	font-style: oblique;
 	display: block;
+	padding-top: .5em;
+	padding-bottom: .5em;
 	padding-left: 1em;
-	background-color: steelblue;
-	border-left: 3px solid lightblue;
+	border-left: 3px solid darkorange;
 }
 
 .grey {
-	color: grey;
+	color: grey !important;
 }
