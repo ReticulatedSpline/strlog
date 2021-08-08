@@ -23,6 +23,20 @@ function testSubTitles() {
 	runTest(testSubTitles, expected, actual);
 }
 
+function testSubTitlesWithItalics() {
+	let post = '## **title**';
+	let actual = format.subTitles(post);
+	let expected = '<h2><b>title</b></h2>\n';
+	runTest(testSubTitles, expected, actual);
+}
+
+function testSubTitlesWithBoldedText() {
+	let post = '# *title*';
+	let actual = format.subTitles(post);
+	let expected = '<h1><em>title</em></h1>\n';
+	runTest(testSubTitles, expected, actual);
+}
+
 function testSubImages() {
 	let post = '![a test alt text](image.png)';
 	let actual = format.subImages(post, date);
@@ -55,6 +69,8 @@ tests = [
 	testSubImages,
 	testSubOrderedLists,
 	testSubUnorderedLists,
+	testSubTitlesWithItalics,
+	testSubTitlesWithBoldedText
 ]
 
 function runTest(test, expected, actual) {
