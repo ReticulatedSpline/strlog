@@ -85,6 +85,12 @@ let server = http.createServer(function (req, res) {
 			sendContent(data, ICO_MIME, res);
 		});
 	}
+	else if (req.url == '/favicon.png') {
+		let uri = path.join(appRoot, 'resources', 'favicon.png');
+		fs.readFile(uri, (err, data) => {
+			sendContent(data, PNG_MIME, res);
+		});
+	}
 	else if (req.url.endsWith('.jpg') || req.url.endsWith('.jpeg')) {
 		let uri = path.join(appRoot, req.url);
 		fs.readFile(uri, (err, data) => {
