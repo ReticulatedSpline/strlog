@@ -2,8 +2,6 @@
 
 ![a road runs through a rice paddy](road.jpg)
 
-*I visited Vietnam in May of 2019 for an all-too-brief two weeks. This following is a smattering of notes I took in hostels, trains, and planes along the way.*
-
 ## Sunday, May 5th
 The first day was... not ideal.  The morning of initially went smoothly; I arrived at MSP on time, didn't forget anything, and I was feeling calm and collected. That is until I went up to get my boarding pass for LAX. The attendant casually informed that I had missed the flight. Oops. In my all my careful spreadsheeting of dates and times, I had transposed the arrival and departure times!
 
