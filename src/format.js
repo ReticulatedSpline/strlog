@@ -48,7 +48,7 @@ function subImages(post, date) {
 	const image_html =
 	'<div class="body_photo_div">' +
 	'<img class="body_photo" src="' + './posts/' + date + '/$2" alt="$1">' +
-	'<p class="body_alt_text">*$1*</p></div>';
+	'<p class="body_alt_text">$1</p></div>';
 	return post.replace(image_regex, image_html);
 }
 

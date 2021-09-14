@@ -36,7 +36,6 @@ function getPostsByDate(fn) {
 					sensitivity: 'base'
 				});
 			});
-			console.log(files)
 			fn(files);
 		}
 	});
