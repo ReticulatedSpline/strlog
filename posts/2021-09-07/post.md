@@ -15,7 +15,7 @@ We decend into the cool forest and its carpet of humus and moss almost silently 
 
 ![](clearing.jpg)
 
-We reach the waterfall and then the lake. Everyone says the lake is fickle and has moods but the personification rings hollow to me. It is indifferent and today it is cold. The bright sun is cutting loudly through an impossibly bright sky and this is the part where Brian Eno would fade in and the screen would fade out but it doesn't and I wish I could meet my friends by the concession stand after it all and talk about how it was and what we liked and what was bad but the reel seems endless so I sit and watch until my rock digs into my skin.
+We reach the waterfall and then the lake. Everyone says the lake is fickle and has moods but the personification rings hollow to me. It is indifferent and today it is cold. The bright sun is cutting loudly through an impossibly bright sky and this is the part where Brian Eno would fade in and the screen would fade out but it doesn't and I wish I could meet my friends by the concession stand after it all and talk about how it was and what we liked and what was bad but the reel seems endless so I sit and watch until the rock digs into my skin.
 
 ![](rigby.jpg)
 
