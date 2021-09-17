@@ -19,4 +19,6 @@ We reach the waterfall and then the lake. Everyone says the lake is fickle and h
 
 ![](rigby.jpg)
 
-On the way back up the path an old man hobbles slowly toward us. I nod and say hello. Rigby has stopped trotting to stare at this new interloper, ears forward, straining for something. "It's a nice day", the old man says, but not to me. It sure is.
+On the way back up the path an old man hobbles slowly toward us. I nod and say hello. Rigby has stopped trotting to stare at this new interloper, ears forward, straining for something. "It's a nice day", the old man says, but not to me.
+
+It sure is.
