@@ -5,9 +5,9 @@ The wiley grounds in the bottom of the thermos that slipped past the filter over
 
 ![](road.jpg)
 
-Rigby, looks at me and breathes hot, smelly dog breath in my direction. The car is stopped, this is the part where we get out and I get to inhale the air and the grass and the pollen and see the people and feel the Earth beneath my paws. Why aren't we doing that? He's almost 15 now. Cancer is eating his bones but it doesn't matter. Today he is happy to be here, and tomorrow none of us will exist because the chemistry holding our fragile selves will stop and we will sink into the Earth, perhaps adorned with a commemorative rock bearing our name and Age of Living, until that too is ground to dust and the very spot is folded like taffy back into the depths of the mantle sending tremors through what was once San Francisco but now is something unimaginable. 
+Rigby, looks at me and breathes hot, smelly dog breath in my direction. The car is stopped, and this is the part where we get out and I get to inhale the air and the grass and the pollen and see the people and feel the Earth beneath my paws. Why aren't we doing that? He's almost 15 now. Cancer is eating his bones but it doesn't matter. Today he is happy to be here, and tomorrow none of us will exist because the chemistry holding our fragile selves will stop and we will sink into the Earth, perhaps adorned with a commemorative rock bearing our name and Age of Living, until that too is ground to dust and the very spot is folded like taffy back into the depths of the mantle sending tremors through what was once San Francisco but is now something unimaginable. 
 
-Late September heat seeps into the car and drives me from my stupor. Rigby gets his wish. He is sleek and streamlined as he pulls against the leash to escape the hot tar of the parking lot. Back on cool Earth, the leash is once again a relic of his youth, a formality that we abide by so the park might let us stay. We skip the visitor center which is offering to add context to this geographical site as if we were consequential to it or anything at all. Inside families flit from plaque to plaque, pausing over the park model and its tiny simulacrum of a moment in reality.
+Late September heat seeps into the car and drives me from my stupor. Rigby gets his wish. He is sleek and streamlined as he pulls against the leash to escape the hot tar of the parking lot. Back on cool Earth, the leash dangles uselessly, once again a relic of his youth -- a formality that we abide by so for the benefit of the park staff. We skip the visitor center which is offering to add context to this geographical site as if we were consequential to it or anything at all. Inside families flit from plaque to plaque, pausing over the park model and its tiny simulacrum of a fleeting moment in reality.
 
 ![](trees.jpg)
 
@@ -19,4 +19,4 @@ We reach the waterfall and then the lake. Everyone says the lake is fickle and h
 
 ![](rigby.jpg)
 
-On the way back up the path an old man approaches. I nod and say hello but he is not looking at me. Rigby has stopped trotting to stare at the interloper, ears forward, straining for something. "It's a nice day", the old man says, but not to me. It sure is.
+On the way back up the path an old man hobbles slowly toward us. I nod and say hello. Rigby has stopped trotting to stare at this new interloper, ears forward, straining for something. "It's a nice day", the old man says, but not to me. It sure is.
