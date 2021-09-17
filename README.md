@@ -1,4 +1,4 @@
-## A blog server with zero dependencies and a clean interface
+## a tiny nodejs blog server powered by markdown
 To host your own copy:
 - Pull a release from the release branch (this branch is updated with features but purged of my own personal posts).
 - Unzip and (optionally) add posts to ./posts. These consist of a single directory per post titled with the date in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601). In this directory add any resources (such as photos) and a file titled `post.md` containing the body text. A subset of [Markdown](https://www.markdownguide.org/) syntax is supported.
