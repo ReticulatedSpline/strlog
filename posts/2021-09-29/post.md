@@ -6,7 +6,7 @@ Watch the teaser for [Mike Flannigan's](https://www.imdb.com/name/nm1093039) Mid
 There are a few strong roles in the series. [Hamish Linklater](https://www.imdb.com/name/nm0512934/) plays a convincing young priest brimming with the holy spirit, and [Samantha Sloyan](https://www.imdb.com/name/nm1418096/) plays a chilling acolyte steeped too long in her own grandeur. Other performances lacked. [Alex Essoe](mildred.jpg) was cast to play the geriatric mother of [Annabeth Gish](https://www.imdb.com/name/nm0001272) at only 29, and despite the efforts of makeup artists this age gap shows. Wearing glasses and a head scarf does not a convincing disguise make.
 ![This is not a 90 year old woman.](mildred.jpg)
 
-Despite these casting weaknesses and a few *really* self-indulgent monologues between Riley Flynn and Erin Greene (seriously, I clocked one of them in at over five minutes), the series is a well executed, original screenplay worthy your attention.
+Despite these casting weaknesses and a few *really* self-indulgent monologues between Riley Flynn and Erin Greene (seriously, I clocked one of them in at over five minutes), the series is a well executed, original screenplay worthy of your attention.
 
 ### rifters
 Before starting Midnight Mass I was in a media rut. I had been reading heavy non-fiction ending with *Primary Healthcare in Cuba; The Other Revolution*, which, by the way, is actually extremely interesting. I was in the mood for something easy and fun, so I settled on a the first two novels in the *Rifters* series by Peter Watts.
