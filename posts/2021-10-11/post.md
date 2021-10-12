@@ -10,8 +10,8 @@ Hmm, that's something new. A succinct synopsis of analysis paralysis and the pos
 
 ![Cover of The Bell Jar by Sylvia Plath](cover.jpeg)
 
-I went into *The Bell Jar* with no further introduction to the novel or the author beside this quote. To the acquainted reader, you can image my surprise as the narrative turned from posh New York tediums to the suburban suicidal ideation. Some context for the rest of us: [Sylvia Plath](https://en.wikipedia.org/wiki/Sylvia_Plath) laid her head in an oven and turned the gas on one month after publication.
+I went into *The Bell Jar* with no further introduction to the novel or the author beside this quote. To the acquainted reader, you can image my surprise as the narrative turned from posh New York tediums to the suburban suicidal ideation. Some context for the rest of us: [Sylvia Plath](https://en.wikipedia.org/wiki/Sylvia_Plath) laid her head in an oven with the gas on one month after publication.
 
-Despite the grim turn of events, this was a worthwhile read. Plath's descriptions of the daily grind are likely familiar to anyone:
+Despite the grim turn of events, this was a gripping and insightful novel. Plath's descriptions of the daily grind are likely familiar to anyone:
 > I saw the days of the year stretching ahead like a series of bright, white boxes, and separating one box from another was sleep, like a black shade. Only for me, the long perspective of shades that set off one box from the next had suddenly snapped up, and I could see day after day after day glaring ahead of me like a white, broad, infinitely desolate avenue.
 Insomnia aside, I felt the same dread of a continuum ahead of me as soon as I completed my undergrad -- all the little milestones of student life had evaporated. There was nothing left to delineate one week from the next. I entertain myself by plotting sabbaticals and gap years that will likely never come to fruition, rotting at my feet like Sylvia's plums did. Yet, for now, it is enough. Pick up a copy of *The Bell Jar* if you want to spend a week commiserating with an author who can put the feeling into actual words.
