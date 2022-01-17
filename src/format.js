@@ -62,6 +62,12 @@ function subRulers(post) {
 	return post.replace(rule_regex, '\n<hr>\n');
 }
 
+function subStrikeTest(post) {
+	const strike_regex = /~~([^~]+?)~~/g;
+	return post.replace(strike_regex,
+		'<span style="text-decoration: line-through;">$1</span>');
+}
+
 function subBoldItalicText(post) {
 	const bold_italic_regex = /\*\*\*([^*]+)\*\*\*/g;
 	return post.replace(bold_italic_regex, '<strong><em>$1</em></strong>');
@@ -130,7 +136,6 @@ function subFooter(post, lastPost, nextPost) {
 	return post.replace(footer_regex, footer);
 }
 
-
 function subContent(html, post) {
 	return html.replace(/{{content}}/, post);
 }
@@ -153,6 +158,7 @@ function formatPost (html, host, post, date, lastPost, nextPost, post_list, fn) 
 	post = addParagraphs(post);
 	post = subBoldItalicText(post);
 	post = subBoldText(post);
+	post = subStrikeTest(post);
 	post = subItalicText(post);
 	post = subBlockQuotes(post);
 	post = subUnorderedLists(post);

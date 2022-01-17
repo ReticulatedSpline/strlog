@@ -48,9 +48,9 @@ function sendContent(content, mime, res) {
 
 let server = http.createServer(function (req, res) {
 	const host = req.headers.host;
-
 	// redirect to most recent post
 	if (req.url == '/') {
+		console.log("Redirecting to most recent post")
 		getPostsByDate((files) => {
 			res.writeHead(302, {'Location': files[files.length - 1]});
 			res.end();

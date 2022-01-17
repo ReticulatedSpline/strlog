@@ -112,7 +112,7 @@
 }
 
 /* general rules */
-body {
+body, span {
 	line-height: 1.6;
 	font-weight: lighter;
 	color: whitesmoke;
