@@ -53,7 +53,7 @@ function subImages(post, date) {
 }
 
 function addParagraphs(post) {
-	const paragraph_regex = /(^[A-Za-z].*(?:\n[A-Za-z].*)*)/gm;
+	const paragraph_regex = /(^[A-Za-z¿¡].*(?:\n[A-Za-z].*)*)/gm;
 	return post.replace(paragraph_regex, '<p>$1</p>');
 }
 
