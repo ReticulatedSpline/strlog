@@ -1,5 +1,5 @@
 ## a tiny nodejs blog server with dumb markdown™
-### that is, context-unaware markdown. yes, it's as bad as it sounds.
+### that is, context-unaware markdown
 
 To host your own copy:
 - Pull a release from the release branch (this branch is updated with features but purged of my own personal posts).
