@@ -13,14 +13,30 @@
 		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
 		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 	</head>
-	<body>
-		<div>
-			{{posts}}
-		</div>
-		<div id="body">
-			{{content}}
-			<hr>
-			{{footer}}
+	<body id="body">
+		<div id="body_container">
+			<div id="site_name_container">
+				<h1 class="h1">strlog</h1>
+			</div>
+			<div id="main_menu_container">
+				<ul id="main_menu">
+					<li class="h1 strong grey"><a>home</a></li>
+					<li class="h1 strong grey"><a>tags</a></li>
+					<li class="h1 strong grey"><a>about</a></li>
+				</ul>
+			</div>
+			<div id="post_list_container">
+				{{posts}}
+			</div>
+			<div id="content_container">
+				<div id="content">
+					{{content}}
+				</div>
+			</div>
+			<div id="spacer_container"></div>
+			<div id="next_last_container">
+				{{footer}}
+			</div>
 		</div>
 	</body>
 </html>
