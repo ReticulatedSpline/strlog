@@ -1,93 +1,95 @@
-/****** general classes ******/
-.h1 {
-	color: darkorange;
-}
-.h2, .h3, .h4, .h5, .h6 {
-	color: lightgray;
-}
+/****** general rules ******/
+@media screen {
+	.h1 {
+		color: darkorange;
+	}
+	.h2, .h3, .h4, .h5, .h6 {
+		color: lightgray;
+	}
 
-.hr {
-	border-top: 2px solid white;
-}
+	.hr {
+		border-top: 2px solid white;
+	}
 
-.pre {
-	overflow: auto;
-	font-family: 'Ubuntu Mono', monospace;
-}
+	.pre {
+		overflow: auto;
+		font-family: 'Ubuntu Mono', monospace;
+	}
 
-.strong {
-	font-weight: 900;
-}
+	.strong {
+		font-weight: bolder;
+	}
 
-.ul {
-	list-style-type: square;
-}
+	.ul {
+		list-style-type: square;
+	}
 
-.link {
-	text-decoration: none;
-}
+	.link {
+		text-decoration: none;
+	}
 
-.link:hover {
-	text-decoration: underline;
-}
+	.link:hover {
+		text-decoration: underline;
+	}
 
-.body_link {
-	color: darkorange;
-}
+	.body_link {
+		color: darkorange;
+	}
 
-.body_photo {
-	width: 100%;
-	object-fit: contain;
-	border: 1px solid white;
-}
+	.body_photo {
+		width: 100%;
+		object-fit: contain;
+		border: 1px solid white;
+	}
 
-.body_photo_div {
-	margin-top: 1%;
-	display: block;
-	max-width: 100%;
-	margin-left: auto;
-	margin-right: auto;
-}
+	.body_photo_div {
+		margin-top: 1%;
+		display: block;
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-.body_alt_text {
-	margin-top: 0%;
-	font-style: italic;
-}
+	.body_alt_text {
+		margin-top: 0%;
+		font-style: italic;
+	}
 
-.quote {
-	font-style: oblique;
-	display: block;
-	padding-top: .5rem;
-	padding-bottom: .5rem;
-	padding-left: 1rem;
-	border-left: 3px solid darkorange;
-}
+	.quote {
+		font-style: oblique;
+		display: block;
+		padding-top: .5rem;
+		padding-bottom: .5rem;
+		padding-left: 1rem;
+		border-left: 3px solid darkorange;
+	}
 
-.grey {
-	color: grey !important;
-}
+	.grey {
+		color: grey !important;
+	}
 
-/****** general ids ******/
-#body {
-	background-color: #3a404b;
-	font-weight: lighter;
-	color: whitesmoke;
-	font-family: 'Ubuntu', sans-serif;
-}
+	/****** general ids ******/
+	#body {
+		color: whitesmoke;
+		font-weight: lighter;
+		background-color: #3a404b;
+		font-family: 'Ubuntu', sans-serif;
+	}
 
-#logo {
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
+	#logo {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
 
-#next {
-	float: right;
-	color:darkorange;
-}
+	#next {
+		float: right;
+		color:darkorange;
+	}
 
-#last {
-	float: left;
-	color:darkorange;
+	#last {
+		float: left;
+		color:darkorange;
+	}
 }
 
 /****** small screen rules ******/
@@ -120,7 +122,7 @@
 		font-size: 5rem;
 	}
 
-	#post_list {
+	#post_list, #main_menu_container {
 		display: none;
 	}
 }
@@ -190,14 +192,22 @@
 		margin-right: 2%;
 	}
 	
+	#main_menu li a {
+		color: lightgray;
+		font-weight: bolder;
+		text-decoration: none;
+	}
+
 	#main_menu li:hover {
-		border-bottom: 3px solid darkorange;
+		border-top: 3px solid darkorange;
 		cursor: pointer;
 	}
 
 	#content {
+		font-size: 1.1rem;
+		line-height: 1.8;
 		padding-left: 3%;
-		padding-right: 20%;
+		padding-right: 25%;
 	}
 
 	#next {
@@ -221,6 +231,7 @@
 		align-items: baseline;
 		margin-top: 7%;
 		margin-left:5%;
+		margin-bottom: 7%;
 	}
 	 
 	#site_name_container {
