@@ -53,7 +53,7 @@ function subImages(post, date) {
 
 function addParagraphs(post) {
 	const paragraph_regex = /(^[A-Za-z¿¡].*(?:\n[A-Za-z].*)*)/gm;
-	return post.replace(paragraph_regex, '<p>$1</p>');
+	return post.replace(paragraph_regex, '<p class=\"p\">$1</p>');
 }
 
 function subRulers(post) {
@@ -135,16 +135,23 @@ function subFooter(post, lastPost, nextPost) {
 	return post.replace(footer_regex, footer);
 }
 
-function subContent(html, metadata, post) {
-	let body_text = "<h1 class=\"h1\">" + metadata.title + "</h1>"
-	body_text += "<h6 class=\"h6\">" + metadata.tagline + 
-				" (tagged as " + metadata.topics.join(', ') + ")</h6>"
+function subContent(post, post_data) {
+	let body_text = "<h1 class=\"h1\">" + post_data.metadata.title + "</h1>"
+	body_text += "<div class=\"subtitle\">" +
+				 "<span class=\"p tagline\">" + post_data.metadata.tagline +
+				 "</span><div>"
+	for (topic of post_data.metadata.topics) {
+		let url = post_data.host + '/topics/' + topic
+		body_text += "<a href=\"" + url + "\" class=\"topics\">"
+				  + topic + "</a>"
+	}
+	body_text += "</div></div>"
 	body_text += post
-	return html.replace(/{{content}}/, body_text);
+	return post_data.html.replace(/{{content}}/, body_text);
 }
 
 function addEndMark(post) {
-	return post + ' ' + '▣';
+	return post + ' ▣';
 }
 
 function stripCarriageReturns(post) {
@@ -168,17 +175,12 @@ function formatPost (post_data, fn) {
 	post = subUnorderedLists(post);
 	post = subOrderedLists(post);
 	post = subRulers(post);
-	post = subContent(post_data.html, post_data.metadata, post);
+	post = subContent(post, post_data);
 	post = subPostList(post, post_data.host, post_data.previous_posts, post_data.directory);
 	post = subFooter(post, post_data.last_post_url, post_data.next_post_url);
 	fn(post);
 }
 
 module.exports = {
-	formatPost: formatPost,
-	subContent: subContent,
-	subTitles: subTitles,
-	subImages: subImages,
-	subOrderedLists: subOrderedLists,
-	subUnorderedLists: subUnorderedLists
+	formatPost: formatPost
 };
