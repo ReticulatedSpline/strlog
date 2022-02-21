@@ -1,4 +1,3 @@
-# lessons on the apocalypse
 I recently finished two novels about the end of a world: the first is a nonfictional account of the Russian revolution by China Miéville; the second is a fictional anthology from before and after an apocalypse.
 ![Covers for October and Station Eleven](books.png)
 

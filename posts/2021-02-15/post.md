@@ -1,5 +1,3 @@
-# indoor succulents & cacti
-
 I've been growing succulents indoors for about five years now. Along the way I've learned a thing or two and paid the price in dead and mangled plants. However, I believe I've reached a point of succulent mastery and have decided to share these secrets with you, my loyal reader.
 
 ## differing types

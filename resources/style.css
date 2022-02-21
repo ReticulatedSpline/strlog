@@ -3,8 +3,14 @@
 	.h1 {
 		color: darkorange;
 	}
-	.h2, .h3, .h4, .h5, .h6 {
+
+	.h2, .h3, .h4, .h5 {
 		color: lightgray;
+	}
+
+	.h6 {
+		color: darkgray;
+		font-weight: 400;
 	}
 
 	.hr {
@@ -131,6 +137,7 @@
 @media (min-width:1001px) {
 	.h1 {
 		font-size: 2rem;
+		margin-bottom: 0;
 	}
 
 	.h2 {
@@ -150,6 +157,7 @@
 	}
 
 	.h6 {
+		margin: 0;
 		font-size: 1.3rem;
 	}
 

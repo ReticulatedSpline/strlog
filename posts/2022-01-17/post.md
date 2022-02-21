@@ -1,5 +1,3 @@
-# two weeks of spanish mistakes
-
 I haven't been posting much in English because I've picked up a Spanish writing habit for the new year and it consumes most of my writing time. The vehicle for this has been Reddit's [language exchange subs](https://old.reddit.com/r/WriteStreakES/). They're a great way to get native speakers to correct your writing as well as a chance to give back and correct theirs. I thought it would be interesting to collect and clean up these writings to review them. Am I improving? Am I making certain mistakes over and over again? For your consideration, here are all my posts over the last two weeks that were lucky enough to get corrected by a native Spanish speaker.
 
 

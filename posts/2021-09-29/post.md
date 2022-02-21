@@ -1,4 +1,3 @@
-# september media roundup
 ### midnight mass (netflix)
 Watch the teaser for [Mike Flannigan's](https://www.imdb.com/name/nm1093039) Midnight Mass and you'd see a heartwarming story about a priest connecting with a disabled girl in a quaint small town. Watch the complete series and what you'll actually find is a strange, violent thriller with an ecclesiastical backdrop. It certainly kept me guessing; is this a story about faith? A horror flick? A parable about death? *Midnight Mass* falls somewhere between all three themes without fully embracing any of them, though it veers towards horror in the last two episodes.
 

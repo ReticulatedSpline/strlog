@@ -1,7 +1,6 @@
-# july media roundup (and the car rant)
 ![Covers](books.jpg)
 
-## caste: the origins of our discontent
+## caste
 I read Times bestseller & Oprah-recommended book *Caste: The Origins of our Discontent*, by Isabel Wilkerson. To be more precise, I read a little over half of Caste. It had an interesting premise and set out to show that America's racial problems were better suited to the Indian style of [caste](https://en.wikipedia.org/wiki/Caste) than to the American idea of racism. Wilkerson attempts to show this by defining caste's components and pointing them out in the American social landscape. Where things went wrong were the presentation. *Caste* had two distinct problems heavier than the premise could carry. The first issue was an overly ornate style of writing plastered with particularly unhelpful analogies. Caste is like the mudsill of a house. Caste is like The Matrix. Caste is like a computer program. A wolf pack. A Broadway play. Marionettes. Each chapter opened with an anecdote or analogy, and almost every analogy was unhelpful. The concept of enforced social stratification isn't difficult and these references only served to water down the narrative. 
 
 My second main qualm with the book was the Liberal attitudes it conveyed. In many spots I would have agreed completely with the premise if only the word "Class" were to replace "Caste". Wilkerson does actually touch on the differences briefly:

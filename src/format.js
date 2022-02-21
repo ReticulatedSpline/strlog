@@ -1,32 +1,31 @@
-function subPostList(post, host, post_list, date) {
+function subPostList(html, hostname, post_list, current_post) {
 	const list_regex = /{{posts}}/;
-	const post_list_reversed = post_list.reverse();
 	let post_list_string = "<ul id=\"post_list\">";
 	let opacity = 1;
 	
-	for (let post_date of post_list_reversed) {
+	for (let post_name of post_list) {
 		if (opacity <= 0) {
 			break;
 		}
 		
 		let css = 'class = \"post_list_entry\" ';
-		let url = 'http://' + host + "/" + post_date;
+		let url = 'http://' + hostname + "/" + post_name;
 		let tic = '';
 
-		if (date == post_date) {
+		if (current_post == post_name) {
 			css = 'id = \"post_list_current\" ';
 			tic = '<span id=\"chevron\">» </span>';
 		}
 
 		post_list_string += "<li style=\"opacity: " + opacity + "\">" + tic +
-							"<a " + css + "href=" + url + ">" + post_date +
+							"<a " + css + "href=" + url + ">" + post_name +
 							"</a></li>";
 		opacity -= 0.1;
 		opacity = opacity.toFixed(1);
 	}
 	post_list_string += "</ul>";
 
-	return post.replace(list_regex, post_list_string);
+	return html.replace(list_regex, post_list_string);
 }
 
 function subTitles(post) {
@@ -136,8 +135,12 @@ function subFooter(post, lastPost, nextPost) {
 	return post.replace(footer_regex, footer);
 }
 
-function subContent(html, post) {
-	return html.replace(/{{content}}/, post);
+function subContent(html, metadata, post) {
+	let body_text = "<h1 class=\"h1\">" + metadata.title + "</h1>"
+	body_text += "<h6 class=\"h6\">" + metadata.tagline + 
+				" (tagged as " + metadata.topics.join(', ') + ")</h6>"
+	body_text += post
+	return html.replace(/{{content}}/, body_text);
 }
 
 function addEndMark(post) {
@@ -148,11 +151,12 @@ function stripCarriageReturns(post) {
 	return post.replace(/\r/g, '');
 }
 
-function formatPost (html, host, post, date, lastPost, nextPost, post_list, fn) {
+function formatPost (post_data, fn) {
+	let post = post_data.markdown;
 	post = stripCarriageReturns(post);
 	post = subTitles(post);
 	post = subLinks(post);
-	post = subImages(post, date);
+	post = subImages(post, post_data.directory);
 	post = subPreText(post);
 	post = addEndMark(post);
 	post = addParagraphs(post);
@@ -164,9 +168,9 @@ function formatPost (html, host, post, date, lastPost, nextPost, post_list, fn) 
 	post = subUnorderedLists(post);
 	post = subOrderedLists(post);
 	post = subRulers(post);
-	post = subContent(html, post);
-	post = subPostList(post, host, post_list, date);
-	post = subFooter(post, lastPost, nextPost);
+	post = subContent(post_data.html, post_data.metadata, post);
+	post = subPostList(post, post_data.host, post_data.previous_posts, post_data.directory);
+	post = subFooter(post, post_data.last_post_url, post_data.next_post_url);
 	fn(post);
 }
 

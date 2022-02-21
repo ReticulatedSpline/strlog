@@ -1,6 +1,3 @@
-# anarchism in *The Dispossessed*
-### a primer on the ambiguous utopian novel by Ursula Le Guin
-
 I recently finished (and very much enjoyed) this book, so I figured I'd give it a short review along with some background. The novel follows a few of Le Guin's signature topics, namely society, gender, and sexuality in her classic context of science fiction. This review will contain mild spoilers.
 
 ![book cover](cover.jpg)

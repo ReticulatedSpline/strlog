@@ -1,5 +1,3 @@
-# the lens of hauntology
-
 The intersection of technology and fiction is fraught with annoying inaccuracies, but carefully applied temporal aesthetics have created some of my favorite universes in science fiction. What's especially interesting to me are  anachronistic retro-futurisms. Two examples of this are shown in Denis Villanueve's last films, *Blade Runner 2049* and *Dune*. The former was originally directed by Ridley Scott in 1989 before Villanueve's 2017 reboot. To this day the reboot remains my favorite film. Afterwards, Villanueve moved to the challenge of Frank Herbert’s *Dune* — the same troublesome franchise that David Lynch directed in 1989 and would later describe as a "great sadness" in his life.
 
 ![CRT monitors in Blade Runner 2049. Sales of this type of monitor peaked over a decade  before the release of the film, yet it's set far in the future.](crts.jpeg)

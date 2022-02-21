@@ -1,5 +1,3 @@
-# Việt Nam: A Retrospective
-
 ![a road runs through a rice paddy](road.jpg)
 
 ## Sunday, May 5th
