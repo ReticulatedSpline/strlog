@@ -16,6 +16,12 @@ let server = http.createServer(function (req, res) {
 	if (req.url == '/') {
 		routeMostRecentPost(res)
 	}
+	else if (req.url.startsWith('/topics')) {
+		routeTopics(req, res)
+	}
+	else if (req.url.startsWith('/about')) {
+		routeAbout(req, res)
+	}
 	else if (req.url.match(/\d{4}-\d{2}-\d{2}$/)) {
 		routeSpecificPost(host, req.url, res);
 	}
@@ -79,19 +85,27 @@ function routeSpecificPost(host, url, res) {
 
 		let next_post_dir
 		if (post_index + 1 < files.length) {
-			next_post_dir = files[post_index + 1];
+			next_post_dir = files[post_index + 1]
 		}
 
-		let previous_posts = []
-		while (post_index > 0) {
-			previous_posts.push(files[post_index])
-			post_index -= 1
-		}
+		let previous_posts = files.slice(0, 10)
 
 		buildResponse(host, post_dir, previous_posts, next_post_dir, (postContent) => {
 			sendContent(postContent, HTML_MIME, res);
 		});
 	})
+}
+
+function routeAbout(req, res) {
+	//send about page
+}
+
+function routeTopics(req, res) {
+	if (req.url.endsWith('/topics')) {
+		//get all topics
+	} else {
+		//get specific topics
+	}
 }
 
 function routeError(req, res) {
@@ -109,11 +123,13 @@ function getAllPostsByDate(fn) {
 		else {
 			// natural sort file names (should be ISO dates!)
 			files.sort(function(a, b) {
-				return a.localeCompare(b, undefined, {
+				return b.localeCompare(a, undefined, {
 					numeric: true,
 					sensitivity: 'base'
 				});
 			});
+			// drop hidden files like .DS_Store
+			files = files.filter(item=> !/^\..*/.test(item))
 			fn(files);
 		}
 	});
