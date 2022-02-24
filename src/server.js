@@ -39,6 +39,9 @@ let server = http.createServer(function (req, res) {
 		let uri = path.join(appRoot, req.url);
 		routeImage(uri, PNG_MIME, res)
 	}
+	else {
+		routeError(req, res)
+	}
 });
 
 function routeCSS(uri, res) {
@@ -88,6 +91,13 @@ function routeSpecificPost(host, url, res) {
 		buildResponse(host, post_dir, previous_posts, next_post_dir, (postContent) => {
 			sendContent(postContent, HTML_MIME, res);
 		});
+	})
+}
+
+function routeError(req, res) {
+	console.log("Invalid route " + req.url)
+	fs.readFile('resources/error.html', 'utf8', (err, html) => {
+		sendContent(html, HTML_MIME, res)
 	})
 }
 

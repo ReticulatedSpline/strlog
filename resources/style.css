@@ -57,6 +57,16 @@
 		font-style: italic;
 	}
 
+	.grey {
+		color: grey !important;
+	}
+
+	.center {
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
+
 	.quote {
 		font-style: oblique;
 		display: block;
@@ -64,10 +74,6 @@
 		padding-bottom: .5rem;
 		padding-left: 1rem;
 		border-left: 3px solid darkorange;
-	}
-
-	.grey {
-		color: grey !important;
 	}
 
 	/****** general ids ******/
@@ -96,6 +102,14 @@
 	#last {
 		float: left;
 		color:darkorange;
+	}
+
+	#error {
+		display:flex;
+		align-items: center;
+		justify-content: center; 
+		flex-direction: column;
+		height: 100vh;
 	}
 }
 
