@@ -200,7 +200,7 @@
 		text-decoration: none;
 	}
 
-	#post_list {
+	#sidebar {
 		margin-top: 0;
 		list-style: none;
 		text-align: right;
@@ -208,17 +208,17 @@
 		overflow: hidden;
 	}
 
-	.post_list_entry {
+	.sidebar_entry {
 		color: gray;
 		font-weight: bold;
 		text-decoration: none;
 	}
 
-	.post_list_entry:hover {
+	.sidebar_entry:hover {
 		text-decoration: underline;
 	}
 
-	#post_list_current {
+	#sidebar_current {
 		font-weight: bold;
 		color: lightgray;
 		text-decoration: none;
@@ -293,7 +293,7 @@
 		flex: 1 80%;
 	}
 
-	#post_list_container {
+	#sidebar_container {
 		order: 3;
 		flex: 2 20%;
 	}

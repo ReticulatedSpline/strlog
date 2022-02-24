@@ -1,6 +1,7 @@
 const fs = require('fs');
 const http = require('http');
 const path = require('path');
+const { formatPost } = require('./format.js');
 const format = require('./format.js');
 
 const CSS_MIME  = { 'Content-Type': 'text/css' };
@@ -17,10 +18,12 @@ let server = http.createServer(function (req, res) {
 		routeMostRecentPost(res)
 	}
 	else if (req.url.startsWith('/topics')) {
-		routeTopics(req, res)
+		//routeTopics(req, res)
+		routeError(req, res)
 	}
 	else if (req.url.startsWith('/about')) {
-		routeAbout(req, res)
+		//routeAbout(req, res)
+		routeError(req, res)
 	}
 	else if (req.url.match(/\d{4}-\d{2}-\d{2}$/)) {
 		routeSpecificPost(host, req.url, res);
@@ -65,7 +68,7 @@ function routeImage(uri, mimetype, res) {
 function routeMostRecentPost(res) {
 	console.log("Redirecting to most recent post")
 	getAllPostsByDate((files) => {
-		res.writeHead(302, {'Location': files[files.length - 1]});
+		res.writeHead(302, {'Location': files[0]});
 		res.end();
 	});
 }
@@ -90,7 +93,7 @@ function routeSpecificPost(host, url, res) {
 
 		let previous_posts = files.slice(0, 10)
 
-		buildResponse(host, post_dir, previous_posts, next_post_dir, (postContent) => {
+		buildPostResponse(host, post_dir, previous_posts, next_post_dir, (postContent) => {
 			sendContent(postContent, HTML_MIME, res);
 		});
 	})
@@ -102,7 +105,7 @@ function routeAbout(req, res) {
 
 function routeTopics(req, res) {
 	if (req.url.endsWith('/topics')) {
-		//get all topics
+		buildTopicResponse(req, res)
 	} else {
 		//get specific topics
 	}
@@ -135,7 +138,42 @@ function getAllPostsByDate(fn) {
 	});
 }
 
-function buildResponse(host, post_dir, previous_posts, next_post, fn) {
+function getMetadataFiles(dir, files_) {
+	files_ = files_ || [];
+	var files = fs.readdirSync(dir);
+	for (var i in files){
+		var name = dir + '/' + files[i];
+		if (fs.statSync(name).isDirectory()) {
+			getMetadataFiles(name, files_);
+		} else if (name.endsWith('metadata.json')) {
+			files_.push(name);
+		}
+	}
+	return files_;
+}
+
+function buildTopicResponse(req, res) {
+	let sidebar_data = {}
+	let host = req.headers.host
+	for (file of getMetadataFiles('./posts')) {
+		metadata = require(path.join(appRoot, file))
+		for (topic of metadata.topics) {
+			// gross hack to grab the date string out of the path :(
+			let directory = file.split('/')[2]
+			let url = path.join(host, directory)
+			if (sidebar_data[topic]) {
+				sidebar_data[topic].add(url)
+			} else {
+				sidebar_data[topic] = new Set()
+				sidebar_data[topic].add(url)
+			}
+		}
+	}
+
+	//formatPost(sidebar_data)
+}
+
+function buildPostResponse(host, post_dir, previous_posts, next_post, fn) {
 	const metadata_path = path.join(appRoot, './posts', post_dir, 'metadata.json')
 	const markdown_path = path.join(appRoot, './posts', post_dir, 'post.md')
 	const html_path     = path.join(appRoot, './resources', 'page.html')

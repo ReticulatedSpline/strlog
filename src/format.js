@@ -1,30 +1,36 @@
-function subPostList(html, hostname, post_list, current_post) {
-	const list_regex = /{{posts}}/;
-	let post_list_string = "<ul id=\"post_list\">";
-	let opacity = 1;
+function subSidebar(html, post_data, make_translucent) {
+	const list_regex = /{{sidebar}}/
+	const hostname = post_data.host
+	const post_list = post_data.previous_posts
+	const current_post = post_data.directory
+	let post_list_string = "<ul id=\"sidebar\">"
+	let opacity = 1
 	
 	for (let post_name of post_list) {
 		if (opacity <= 0) {
 			break;
 		}
 		
-		let css = 'class = \"post_list_entry\" ';
+		let css = 'class = \"sidebar_entry\" ';
 		let url = 'http://' + hostname + "/" + post_name;
 		let tic = '';
 
 		if (current_post == post_name) {
-			css = 'id = \"post_list_current\" ';
+			css = 'id = \"sidebar_current\" ';
 			tic = '<span id=\"chevron\">» </span>';
 		}
 
 		post_list_string += "<li style=\"opacity: " + opacity + "\">" + tic +
 							"<a " + css + "href=" + url + ">" + post_name +
 							"</a></li>";
-		opacity -= 0.1;
-		opacity = opacity.toFixed(1);
-	}
-	post_list_string += "</ul>";
 
+		if (make_translucent) {
+			opacity -= 0.1;
+			opacity = opacity.toFixed(1);
+		}
+	}
+
+	post_list_string += "</ul>";
 	return html.replace(list_regex, post_list_string);
 }
 
@@ -119,7 +125,7 @@ function subOrderedLists(post) {
 
 function subFooter(post, lastPost, nextPost) {
 	const footer_regex = /{{footer}}/;
-	let footer = "";
+	let footer = '<hr class="hr"/>';
 	if (lastPost) {
 		footer = '<a id="last" href=' + lastPost + '>last</a>';
 	} else {
@@ -176,7 +182,7 @@ function formatPost (post_data, fn) {
 	post = subOrderedLists(post);
 	post = subRulers(post);
 	post = subContent(post, post_data);
-	post = subPostList(post, post_data.host, post_data.previous_posts, post_data.directory);
+	post = subSidebar(post, post_data, true);
 	post = subFooter(post, post_data.last_post_url, post_data.next_post_url);
 	fn(post);
 }
