@@ -1,8 +1,7 @@
 const fs = require('fs');
 const http = require('http');
 const path = require('path');
-const { formatPost } = require('./format.js');
-const format = require('./format.js');
+const { formatPost, formatTopic } = require('./format.js');
 
 const CSS_MIME  = { 'Content-Type': 'text/css' };
 const HTML_MIME = { 'Content-Type': 'text/html' };
@@ -10,17 +9,22 @@ const ICO_MIME  = { 'Content-Type': 'image/x-icon' };
 const JPG_MIME  = { 'Content-Type': 'image/jpg' };
 const PNG_MIME  = { 'Content-Type': 'image/png' };
 const appRoot = path.join(__dirname, '../');
+const html_path = path.join(appRoot, './resources', 'page.html')
 const port = process.env.PORT || 5000;
 
 let server = http.createServer(function (req, res) {
 	const host = req.headers.host;
+	// console.log(host, ' requests ', req.url)
 	if (req.url == '/') {
 		routeMostRecentPost(res)
 	}
-	else if (req.url.startsWith('/topics')) {
-		//routeTopics(req, res)
-		routeError(req, res)
+	else if (req.url.endsWith('/topics')) {
+		routeTopics(req, res)
 	}
+	// else if (req.url.match(/\/topics\/[A-z]+$/)) {
+	// 	//routeSpecificTopic(req, res)
+	// 	routeError(req, res)
+	// }
 	else if (req.url.startsWith('/about')) {
 		//routeAbout(req, res)
 		routeError(req, res)
@@ -28,7 +32,7 @@ let server = http.createServer(function (req, res) {
 	else if (req.url.match(/\d{4}-\d{2}-\d{2}$/)) {
 		routeSpecificPost(host, req.url, res);
 	}
-	else if (req.url == '/style.css') {
+	else if (req.url.endsWith('/style.css')) {
 		let uri = path.join(appRoot, 'resources', 'style.css');
 		routeCSS(uri, res)
 	}
@@ -103,14 +107,6 @@ function routeAbout(req, res) {
 	//send about page
 }
 
-function routeTopics(req, res) {
-	if (req.url.endsWith('/topics')) {
-		buildTopicResponse(req, res)
-	} else {
-		//get specific topics
-	}
-}
-
 function routeError(req, res) {
 	console.log("Invalid route " + req.url)
 	fs.readFile('resources/error.html', 'utf8', (err, html) => {
@@ -152,31 +148,46 @@ function getMetadataFiles(dir, files_) {
 	return files_;
 }
 
-function buildTopicResponse(req, res) {
-	let sidebar_data = {}
-	let host = req.headers.host
+function routeTopics(req, res) {
+	let topics = {}
+	let current_topic = {}
 	for (file of getMetadataFiles('./posts')) {
 		metadata = require(path.join(appRoot, file))
 		for (topic of metadata.topics) {
 			// gross hack to grab the date string out of the path :(
 			let directory = file.split('/')[2]
-			let url = path.join(host, directory)
-			if (sidebar_data[topic]) {
-				sidebar_data[topic].add(url)
-			} else {
-				sidebar_data[topic] = new Set()
-				sidebar_data[topic].add(url)
+			let url = path.join(req.headers.host, directory)
+			let item = {
+				title: metadata.title,
+				tagline: metadata.tagline,
+				url: url
 			}
+			if (topics[topic]) {
+				topics[topic].add(item)
+			} else {
+				topics[topic] = new Set()
+				topics[topic].add(item)
+			}
+			current_topic = topic
 		}
 	}
 
-	//formatPost(sidebar_data)
+	fs.readFile(html_path, 'utf8', (err, html) => {
+		page_data = {
+			html: html,
+			host: req.headers.host,
+			topics: topics,
+			current_topic: current_topic,
+			current_tab: 'topics'
+		}
+		let fn = (postContent) => {sendContent(postContent, HTML_MIME, res)}
+		formatTopic(page_data, fn)
+	})
 }
 
 function buildPostResponse(host, post_dir, previous_posts, next_post, fn) {
 	const metadata_path = path.join(appRoot, './posts', post_dir, 'metadata.json')
 	const markdown_path = path.join(appRoot, './posts', post_dir, 'post.md')
-	const html_path     = path.join(appRoot, './resources', 'page.html')
 
 	let post_data = {
 		host: host,
@@ -185,14 +196,15 @@ function buildPostResponse(host, post_dir, previous_posts, next_post, fn) {
 		last_post_url: previous_posts[0],
 		next_post_url: next_post,
 		html_dir: html_path,
-		metadata: require(metadata_path)
+		metadata: require(metadata_path),
+		current_tab: 'recent'
 	}
 
 	fs.readFile(html_path, 'utf8', (err, html) => {
 		post_data.html = html;
 		fs.readFile(markdown_path, 'utf8', (err, markdown) => {
 			post_data.markdown = markdown;
-			format.formatPost(post_data, fn);
+			formatPost(post_data, fn);
 		});
 	});
 }

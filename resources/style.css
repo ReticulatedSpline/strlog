@@ -5,7 +5,7 @@
 	}
 
 	.h2, .h3, .h4, .h5, .h6 {
-		color: lightgray;
+		color: darkgrey;
 		margin-bottom: 0;
 	}
 
@@ -19,7 +19,7 @@
 	}
 
 	.strong {
-		font-weight: bolder;
+		font-weight: 800;
 	}
 
 	.ul {
@@ -211,22 +211,16 @@
 	.sidebar_entry {
 		color: gray;
 		font-weight: bold;
+		padding-left: 1rem;
 		text-decoration: none;
 	}
-
-	.sidebar_entry:hover {
-		text-decoration: underline;
-	}
-
+	
 	#sidebar_current {
-		font-weight: bold;
-		color: lightgray;
-		text-decoration: none;
+		border-left: 3px solid grey;
 	}
 
-	#chevron {
-		font-weight: bold;
-		color: lightgray;
+	.sidebar_entry:hover, #sidebar_current:hover {
+		border-left: 3px solid darkorange;
 	}
 
 	#main_menu {
@@ -241,9 +235,13 @@
 	}
 	
 	#main_menu li a {
-		color: lightgray;
+		color: darkgrey;
 		font-weight: bolder;
 		text-decoration: none;
+	}
+
+	#main_menu .current_tab {
+		border-top: 3px solid gray;
 	}
 
 	#main_menu li:hover {

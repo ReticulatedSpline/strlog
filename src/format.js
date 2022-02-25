@@ -11,16 +11,14 @@ function subSidebar(html, post_data, make_translucent) {
 			break;
 		}
 		
-		let css = 'class = \"sidebar_entry\" ';
+		let css = 'class = "sidebar_entry"';
 		let url = 'http://' + hostname + "/" + post_name;
-		let tic = '';
 
 		if (current_post == post_name) {
-			css = 'id = \"sidebar_current\" ';
-			tic = '<span id=\"chevron\">» </span>';
+			css += ' id = \"sidebar_current\" ';
 		}
 
-		post_list_string += "<li style=\"opacity: " + opacity + "\">" + tic +
+		post_list_string += "<li style=\"opacity: " + opacity + "\">" +
 							"<a " + css + "href=" + url + ">" + post_name +
 							"</a></li>";
 
@@ -80,7 +78,7 @@ function subBoldItalicText(post) {
 
 function subBoldText(post) {
 	const bold_regex = /\*\*([^*]+)\*\*/g;
-	return post.replace(bold_regex, '<strong>$1</strong>');
+	return post.replace(bold_regex, '<strong class=\"strong\">$1</strong>');
 }
 
 function subItalicText(post) {
@@ -125,6 +123,11 @@ function subOrderedLists(post) {
 
 function subFooter(post, lastPost, nextPost) {
 	const footer_regex = /{{footer}}/;
+
+	if (!lastPost || !nextPost) {
+		return post.replace(footer_regex, '');
+	}
+
 	let footer = '<hr class="hr"/>';
 	if (lastPost) {
 		footer = '<a id="last" href=' + lastPost + '>last</a>';
@@ -142,17 +145,18 @@ function subFooter(post, lastPost, nextPost) {
 }
 
 function subContent(post, post_data) {
-	let body_text = "<h1 class=\"h1\">" + post_data.metadata.title + "</h1>"
-	body_text += "<div class=\"subtitle\">" +
-				 "<span class=\"p tagline\">" + post_data.metadata.tagline +
-				 "</span><div>"
+	let body_text = '<div id="content">'
+		+ '<h1 class=\"h1\">'+ post_data.metadata.title + '</h1>'
+		+ "<div class=\"subtitle\">"
+		+ "<span class=\"p tagline\">" + post_data.metadata.tagline
+		+ "</span><div>"
 	for (topic of post_data.metadata.topics) {
 		let url = post_data.host + '/topics/' + topic
 		body_text += "<a href=\"" + url + "\" class=\"topics\">"
 				  + topic + "</a>"
 	}
 	body_text += "</div></div>"
-	body_text += post
+	body_text += post + '</div>'
 	return post_data.html.replace(/{{content}}/, body_text);
 }
 
@@ -162,6 +166,25 @@ function addEndMark(post) {
 
 function stripCarriageReturns(post) {
 	return post.replace(/\r/g, '');
+}
+
+function subHeader(post, post_data) {
+	let header = '<ul id="main_menu">'
+	let tabs = ['recent', 'topics', 'about']
+	let urls = ['/', '/topics', '/about']
+	let index = 0
+	while (index < 3) {
+		if (post_data.current_tab == tabs[index]) {
+			header += '<li class="h1 strong current_tab">'
+		} else {
+			header += '<li class="h1 strong">'
+		}
+		header += '<a href="' + urls[index] + '">'
+		header += tabs[index] + '</a></li>'
+		header += '</a></li>'
+		index += 1
+	}
+	return post.replace(/{{header}}/, header)
 }
 
 function formatPost (post_data, fn) {
@@ -183,10 +206,54 @@ function formatPost (post_data, fn) {
 	post = subRulers(post);
 	post = subContent(post, post_data);
 	post = subSidebar(post, post_data, true);
+	post = subHeader(post, post_data)
 	post = subFooter(post, post_data.last_post_url, post_data.next_post_url);
 	fn(post);
 }
 
+function concatTitles(page_data) {
+	let content = '<div id="content">'
+	for (let item of page_data.topics[page_data.current_topic]) {
+		content += '<h2 class = "h2">'
+		content += '<a class = "link body_link" href="http://' + item.url + '"/>'
+		content += item.title
+		content += '</a></h2>'
+		content += '<h3 class = "tagline">'
+		content += item.tagline
+		content += '</h3>'
+		content += '</br>'
+	}
+	content += "</div>"
+
+	page_data.html = page_data.html.replace(/{{content}}/, content);
+}
+
+function subTopicSidebar(page_data) {
+	let sidebar_string = "<ul id=\"sidebar\">"
+
+	for (topic in page_data.topics) {
+		let css = 'class = \"sidebar_entry\" '
+		let url = 'topics/' + topic
+		if (page_data.current_topic == topic) {
+			css += 'id = \"sidebar_current\" '
+		}
+
+		sidebar_string += "<li><a " + css + 'href="' + url + '">' + topic +"</a></li>";
+	}
+
+	sidebar_string += "</ul>";
+	return page_data.html.replace(/{{sidebar}}/, sidebar_string);
+}
+
+function formatTopic(page_data, fn) {
+	concatTitles(page_data);
+	page_data.html = subHeader(page_data.html, page_data)
+	page_data.html = subFooter(page_data.html, null, null)
+	page_data.html = subTopicSidebar(page_data);
+	fn(page_data.html);
+}
+
 module.exports = {
-	formatPost: formatPost
+	formatPost: formatPost,
+	formatTopic: formatTopic
 };
