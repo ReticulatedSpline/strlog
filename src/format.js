@@ -152,7 +152,7 @@ function subContent(post, post_data) {
 		+ "</span><div>"
 	for (topic of post_data.metadata.topics) {
 		let url = post_data.host + '/topics/' + topic
-		body_text += "<a href=\"" + url + "\" class=\"topics\">"
+		body_text += "<a href=\"http://" + url + "\" class=\"topics\">"
 				  + topic + "</a>"
 	}
 	body_text += "</div></div>"
@@ -233,7 +233,12 @@ function subTopicSidebar(page_data) {
 
 	for (topic in page_data.topics) {
 		let css = 'class = \"sidebar_entry\" '
-		let url = 'topics/' + topic
+		let url = ''
+		if (!url.includes('topics/')) {
+			url += 'topics/' + topic
+		} else {
+			url += topic
+		}
 		if (page_data.current_topic == topic) {
 			css += 'id = \"sidebar_current\" '
 		}

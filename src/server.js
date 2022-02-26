@@ -14,23 +14,22 @@ const port = process.env.PORT || 5000;
 
 let server = http.createServer(function (req, res) {
 	const host = req.headers.host;
-	// console.log(host, ' requests ', req.url)
+
 	if (req.url == '/') {
 		routeMostRecentPost(res)
+	}
+	else if (req.url.match(/\d{4}-\d{2}-\d{2}$/)) {
+		routeSpecificPost(host, req.url, res);
 	}
 	else if (req.url.endsWith('/topics')) {
 		routeTopics(req, res)
 	}
-	// else if (req.url.match(/\/topics\/[A-z]+$/)) {
-	// 	//routeSpecificTopic(req, res)
-	// 	routeError(req, res)
-	// }
+	else if (req.url.match(/\/topics\/[A-z]+$/)) {
+		routeSpecificTopic(req, res)
+	}
 	else if (req.url.startsWith('/about')) {
 		//routeAbout(req, res)
 		routeError(req, res)
-	}
-	else if (req.url.match(/\d{4}-\d{2}-\d{2}$/)) {
-		routeSpecificPost(host, req.url, res);
 	}
 	else if (req.url.endsWith('/style.css')) {
 		let uri = path.join(appRoot, 'resources', 'style.css');
@@ -148,9 +147,51 @@ function getMetadataFiles(dir, files_) {
 	return files_;
 }
 
+function routeSpecificTopic(req, res) {
+	let topics = {}
+	let current_topic = {}
+	let url_parts = req.url.split('/')
+	let topic_name = url_parts[url_parts.length - 1]
+	console.log('Requested topic', topic)
+	for (file of getMetadataFiles('./posts')) {
+		metadata = require(path.join(appRoot, file))
+		for (topic of metadata.topics) {
+			// gross hack to grab the date string out of the path :(
+			let directory = file.split('/')[2]
+			let item = {
+				title: metadata.title,
+				tagline: metadata.tagline,
+				url: path.join(req.headers.host, directory)
+			}
+			if (topics[topic]) {
+				topics[topic].add(item)
+			} else {
+				topics[topic] = new Set()
+				topics[topic].add(item)
+			}
+			if (topic == topic_name) {
+				current_topic = topic
+			}
+		}
+	}
+
+	fs.readFile(html_path, 'utf8', (err, html) => {
+		page_data = {
+			html: html,
+			host: req.headers.host,
+			topics: topics,
+			current_topic: current_topic,
+			current_tab: 'topics'
+		}
+		let fn = (postContent) => {sendContent(postContent, HTML_MIME, res)}
+		formatTopic(page_data, fn)
+	})
+}
+
 function routeTopics(req, res) {
 	let topics = {}
 	let current_topic = {}
+	console.log('Topic list requested')
 	for (file of getMetadataFiles('./posts')) {
 		metadata = require(path.join(appRoot, file))
 		for (topic of metadata.topics) {
