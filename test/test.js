@@ -54,7 +54,7 @@ tests = [
 	testSubTitles,
 	testSubImages,
 	testSubOrderedLists,
-	testSubUnorderedLists,
+	testSubUnorderedLists
 ]
 
 function runTest(test, expected, actual) {
