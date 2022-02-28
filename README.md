@@ -7,4 +7,4 @@ To host your own copy:
 - Navigate to the root directory and run `npm start`. The server will default to port 5000.
 Unit tests can be run with `npm test`.
 
-![screenshot](https://imgur.com/wbTqj35 "Screenshot")
+![screenshot](https://imgur.com/wbTqj35.jpg "Screenshot")
