@@ -1,4 +1,4 @@
-function subSidebar(html, post_data, make_translucent) {
+function insertSidebar(html, post_data, make_translucent) {
 	const list_regex = /{{sidebar}}/
 	const hostname = post_data.host
 	const post_list = post_data.previous_posts
@@ -11,11 +11,13 @@ function subSidebar(html, post_data, make_translucent) {
 			break;
 		}
 		
-		let css = 'class = "sidebar_entry"';
+		let css = 'class = "tab ';
 		let url = 'http://' + hostname + "/" + post_name;
 
 		if (current_post == post_name) {
-			css += ' id = \"sidebar_current\" ';
+			css += 'current_tab"'
+		} else {
+			css += '"'
 		}
 
 		post_list_string += "<li style=\"opacity: " + opacity + "\">" +
@@ -121,7 +123,7 @@ function subOrderedLists(post) {
 	return post;
 }
 
-function subFooter(post, lastPost, nextPost) {
+function insertFooter(post, lastPost, nextPost) {
 	const footer_regex = /{{footer}}/;
 
 	if (!lastPost || !nextPost) {
@@ -144,7 +146,7 @@ function subFooter(post, lastPost, nextPost) {
 	return post.replace(footer_regex, footer);
 }
 
-function subContent(post, post_data) {
+function insertContent(post, post_data) {
 	let body_text = '<div id="content">'
 		+ '<h1 class=\"h1\">'+ post_data.metadata.title + '</h1>'
 		+ "<div class=\"subtitle\">"
@@ -168,20 +170,20 @@ function stripCarriageReturns(post) {
 	return post.replace(/\r/g, '');
 }
 
-function subHeader(post, post_data) {
+function insertHeader(post, post_data) {
 	let header = '<ul id="main_menu">'
-	let tabs = ['recent', 'topics', 'about']
+	let tabs = ['posts', 'topics', 'about']
 	let urls = ['/', '/topics', '/about']
 	let index = 0
 	while (index < 3) {
+		header += '<li>'
 		if (post_data.current_tab == tabs[index]) {
-			header += '<li class="h1 strong current_tab">'
+			header += '<a class="h1 tab current_tab" '
 		} else {
-			header += '<li class="h1 strong">'
+			header += '<a class="h1 tab" '
 		}
-		header += '<a href="' + urls[index] + '">'
+		header += 'href="' + urls[index] + '">'
 		header += tabs[index] + '</a></li>'
-		header += '</a></li>'
 		index += 1
 	}
 	return post.replace(/{{header}}/, header)
@@ -204,10 +206,10 @@ function formatPost (post_data, fn) {
 	post = subUnorderedLists(post);
 	post = subOrderedLists(post);
 	post = subRulers(post);
-	post = subContent(post, post_data);
-	post = subSidebar(post, post_data, true);
-	post = subHeader(post, post_data)
-	post = subFooter(post, post_data.last_post_url, post_data.next_post_url);
+	post = insertContent(post, post_data);
+	post = insertSidebar(post, post_data, true);
+	post = insertHeader(post, post_data)
+	post = insertFooter(post, post_data.last_post_url, post_data.next_post_url);
 	fn(post);
 }
 
@@ -224,23 +226,20 @@ function concatTitles(page_data) {
 		content += '</br>'
 	}
 	content += "</div>"
-
+	content = subItalicText(content)
 	page_data.html = page_data.html.replace(/{{content}}/, content);
 }
 
-function subTopicSidebar(page_data) {
+function insertTopicSidebar(page_data) {
 	let sidebar_string = "<ul id=\"sidebar\">"
-
 	for (topic in page_data.topics) {
-		let css = 'class = \"sidebar_entry\" '
-		let url = ''
-		if (!url.includes('topics/')) {
-			url += 'topics/' + topic
-		} else {
-			url += topic
-		}
+		let css = 'class = "tab '
+		let url = 'http://' + page_data.host + '/topics/' + topic
+
 		if (page_data.current_topic == topic) {
-			css += 'id = \"sidebar_current\" '
+			css += 'current_tab"'
+		} else {
+			css += '"'
 		}
 
 		sidebar_string += "<li><a " + css + 'href="' + url + '">' + topic +"</a></li>";
@@ -252,9 +251,9 @@ function subTopicSidebar(page_data) {
 
 function formatTopic(page_data, fn) {
 	concatTitles(page_data);
-	page_data.html = subHeader(page_data.html, page_data)
-	page_data.html = subFooter(page_data.html, null, null)
-	page_data.html = subTopicSidebar(page_data);
+	page_data.html = insertHeader(page_data.html, page_data)
+	page_data.html = insertFooter(page_data.html, null, null)
+	page_data.html = insertTopicSidebar(page_data);
 	fn(page_data.html);
 }
 

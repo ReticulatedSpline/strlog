@@ -58,7 +58,7 @@
 	}
 
 	.grey {
-		color: grey !important;
+		color: darkgrey !important;
 	}
 
 	.center {
@@ -208,19 +208,20 @@
 		overflow: hidden;
 	}
 
-	.sidebar_entry {
+	.tab {
 		color: gray;
 		font-weight: bold;
-		padding-left: 1rem;
 		text-decoration: none;
 	}
 	
-	#sidebar_current {
-		border-left: 3px solid grey;
+	.tab:hover {
+		background-color: darkorange;
+		color: #3a404b;
 	}
 
-	.sidebar_entry:hover, #sidebar_current:hover {
-		border-left: 3px solid darkorange;
+	.current_tab {
+		background-color: darkgrey;
+		color: #3a404b;
 	}
 
 	#main_menu {
@@ -232,21 +233,6 @@
 		list-style-type: none;
 		display: inline;
 		margin-right: 2%;
-	}
-	
-	#main_menu li a {
-		color: darkgrey;
-		font-weight: bolder;
-		text-decoration: none;
-	}
-
-	#main_menu .current_tab {
-		border-top: 3px solid gray;
-	}
-
-	#main_menu li:hover {
-		border-top: 3px solid darkorange;
-		cursor: pointer;
 	}
 
 	#content {

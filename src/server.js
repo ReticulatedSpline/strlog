@@ -22,7 +22,7 @@ let server = http.createServer(function (req, res) {
 		routeSpecificPost(host, req.url, res);
 	}
 	else if (req.url.endsWith('/topics')) {
-		routeTopics(req, res)
+		routeAllTopics(req, res)
 	}
 	else if (req.url.match(/\/topics\/[A-z]+$/)) {
 		routeSpecificTopic(req, res)
@@ -152,7 +152,7 @@ function routeSpecificTopic(req, res) {
 	let current_topic = {}
 	let url_parts = req.url.split('/')
 	let topic_name = url_parts[url_parts.length - 1]
-	console.log('Requested topic', topic)
+	console.log('Requested topic', topic_name)
 	for (file of getMetadataFiles('./posts')) {
 		metadata = require(path.join(appRoot, file))
 		for (topic of metadata.topics) {
@@ -175,20 +175,10 @@ function routeSpecificTopic(req, res) {
 		}
 	}
 
-	fs.readFile(html_path, 'utf8', (err, html) => {
-		page_data = {
-			html: html,
-			host: req.headers.host,
-			topics: topics,
-			current_topic: current_topic,
-			current_tab: 'topics'
-		}
-		let fn = (postContent) => {sendContent(postContent, HTML_MIME, res)}
-		formatTopic(page_data, fn)
-	})
+	buildTopicResponse(req, res, topics, current_topic)
 }
 
-function routeTopics(req, res) {
+function routeAllTopics(req, res) {
 	let topics = {}
 	let current_topic = {}
 	console.log('Topic list requested')
@@ -213,6 +203,10 @@ function routeTopics(req, res) {
 		}
 	}
 
+	buildTopicResponse(req, res, topics, current_topic)
+}
+
+function buildTopicResponse(req, res, topics, current_topic) {
 	fs.readFile(html_path, 'utf8', (err, html) => {
 		page_data = {
 			html: html,
@@ -238,7 +232,7 @@ function buildPostResponse(host, post_dir, previous_posts, next_post, fn) {
 		next_post_url: next_post,
 		html_dir: html_path,
 		metadata: require(metadata_path),
-		current_tab: 'recent'
+		current_tab: 'posts'
 	}
 
 	fs.readFile(html_path, 'utf8', (err, html) => {
