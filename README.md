@@ -27,3 +27,5 @@ The repository contains the following important directories:
 
 #### A Caveat
 Markdown parsing is an audacious claim for what is really just a series of regex string manipulations. Someday I'd love to take the time to write a real parser. 
+
+![screenshot](https://imgur.com/wbTqj35.jpg "Screenshot")
