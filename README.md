@@ -10,7 +10,7 @@ Unit tests can be run with `npm test`.
 The repository contains the following important directories:
 - `./posts`: holds directories titled with the date in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601) representing a single blog post each. Two files are required:
   - A [Markdown](https://www.markdownguide.org/) file called `post.md`.
-  - A [JSON] file with three attributes: the post name, title, and an array of topics which may be empty.
+  - A [JSON](https://en.wikipedia.org/wiki/JSON) file with three attributes: the post name, title, and an array of topics which may be empty.
   - Additionally, you may add any resources, such as photos, to this directory. 
 - `resources`: holds template html files, the favicon, an icon for link embeds, and the CSS file.
 - `src`: source code, split roughly into routing / file reading (`server.js`) and markdown parsing / html building (`format.js`).
