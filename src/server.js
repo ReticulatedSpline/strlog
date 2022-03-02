@@ -68,7 +68,7 @@ function routeImage(uri, mimetype, res) {
 }
 
 function routeMostRecentPost(res) {
-	console.log("Redirecting to most recent post")
+	console.log('Redirecting to most recent post')
 	getAllPostsByDate((files) => {
 		res.writeHead(302, {'Location': files[0]})
 		res.end()
@@ -81,7 +81,7 @@ function routeSpecificPost(host, url, res) {
 		let post_index = 0
 		for (const [index, post] of files.entries()) {
 			if (post === url.substring(1)) {
-				console.log("Post", post, "requested")
+				console.log('Post', post, 'requested')
 				post_index = index
 			}
 		}
@@ -134,7 +134,7 @@ function routeAbout(req, res) {
 }
 
 function routeError(req, res) {
-	console.log("Invalid route " + req.url)
+	console.log('Invalid route ' + req.url)
 	fs.readFile('resources/error.html', 'utf8', (err, html) => {
 		sendContent(html, HTML_MIME, res)
 	})

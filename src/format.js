@@ -1,6 +1,6 @@
 function insertSidebar(html, post_data, make_translucent) {
 	const list_regex = /{{sidebar}}/
-	let post_list_string = "<ul id=\"sidebar\">"
+	let post_list_string = '<ul id="sidebar">'
 	let opacity = 1
 
 	for (let post_name of post_data.previous_posts) {
@@ -8,21 +8,22 @@ function insertSidebar(html, post_data, make_translucent) {
 			break
 		}
 		
-		let css = 'class = "tab '
-		let url = 'http://' + post_data.host + "/" + post_name
+		let css = 'class = "tab'
+		let url = 'http://' + post_data.host + '/' + post_name
+
 		if (post_data.no_url) {
 			url = ''
 		}
 
 		if (post_data.directory == post_name) {
-			css += 'current_tab"'
+			css += ' current_tab"'
 		} else {
 			css += '"'
 		}
 
-		post_list_string += "<li style=\"opacity: " + opacity + "\">" +
-							"<a " + css + "href=" + url + ">" + post_name +
-							"</a></li>"
+		post_list_string += '<li style="opacity: ' + opacity + '">' +
+							'<a ' + css + 'href="' + url + '">' + post_name +
+							'</a></li>'
 
 		if (make_translucent) {
 			opacity -= 0.1
@@ -30,7 +31,7 @@ function insertSidebar(html, post_data, make_translucent) {
 		}
 	}
 
-	post_list_string += "</ul>"
+	post_list_string += '</ul>'
 	return html.replace(list_regex, post_list_string)
 }
 
@@ -45,7 +46,7 @@ function subTitles(post) {
 
 function subLinks(post) {
 	const link_regex = /[^!]\[(.+?)\]\((.+?)\)/g
-	return post.replace(link_regex, ' <a class=\"link body_link\" href="$2" target="_blank">$1</a>')
+	return post.replace(link_regex, ' <a class="link body_link" href="$2" target="_blank">$1</a>')
 }
 
 function subImages(post, date) {
@@ -59,12 +60,12 @@ function subImages(post, date) {
 
 function addParagraphs(post) {
 	const paragraph_regex = /(^[A-Za-z¿¡].*(?:\n[A-Za-z].*)*)/gm
-	return post.replace(paragraph_regex, '<p class=\"p\">$1</p>')
+	return post.replace(paragraph_regex, '<p class="p">$1</p>')
 }
 
 function subRulers(post) {
 	const rule_regex = /\n---\n/g
-	return post.replace(rule_regex, '\n<hr class=\"hr\">\n')
+	return post.replace(rule_regex, '\n<hr class="hr">\n')
 }
 
 function subStrikeTest(post) {
@@ -75,12 +76,12 @@ function subStrikeTest(post) {
 
 function subBoldItalicText(post) {
 	const bold_italic_regex = /\*\*\*([^*]+)\*\*\*/g
-	return post.replace(bold_italic_regex, '<strong class=\"strong\"><em>$1</em></strong>')
+	return post.replace(bold_italic_regex, '<strong class="strong"><em>$1</em></strong>')
 }
 
 function subBoldText(post) {
 	const bold_regex = /\*\*([^*]+)\*\*/g
-	return post.replace(bold_regex, '<strong class=\"strong\">$1</strong>')
+	return post.replace(bold_regex, '<strong class="strong">$1</strong>')
 }
 
 function subItalicText(post) {
@@ -99,14 +100,14 @@ function subPreText(post) {
 	// can't use backticks in code blocks with this regex
 	const pre_regex = /`([^`]+)`/g
 	const fence_regex = /```([^`]+)```/gm
-	post = post.replace(fence_regex, '<pre class=\"pre\">$1</pre>')
-	return post.replace(pre_regex, '<pre class=\"pre\">$1</pre>')
+	post = post.replace(fence_regex, '<pre class="pre">$1</pre>')
+	return post.replace(pre_regex, '<pre class="pre">$1</pre>')
 }
 
 function subUnorderedLists(post) {
 	const list_shell_regex = /((?:\n-\s.*)+)/gm
 	const list_item_regex = /\n-\s([^\n]+)/m
-	post = post.replace(list_shell_regex, '\n<ul class=\"ul\">$1\n</ul>')
+	post = post.replace(list_shell_regex, '\n<ul class="ul">$1\n</ul>')
 	while (results = post.match(list_item_regex)) {
 		post = post.replace(list_item_regex, '\n<li>$1</li>')
 	}
@@ -132,13 +133,13 @@ function insertFooter(post, lastPost, nextPost) {
 
 	let footer = '<hr class="hr"/>'
 	if (lastPost) {
-		footer = '<a id="last" href=' + lastPost + '>last</a>'
+		footer = '<a id="last" href="' + lastPost + '">last</a>'
 	} else {
 		footer = '<span class="grey" id="last">//last</span>'
 	}
 
 	if (nextPost) {
-		footer = footer + '<a id="next" href=' + nextPost + '>next</a>'
+		footer = footer + '<a id="next" href="' + nextPost + '">next</a>'
 	} else {
 		footer = footer + '<span class="grey" id="next">//next</span>'
 	}
@@ -148,16 +149,16 @@ function insertFooter(post, lastPost, nextPost) {
 
 function insertContent(post, post_data) {
 	let body_text = '<div id="content">'
-		+ '<h1 class=\"h1\">'+ post_data.metadata.title + '</h1>'
-		+ "<div class=\"subtitle\">"
-		+ "<span class=\"p tagline\">" + post_data.metadata.tagline
-		+ "</span><div>"
+		+ '<h1 class="h1">'+ post_data.metadata.title + '</h1>'
+		+ '<div class="subtitle">'
+		+ '<span class="p tagline">' + post_data.metadata.tagline
+		+ '</span><div>'
 	for (topic of post_data.metadata.topics) {
 		let url = post_data.host + '/topics/' + topic
-		body_text += "<a href=\"http://" + url + "\" class=\"topics\">"
-				  + topic + "</a>"
+		body_text += '<a href="http://' + url + '" class="topics">'
+				  + topic + '</a>'
 	}
-	body_text += "</div></div>"
+	body_text += '</div></div>'
 	body_text += post + '</div>'
 	return post_data.html.replace(/{{content}}/, body_text)
 }
@@ -225,13 +226,13 @@ function concatTitles(page_data) {
 		content += '</h3>'
 		content += '</br>'
 	}
-	content += "</div>"
+	content += '</div>'
 	content = subItalicText(content)
 	page_data.html = page_data.html.replace(/{{content}}/, content)
 }
 
 function insertTopicSidebar(page_data) {
-	let sidebar_string = "<ul id=\"sidebar\">"
+	let sidebar_string = '<ul id=\"sidebar\">'
 	for (topic in page_data.topics) {
 		let css = 'class = "tab '
 		let url = 'http://' + page_data.host + '/topics/' + topic
@@ -242,10 +243,10 @@ function insertTopicSidebar(page_data) {
 			css += '"'
 		}
 
-		sidebar_string += "<li><a " + css + 'href="' + url + '">' + topic +"</a></li>"
+		sidebar_string += '<li><a ' + css + 'href="' + url + '">' + topic +'</a></li>'
 	}
 
-	sidebar_string += "</ul>"
+	sidebar_string += '</ul>'
 	return page_data.html.replace(/{{sidebar}}/, sidebar_string)
 }
 
