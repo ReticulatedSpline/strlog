@@ -13,7 +13,7 @@ Pero eso **se** me hizo aburrido, y sabía que ~~aún hubo mucho del país que n
 
 Con eso en mente, compré otro boleto, ~~este tiempo~~ **esta vez** un boleto de tren. Fui **al** norte, a Hà Giang, cerca de la frontera con China y **renté** una moto. Allí pasé mis últimos cuatros días allí **andando en** moto a través **de** la selva con su agobiante calor. Por horas no ~~viera~~ **veía a** nadie en las calles que, a tiempos, ~~fueron hecho~~ **fueron terracerías**. Un guía me advirtió que ~~hubiera~~ **había** minas desde la guerra con China, así que no debía salir de la calle.
 
-Fue un poco irresponsable y peligroso, pero aún pienso en esos días con nostalgia. No había hecho nada como eso antes y, con la pandemia, no sé si ~~pudiere~~ (1) **podré hacerlo** en el futuro ~~tampoco~~.
+Fue un poco irresponsable y peligroso, pero aún pienso en esos días con nostalgia. No había hecho nada como eso antes y, con la pandemia, no sé si ~~pudiere~~ **podré hacerlo** en el futuro ~~tampoco~~.
 
 ### 2.jan.2022: hollywood y la nieve
 Hay muchas cosas que Hollywood no hace correctamente. Me doy cuenta de tazas de café que aparece ~~vacío~~ **vacías** o cuando el tiempo corre demasiado lento, pero lo que me fijo más es cuando actores no ~~actuar como~~ **actúan** correctamente **en** escenas en el invierno ~~de verdad son frío~~ **en el verdadero frío**.  

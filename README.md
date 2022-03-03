@@ -18,12 +18,14 @@ The repository contains the following important directories:
 
 #### Roadmap
 1. mobile site formatting
-3. refactor: PageData object with named fields
-4. refactor: switch to all single quotes
-5. update or remove tests
-6. verify release branch
-7. tagline in link embeds
-8. refactor: pack globals into object
+2. refactor: PageData object with named fields
+3. update or remove tests
+4. verify release branch
+5. tagline in link embeds
+6. refactor: pack globals into object
+8. cleaner replace method in format.js
+9. tagline in header
+10. crack (my own) combo articles into single subject
 
 #### A Caveat
 Markdown parsing is an audacious claim for what is really just a series of regex string manipulations. Someday I'd love to take the time to write a real parser. 

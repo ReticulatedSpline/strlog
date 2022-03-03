@@ -151,8 +151,8 @@ function insertContent(post, post_data) {
 	let body_text = '<div id="content">'
 		+ '<h1 class="h1">'+ post_data.metadata.title + '</h1>'
 		+ '<div class="subtitle">'
-		+ '<span class="p tagline">' + post_data.metadata.tagline
-		+ '</span><div>'
+		+ '<span class="tagline">' + post_data.metadata.tagline
+		+ '</span><div id="topics">'
 	for (topic of post_data.metadata.topics) {
 		let url = post_data.host + '/topics/' + topic
 		body_text += '<a href="http://' + url + '" class="topics">'

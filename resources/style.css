@@ -76,6 +76,22 @@
 		border-left: 3px solid darkorange;
 	}
 
+	.tab {
+		color: gray;
+		font-weight: bold;
+		text-decoration: none;
+	}
+	
+	.tab:hover {
+		background-color: darkorange;
+		color: #3a404b;
+	}
+
+	.current_tab {
+		background-color: darkgrey;
+		color: #3a404b;
+	}
+
 	/****** general ids ******/
 	body {
 		/** prevents white flash on reload **/
@@ -111,6 +127,14 @@
 		flex-direction: column;
 		height: 100vh;
 	}
+
+	#sidebar {
+		margin-top: 0;
+		list-style: none;
+		text-align: right;
+		font-size: 2rem;
+		overflow: hidden;
+	}
 }
 
 /****** small screen rules ******/
@@ -119,8 +143,10 @@
 		font-size: 6rem;
 	}
 
-	.h2 {
+	.h2, .tagline {
 		font-size: 4rem;
+		color: darkgrey;
+		font-weight: 700;
 	}
 	
 	.h3 {
@@ -139,12 +165,52 @@
 		font-size: 3rem;
 	}
 
+	.p {
+		font-size: 2.5rem;
+		line-height: 1.5;
+	}
+
+	.topics {
+		display: hidden;
+	}
+
 	#next, #last {
 		font-size: 5rem;
 	}
 
-	#post_list, #main_menu_container {
+	#site_name_container {
 		display: none;
+	}
+
+	#main_menu_container {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: nowrap
+	}
+
+	#main_menu li {
+		display: inline;
+		list-style-type: none;
+		margin-left: 2rem;
+	}
+
+	#sidebar_container {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: nowrap
+	}
+
+	#sidebar {
+		overflow-x: scroll;
+	}
+
+	#sidebar li {
+		font-size: 3rem;
+		display: inline;
+		list-style-type: none;
+		margin-left: 2rem;
 	}
 }
 
@@ -201,27 +267,7 @@
 	}
 
 	#sidebar {
-		margin-top: 0;
-		list-style: none;
-		text-align: right;
 		font-size: 2rem;
-		overflow: hidden;
-	}
-
-	.tab {
-		color: gray;
-		font-weight: bold;
-		text-decoration: none;
-	}
-	
-	.tab:hover {
-		background-color: darkorange;
-		color: #3a404b;
-	}
-
-	.current_tab {
-		background-color: darkgrey;
-		color: #3a404b;
 	}
 
 	#main_menu {
