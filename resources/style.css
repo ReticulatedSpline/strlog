@@ -219,6 +219,17 @@
 		list-style-type: none;
 		margin-left: 2rem;
 	}
+
+	#next_last_container {
+		margin-bottom: 25%;
+		padding-left: 5%;
+		padding-right: 5%;
+		font-weight: bold;
+	}
+	
+	#next_last_container a:link {
+		text-decoration: none;
+	}
 }
 
 /****** large screen rules ******/

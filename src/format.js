@@ -54,7 +54,7 @@ function subImages(post, date) {
 	const image_html =
 	'<div class="body_photo_div">' +
 	'<img class="body_photo" src="' + './posts/' + date + '/$2" alt="$1">' +
-	'<p class="body_alt_text">$1</p></div>'
+	'<p class="p body_alt_text">$1</p></div>'
 	return post.replace(image_regex, image_html)
 }
 
@@ -93,21 +93,21 @@ function subItalicText(post) {
 
 function subBlockQuotes(post) {
 	const bold_regex = /^>\s([^\n]+)/gm
-	return post.replace(bold_regex, '<p class="quote">$1</p>')
+	return post.replace(bold_regex, '<p class="p quote">$1</p>')
 }
 
 function subPreText(post) {
 	// can't use backticks in code blocks with this regex
 	const pre_regex = /`([^`]+)`/g
 	const fence_regex = /```([^`]+)```/gm
-	post = post.replace(fence_regex, '<pre class="pre">$1</pre>')
-	return post.replace(pre_regex, '<pre class="pre">$1</pre>')
+	post = post.replace(fence_regex, '<pre class="p pre">$1</pre>')
+	return post.replace(pre_regex, '<pre class="p pre">$1</pre>')
 }
 
 function subUnorderedLists(post) {
 	const list_shell_regex = /((?:\n-\s.*)+)/gm
 	const list_item_regex = /\n-\s([^\n]+)/m
-	post = post.replace(list_shell_regex, '\n<ul class="ul">$1\n</ul>')
+	post = post.replace(list_shell_regex, '\n<ul class="p ul">$1\n</ul>')
 	while (results = post.match(list_item_regex)) {
 		post = post.replace(list_item_regex, '\n<li>$1</li>')
 	}
@@ -117,7 +117,7 @@ function subUnorderedLists(post) {
 function subOrderedLists(post) {
 	const list_shell_regex = /((?:\n\d\.\s.*)+)/gm
 	const list_item_regex = /\n\d\.\s([^\n]+)/m
-	post = post.replace(list_shell_regex, '\n<ol>$1\n</ol>')
+	post = post.replace(list_shell_regex, '\n<ol class="p">$1\n</ol>')
 		while (results = post.match(list_item_regex)) {
 		post = post.replace(list_item_regex, '\n<li>$1</li>')
 	}
