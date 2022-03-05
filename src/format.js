@@ -162,6 +162,8 @@ function insertContent(post, post_data) {
 	body_text += post + '</div>'
 	post_data.html = post_data.html.replace(/{{tagline}}/, '"'
 		+ post_data.metadata.tagline + '"')
+	post_data.html = post_data.html.replace(/{{title}}/, '"strlog: '
+		+ post_data.metadata.title + '"')
 	return post_data.html.replace(/{{content}}/, body_text)
 }
 
