@@ -24,7 +24,7 @@ The repository contains the following important directories:
 6. refactor: pack globals into object
 7. cleaner replace method in format.js
 8. tagline in header
-9.  crack (my own) combo articles into single subject
+9. crack (my own) combo articles into single subject
 
 #### A Caveat
 Markdown parsing is an audacious claim for what is really just a series of regex string manipulations. Someday I'd love to take the time to write a real parser. 

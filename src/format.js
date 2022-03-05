@@ -160,6 +160,8 @@ function insertContent(post, post_data) {
 	}
 	body_text += '</div></div>'
 	body_text += post + '</div>'
+	post_data.html = post_data.html.replace(/{{tagline}}/, '"'
+		+ post_data.metadata.tagline + '"')
 	return post_data.html.replace(/{{content}}/, body_text)
 }
 
