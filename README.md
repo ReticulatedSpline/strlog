@@ -17,14 +17,11 @@ The repository contains the following important directories:
 - `test`: holds the neglected unit testing suite.
 
 #### Roadmap
-1. refactor: PageData object with named fields
-2. update or remove tests
-3. verify release branch
-4. tagline in link embeds
-6. refactor: pack globals into object
-7. cleaner replace method in format.js
-8. tagline in header
-9. crack (my own) combo articles into single subject
+1. update or remove tests
+2. refactor: PageData object with named fields
+3. refactor: pack globals into object
+4. refactor: replace method in format.js
+5. verify release branch
 
 #### A Caveat
 Markdown parsing is an audacious claim for what is really just a series of regex string manipulations. Someday I'd love to take the time to write a real parser. 

@@ -1,0 +1,12 @@
+## a small rant about tea
+I don't want to disparage the typical American supermarket tea. It's convenient and cheap. I almost always have a box in my kitchen. However, I've been wondering why loose leaf tea never caught on in American supermarkets. It seems plausible that a majority of people have gone their entire life without tasting tea that hasn't been cut with some kind of flavoring. Take a look at [Lipton's green tea offerings](https://www.lipton.com/us/en/our-teas/green-teas.html): passionfruit, mint, lemon ginseng, ginger, cranberry, the list goes on and on. There are a few with more abstract names, like "Detox" and "Support". If you want plain tea your only option is decaf, and the box doesn't endeavor to tell you what kind of tea it even is! Cut one of the pouches open and you'll find a powdery substance not... entirely *unlike* tea leaves?
+
+Am I just a purist? Some kind of tea snob? Well, yes. Still, I find the lack of productized loose leaf tea interesting. For starters, it's no more expensive than the individually wrapped pouches. Lipton's green teas start at around $3 for 20 pouches. A big bag of loose leaf tea, say, [Pinhead Gunpowder](https://www.thewhistlingkettle.com/collections/classic-green-teas/products/pinhead-gunpowder-organic?variant=6930836226103) usually runs around $20. The price is almost the same - 15 cents per Lipton serving and about 17 cents from the loose leaf purveyor. What seals the deal is that these full tea leaves can be steeped multiple times, doubly so for green teas. Those 128 servings of Gunpowder will make 300 cups or more, and the flavor is quite different than what comes in the little packets. I suppose this hole in the market can't be plugged until Americans develop a taste for tea. This seems to be growing, but slowly. 
+
+![Looseleaf tea compared to the contents of a supermarket sachet](tea_comparison.jpg)
+
+Here's my preferred brew method, using an indestructible metal basket that runs about $6:
+
+![Typical, cheap loose leaf tea brew basket](tea_basket.jpg)
+
+The best part of this brewing method is that a single cup of loose leaf tea produces no waste except the tea leaves themselves. The paper pouches aren't so bad either, but don't get me started on the [new trend of plastic "silken" tea pouches](https://www.discovermagazine.com/health/plastic-tea-bags-release-billions-of-microplastics-into-every-cup). I have strong feelings about taking something that was formerly sustainable and wrapping it in an oil derivative just for misguided aesthetics.
