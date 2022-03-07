@@ -204,8 +204,9 @@
 	#sidebar_container {
 		width: 100%;
 		display: flex;
+		overflow: hidden;
+		flex-wrap: nowrap;
 		justify-content: space-between;
-		flex-wrap: nowrap
 	}
 
 	#sidebar {
