@@ -1,3 +1,4 @@
+const { dir } = require('console')
 const fs = require('fs')
 const http = require('http')
 const path = require('path')
@@ -8,9 +9,36 @@ const HTML_MIME = { 'Content-Type': 'text/html' }
 const ICO_MIME  = { 'Content-Type': 'image/x-icon' }
 const JPG_MIME  = { 'Content-Type': 'image/jpg' }
 const PNG_MIME  = { 'Content-Type': 'image/png' }
-const appRoot = path.join(__dirname, '../')
-const html_path = path.join(appRoot, './resources', 'page.html')
+const app_root = path.join(__dirname, '../')
+const html_path = 'resources/page.html'
+const error_path = 'resources/error.html'
+
 const port = process.env.PORT || 5000
+//var posts = cacheAllPosts();
+//console.log('Loaded', posts.length, 'posts.')
+
+function sortByISODate(a, b) {
+	let options = {numeric: true, sensitivity: 'base'}
+	return b.localeCompare(a, undefined, options)
+}
+
+function cacheAllPosts() {
+	let post_dirs = fs.readdirSync(path.join(app_root, 'posts'))
+	// natural sort file names (should be ISO dates!)
+	post_dirs.sort(sortByISODate)
+	// drop hidden dir names, alphabetic dir names
+	post_dirs = post_dirs.filter(item=> !/^[A-z\.].*/.test(item))
+	let index = 0
+	let posts = []
+	for (directory in post_dirs) {
+		let post = {
+
+		}
+		index += 1
+		posts.push(post)
+	}
+	return post_dirs
+}
 
 let server = http.createServer(function (req, res) {
 	const host = req.headers.host
@@ -31,23 +59,23 @@ let server = http.createServer(function (req, res) {
 		routeAbout(req, res)
 	}
 	else if (req.url.endsWith('/style.css')) {
-		let uri = path.join(appRoot, 'resources', 'style.css')
+		let uri = path.join(app_root, 'resources', 'style.css')
 		routeCSS(uri, res)
 	}
 	else if (req.url == '/favicon.ico') {
-		let uri = path.join(appRoot, 'resources', 'favicon.ico')
+		let uri = path.join(app_root, 'resources', 'favicon.ico')
 		routeImage(uri, ICO_MIME, res)
 	}
 	else if (req.url == '/icon.png') {
-		let uri = path.join(appRoot, 'resources', 'icon.png')
+		let uri = path.join(app_root, 'resources', 'icon.png')
 		routeImage(uri, PNG_MIME, res)
 	}
 	else if (req.url.endsWith('.jpg') || req.url.endsWith('.jpeg')) {
-		let uri = path.join(appRoot, req.url)
+		let uri = path.join(app_root, req.url)
 		routeImage(uri, JPG_MIME, res)
 	}
 	else if (req.url.endsWith('.png')) {
-		let uri = path.join(appRoot, req.url)
+		let uri = path.join(app_root, req.url)
 		routeImage(uri, PNG_MIME, res)
 	}
 	else {
@@ -88,14 +116,19 @@ function routeSpecificPost(host, url, res) {
 	
 		const post_dir = files[post_index]
 
-		let next_post_dir
-		if (post_index + 1 < files.length) {
+		let next_post_dir = null
+		if (post_index > 0) {
+			next_post_dir = files[post_index - 1]
+		}
+
+		let last_post_dir = null
+		if (post_index < files.length) {
 			next_post_dir = files[post_index + 1]
 		}
 
 		let previous_posts = files.slice(0, 10)
 
-		buildPostResponse(host, post_dir, previous_posts, next_post_dir, (postContent) => {
+		buildPostResponse(host, post_dir, previous_posts, last_post_dir, next_post_dir, (postContent) => {
 			sendContent(postContent, HTML_MIME, res)
 		})
 	})
@@ -116,7 +149,7 @@ function routeAbout(req, res) {
 		}
 
 		fs.readFile(html_path, 'utf8', (err, html) => {
-			let metadata_path = path.join(appRoot, './posts/about/metadata.json')
+			let metadata_path = path.join(app_root, './posts/about/metadata.json')
 			let page_data = {
 				html: html,
 				host: req.headers.host,
@@ -135,13 +168,13 @@ function routeAbout(req, res) {
 
 function routeError(req, res) {
 	console.log('Invalid route ' + req.url)
-	fs.readFile('resources/error.html', 'utf8', (err, html) => {
+	fs.readFile(error_path, 'utf8', (err, html) => {
 		sendContent(html, HTML_MIME, res)
 	})
 }
 
 function getAllPostsByDate(fn) {
-	fs.readdir(path.join(appRoot, 'posts'), (err, files) => {
+	fs.readdir(path.join(app_root, 'posts'), (err, files) => {
 		if (err) {
 			console.log('Error fetching files: ', err)
 		}
@@ -181,7 +214,7 @@ function routeSpecificTopic(req, res) {
 	let topic_name = url_parts[url_parts.length - 1]
 	console.log('Requested topic', topic_name)
 	for (file of getMetadataFiles('./posts')) {
-		metadata = require(path.join(appRoot, file))
+		metadata = require(path.join(app_root, file))
 		for (topic of metadata.topics) {
 			// gross hack to grab the date string out of the path :(
 			let directory = file.split('/')[2]
@@ -210,7 +243,7 @@ function routeAllTopics(req, res) {
 	let current_topic = {}
 	console.log('Topic list requested')
 	for (file of getMetadataFiles('./posts')) {
-		metadata = require(path.join(appRoot, file))
+		metadata = require(path.join(app_root, file))
 		for (topic of metadata.topics) {
 			// gross hack to grab the date string out of the path :(
 			let directory = file.split('/')[2]
@@ -247,15 +280,15 @@ function buildTopicResponse(req, res, topics, current_topic) {
 	})
 }
 
-function buildPostResponse(host, post_dir, previous_posts, next_post, fn) {
-	const metadata_path = path.join(appRoot, './posts', post_dir, 'metadata.json')
-	const markdown_path = path.join(appRoot, './posts', post_dir, 'post.md')
+function buildPostResponse(host, post_dir, previous_posts, next_post, last_post, fn) {
+	const metadata_path = path.join(app_root, './posts', post_dir, 'metadata.json')
+	const markdown_path = path.join(app_root, './posts', post_dir, 'post.md')
 
 	let post_data = {
 		host: host,
 		directory: post_dir,
 		previous_posts: previous_posts,
-		last_post_url: previous_posts[0],
+		last_post_url: last_post,
 		next_post_url: next_post,
 		html_dir: html_path,
 		metadata: require(metadata_path),

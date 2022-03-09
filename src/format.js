@@ -127,7 +127,7 @@ function subOrderedLists(post) {
 function insertFooter(post, lastPost, nextPost) {
 	const footer_regex = /{{footer}}/
 
-	if (!lastPost || !nextPost) {
+	if (!lastPost && !nextPost) {
 		return post.replace(footer_regex, '')
 	}
 
