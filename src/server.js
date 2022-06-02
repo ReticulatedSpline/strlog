@@ -118,12 +118,12 @@ function routeSpecificPost(host, url, res) {
 
 		let next_post_dir = null
 		if (post_index > 0) {
-			next_post_dir = files[post_index - 1]
+			next_post_dir = files[post_index + 1]
 		}
 
 		let last_post_dir = null
 		if (post_index < files.length) {
-			next_post_dir = files[post_index + 1]
+			last_post_dir = files[post_index - 1]
 		}
 
 		let previous_posts = files.slice(0, 10)
