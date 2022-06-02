@@ -58,7 +58,7 @@
 	}
 
 	.grey {
-		color: grey !important;
+		color: darkgrey !important;
 	}
 
 	.center {
@@ -74,6 +74,22 @@
 		padding-bottom: .5rem;
 		padding-left: 1rem;
 		border-left: 3px solid darkorange;
+	}
+
+	.tab {
+		color: gray;
+		font-weight: bold;
+		text-decoration: none;
+	}
+	
+	.tab:hover {
+		background-color: darkorange;
+		color: #3a404b;
+	}
+
+	.current_tab {
+		background-color: darkgrey;
+		color: #3a404b;
 	}
 
 	/****** general ids ******/
@@ -111,6 +127,14 @@
 		flex-direction: column;
 		height: 100vh;
 	}
+
+	#sidebar {
+		margin-top: 0;
+		list-style: none;
+		text-align: right;
+		font-size: 2rem;
+		overflow: hidden;
+	}
 }
 
 /****** small screen rules ******/
@@ -119,8 +143,10 @@
 		font-size: 6rem;
 	}
 
-	.h2 {
+	.h2, .tagline {
 		font-size: 4rem;
+		color: darkgrey;
+		font-weight: 700;
 	}
 	
 	.h3 {
@@ -139,12 +165,71 @@
 		font-size: 3rem;
 	}
 
+	.p {
+		font-size: 2.5rem;
+		line-height: 1.5;
+	}
+
+	.topic_tags {
+		display: none;
+	}
+
+	#content_container {
+		margin-left: 7%;
+		margin-right: 7%;
+		line-height: 1.3;
+	}
+
 	#next, #last {
 		font-size: 5rem;
 	}
 
-	#post_list, #main_menu_container {
+	#site_name_container {
 		display: none;
+	}
+
+	#main_menu_container {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: nowrap
+	}
+
+	#main_menu li {
+		display: inline;
+		list-style-type: none;
+		margin-left: 2rem;
+	}
+
+	#sidebar_container {
+		width: 100%;
+		display: flex;
+		overflow: hidden;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+	}
+
+	#sidebar {
+		overflow-x: scroll;
+		white-space: nowrap;
+	}
+
+	#sidebar li {
+		font-size: 3rem;
+		display: inline;
+		list-style-type: none;
+		margin-left: 2rem;
+	}
+
+	#next_last_container {
+		margin-bottom: 25%;
+		padding-left: 5%;
+		padding-right: 5%;
+		font-weight: bold;
+	}
+	
+	#next_last_container a:link {
+		text-decoration: none;
 	}
 }
 
@@ -190,63 +275,30 @@
 		margin: 0;
 	}
 
-	.topics {
-		padding: .1rem .2rem .1rem .2rem;
+	.topic_tag {
 		border-radius: .3rem;
+		padding: .1rem .2rem .1rem .2rem;
 		font-weight: 500;
 		margin-right: .7rem;
-		color: #3a404b;
 		background-color: darkgray;
 		text-decoration: none;
+		color: #3a404b;
+		background-color: darkgray;
 	}
 
 	#sidebar {
-		margin-top: 0;
-		list-style: none;
-		text-align: right;
 		font-size: 2rem;
-		overflow: hidden;
-	}
-
-	.sidebar_entry {
-		color: gray;
-		font-weight: bold;
-		padding-left: 1rem;
-		text-decoration: none;
-	}
-	
-	#sidebar_current {
-		border-left: 3px solid grey;
-	}
-
-	.sidebar_entry:hover, #sidebar_current:hover {
-		border-left: 3px solid darkorange;
 	}
 
 	#main_menu {
 		display: block;
 		padding-left: 3%;
 	}
-	
+
 	#main_menu li {
 		list-style-type: none;
 		display: inline;
 		margin-right: 2%;
-	}
-	
-	#main_menu li a {
-		color: darkgrey;
-		font-weight: bolder;
-		text-decoration: none;
-	}
-
-	#main_menu .current_tab {
-		border-top: 3px solid gray;
-	}
-
-	#main_menu li:hover {
-		border-top: 3px solid darkorange;
-		cursor: pointer;
 	}
 
 	#content {
