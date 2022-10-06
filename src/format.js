@@ -1,3 +1,32 @@
+function insertContent(post, post_data) {
+	if (!post_data || !post_data.metadata) {
+		post_data = {}
+		post_data['metadata'] = {}
+		post_data['html'] = '<html><body>{{content}}</body></html>'
+		post_data.metadata['title'] = ''
+		post_data.metadata['tagline'] = ''
+		post_data.metadata['topics'] = []
+	}
+
+	let body_text = '<div id="content">'
+		+ '<h1 class="h1">'+ post_data.metadata.title + '</h1>'
+		+ '<div class="subtitle">'
+		+ '<span class="tagline">' + post_data.metadata.tagline
+		+ '</span><div class="topic_tags">'
+	for (topic of post_data.metadata.topics) {
+		let url = post_data.host + '/topics/' + topic
+		body_text += '<a href="http://' + url + '" class="topic_tag">'
+				  + topic + '</a>'
+	}
+	body_text += '</div></div>'
+	body_text += post + '</div>'
+	post_data.html = post_data.html.replace(/{{tagline}}/, '"'
+		+ post_data.metadata.tagline + '"')
+	post_data.html = post_data.html.replace(/{{title}}/, '"strlog: '
+		+ post_data.metadata.title + '"')
+	return post_data.html.replace(/{{content}}/, body_text)
+}
+
 function insertSidebar(html, post_data, make_translucent) {
 	const list_regex = /{{sidebar}}/
 	let post_list_string = '<ul id="sidebar">'
@@ -147,26 +176,6 @@ function insertFooter(post, lastPost, nextPost) {
 	return post.replace(footer_regex, footer)
 }
 
-function insertContent(post, post_data) {
-	let body_text = '<div id="content">'
-		+ '<h1 class="h1">'+ post_data.metadata.title + '</h1>'
-		+ '<div class="subtitle">'
-		+ '<span class="tagline">' + post_data.metadata.tagline
-		+ '</span><div class="topic_tags">'
-	for (topic of post_data.metadata.topics) {
-		let url = post_data.host + '/topics/' + topic
-		body_text += '<a href="http://' + url + '" class="topic_tag">'
-				  + topic + '</a>'
-	}
-	body_text += '</div></div>'
-	body_text += post + '</div>'
-	post_data.html = post_data.html.replace(/{{tagline}}/, '"'
-		+ post_data.metadata.tagline + '"')
-	post_data.html = post_data.html.replace(/{{title}}/, '"strlog: '
-		+ post_data.metadata.title + '"')
-	return post_data.html.replace(/{{content}}/, body_text)
-}
-
 function addEndMark(post) {
 	return post + ' ▣'
 }
@@ -264,5 +273,6 @@ function formatTopic(page_data, fn) {
 
 module.exports = {
 	formatPost: formatPost,
-	formatTopic: formatTopic
+	formatTopic: formatTopic,
+	insertContent: insertContent
 }
