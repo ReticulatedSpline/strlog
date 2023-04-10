@@ -13,24 +13,15 @@
 		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
 		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 	</head>
-	<body id="body">
-		<div id="body_container">
-			<div id="site_name_container">
-				<h1 class="h1">strlog</h1>
-			</div>
-			<div id="main_menu_container">
-				{{header}}
-			</div>
-			<div id="sidebar_container">
-				{{sidebar}}
-			</div>
-			<div id="content_container">
-				{{content}}
-			</div>
-			<div id="spacer_container"></div>
-			<div id="next_last_container">
-				{{footer}}
-			</div>
+	<body class="center" id="site_container">
+		<div id="sidebar_container">
+			<h1 class="h1" id="site_name">strlog</h1>
+			{{sidebar}}
+		</div>
+		<div id="content_container">
+			{{header}}
+			{{content}}
+			{{footer}}
 		</div>
 	</body>
 </html>

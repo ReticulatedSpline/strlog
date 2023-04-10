@@ -81,7 +81,7 @@ function subLinks(post) {
 function subImages(post, date) {
 	const image_regex = /!\[(.*?)\]\((.+?)\)/g
 	const image_html =
-	'<div class="body_photo_div">' +
+	'<div class="center body_photo_div">' +
 	'<img class="body_photo" src="' + './posts/' + date + '/$2" alt="$1">' +
 	'<p class="p body_alt_text">$1</p></div>'
 	return post.replace(image_regex, image_html)
@@ -200,6 +200,7 @@ function insertHeader(post, post_data) {
 		header += tabs[index] + '</a></li>'
 		index += 1
 	}
+	header += "</ul>"
 	return post.replace(/{{header}}/, header)
 }
 

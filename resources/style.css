@@ -1,366 +1,244 @@
-/****** general rules ******/
-@media screen {
-	.h1 {
-		color: darkorange;
-	}
-
-	.h2, .h3, .h4, .h5, .h6 {
-		color: darkgrey;
-		margin-bottom: 0;
-	}
-
-	.hr {
-		border-top: 2px solid white;
-	}
-
-	.pre {
-		overflow: auto;
-		font-family: 'Ubuntu Mono', monospace;
-	}
-
-	.strong {
-		font-weight: 800;
-	}
-
-	.ul {
-		list-style-type: square;
-	}
-
-	.link {
-		text-decoration: none;
-	}
-
-	.link:hover {
-		text-decoration: underline;
-	}
-
-	.body_link {
-		color: darkorange;
-	}
-
-	.body_photo {
-		width: 100%;
-		object-fit: contain;
-		border: 1px solid white;
-	}
-
-	.body_photo_div {
-		margin-top: 1%;
-		display: block;
-		max-width: 100%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.body_alt_text {
-		margin-top: 0%;
-		font-style: italic;
-	}
-
-	.grey {
-		color: darkgrey !important;
-	}
-
-	.center {
-		margin-left: auto;
-		margin-right: auto;
-		display: block;
-	}
-
-	.quote {
-		font-style: oblique;
-		display: block;
-		padding-top: .5rem;
-		padding-bottom: .5rem;
-		padding-left: 1rem;
-		border-left: 3px solid darkorange;
-	}
-
-	.tab {
-		color: gray;
-		font-weight: bold;
-		text-decoration: none;
-	}
-	
-	.tab:hover {
-		background-color: darkorange;
-		color: #3a404b;
-	}
-
-	.current_tab {
-		background-color: darkgrey;
-		color: #3a404b;
-	}
-
-	/****** general ids ******/
-	body {
-		/** prevents white flash on reload **/
-		background: #3a404b;
-	}
-
-	#body {
-		color: whitesmoke;
-		font-weight: lighter;
-		background-color: #3a404b;
-		font-family: 'Ubuntu', sans-serif;
-	}
-
-	#logo {
-		margin-top: 0px;
-		margin-bottom: 0px;
-	}
-
-	#next {
-		float: right;
-		color:darkorange;
-	}
-
-	#last {
-		float: left;
-		color:darkorange;
-	}
-
-	#error {
-		display:flex;
-		align-items: center;
-		justify-content: center; 
-		flex-direction: column;
-		height: 100vh;
-	}
-
-	#sidebar {
-		margin-top: 0;
-		list-style: none;
-		text-align: right;
-		font-size: 2rem;
-		overflow: hidden;
-	}
+/** tags **/
+body {
+	/** prevents white flash on reload **/
+	background: #3a404b;
 }
 
-/****** small screen rules ******/
-@media (max-width:767px) {
-	.h1 {
-		font-size: 6rem;
-	}
+/** ids **/
+#site_container {
+	align-items: baseline;
+	display: flex;
+	flex-wrap: nowrap;
+	margin-top: 5rem;
+	font-weight: lighter;
+	background-color: #3a404b;
+	font-family: "Ubuntu", sans-serif;
+}
 
-	.h2, .tagline {
-		font-size: 4rem;
-		color: darkgrey;
-		font-weight: 700;
-	}
-	
-	.h3 {
-		font-size: 4rem;
-	}
-
-	.h4 {
-		font-size: 3.5rem;
-	}
-
-	.h5 {
-		font-size: 3.3rem;
-	}
-
-	.h5 {
-		font-size: 3rem;
-	}
-
-	.p {
-		font-size: 2.5rem;
-		line-height: 1.5;
-	}
-
-	.topic_tags {
-		display: none;
-	}
-
-	#content_container {
-		margin-left: 7%;
-		margin-right: 7%;
-		line-height: 1.3;
-	}
-
-	#next, #last {
-		font-size: 5rem;
-	}
-
-	#site_name_container {
-		display: none;
-	}
-
-	#main_menu_container {
-		width: 100%;
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: nowrap
-	}
-
-	#main_menu li {
-		display: inline;
-		list-style-type: none;
-		margin-left: 2rem;
-	}
-
+@media (min-width: 801px) {
 	#sidebar_container {
-		width: 100%;
-		display: flex;
-		overflow: hidden;
-		flex-wrap: nowrap;
-		justify-content: space-between;
-	}
-
-	#sidebar {
-		overflow-x: scroll;
-		white-space: nowrap;
-	}
-
-	#sidebar li {
-		font-size: 3rem;
-		display: inline;
-		list-style-type: none;
-		margin-left: 2rem;
-	}
-
-	#next_last_container {
-		margin-bottom: 25%;
-		padding-left: 5%;
-		padding-right: 5%;
-		font-weight: bold;
-	}
-	
-	#next_last_container a:link {
-		text-decoration: none;
-	}
-}
-
-/****** large screen rules ******/
-@media (min-width:768px) {
-	.h1 {
-		font-size: 2rem;
-		margin-bottom: 0;
-	}
-
-	.h2 {
-		font-size: 2rem;
-	}
-
-	.h3 {
-		font-size: 2rem;
-	}
-
-	.h4 {
-		font-size: 1.8rem;
-	}
-
-	.h5 {
-		font-size: 1.6rem;
-	}
-
-	.h6 {
-		margin: 0;
-		font-size: 1.3rem;
-	}
-
-	.p {
-		margin-top: 0;
-	}
-
-	.subtitle {
-		margin-bottom: 1rem;
-	}
-
-	.tagline {
-		font-size: 1.4rem;
-		color: darkgray;
-		margin: 0;
-	}
-
-	.topic_tag {
-		border-radius: .3rem;
-		padding: .1rem .2rem .1rem .2rem;
-		font-weight: 500;
-		margin-right: .7rem;
-		background-color: darkgray;
-		text-decoration: none;
-		color: #3a404b;
-		background-color: darkgray;
-	}
-
-	#sidebar {
-		font-size: 2rem;
-	}
-
-	#main_menu {
-		display: block;
-		padding-left: 3%;
-	}
-
-	#main_menu li {
-		list-style-type: none;
-		display: inline;
-		margin-right: 2%;
-	}
-
-	#content {
-		font-size: 1.1rem;
-		line-height: 1.8;
-		padding-left: 3%;
-		padding-right: 25%;
-	}
-
-	#next {
-		float: right;
-		font-size: 2rem;
-		padding-right: 20%;
-		text-decoration: none;
-	}
-	
-	#last {
-		float: left;
-		font-size: 2rem;
-		padding-left: 3%;
-		text-decoration: none;
-	}
-
-	/****** flex box layout ******/
-	#body_container {
-		display: flex;
-		flex-flow: row wrap;
-		align-items: baseline;
-		margin-top: 7%;
-		margin-left:5%;
-		margin-bottom: 7%;
-	}
-	 
-	#site_name_container {
 		order: 1;
-		flex: 1 20%;
-		text-align: right;
+		flex: 1 0 15%;
+		margin-left: auto;
+		max-width: fit-content;
 	}
- 
-	#main_menu_container {
-		order: 2;
-		flex: 1 80%;
-	}
+}
 
+@media(max-width: 800px) {
 	#sidebar_container {
-		order: 3;
-		flex: 2 20%;
+		visibility: hidden;
 	}
-	
-	#content_container {
-		order: 4;
-		flex: 2 80%;
-	}
+}
 
-	#spacer_container {
-		order: 5;
-		flex: 3 20%;
-		flex-shrink: 3;
-	}
+#content_container {
+	order: 2;
+	flex: 1 0 75%;
+	padding-left: 4rem;
+	max-width: 32rem;
+	margin-right: auto;
+	color: whitesmoke;
+}
 
-	#next_last_container {
-		order: 6;
-		flex: 3 80%;
-	}
+#site_name {
+	text-align: right;
+	margin-bottom: 2rem;
+}
+
+#sidebar {
+	margin-top: 0;
+	list-style: none;
+	text-align: right;
+	font-size: 2rem;
+	overflow: hidden;
+}
+
+#sidebar {
+	font-size: 2rem;
+}
+
+#main_menu {
+	display: block;
+	padding-left: 0;
+}
+
+#main_menu li {
+	list-style-type: none;
+	display: inline;
+	margin-right: 2rem;
+}
+
+#content {
+	font-size: 1.1rem;
+	line-height: 1.8;
+}
+
+
+#next {
+	float: right;
+	color: darkorange;
+	font-size: 2rem;
+	text-decoration: none;
+}
+
+#last {
+	float: left;
+	color: darkorange;
+	font-size: 2rem;
+	text-decoration: none;
+}
+
+#error {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 100vh;
+}
+
+/** classes **/
+.h1 {
+	color: darkorange;
+}
+
+.h1 {
+	font-size: 2rem;
+	margin-bottom: 0;
+}
+
+.h2 {
+	font-size: 2rem;
+	color: darkgrey;
+	margin-bottom: 0;
+}
+
+.h3 {
+	font-size: 2rem;
+	color: darkgrey;
+	margin-bottom: 0;
+}
+
+.h4 {
+	font-size: 1.8rem;
+	color: darkgrey;
+	margin-bottom: 0;
+}
+
+.h5 {
+	font-size: 1.6rem;
+	color: darkgrey;
+	margin-bottom: 0;
+}
+
+.h6 {
+	margin: 0;
+	font-size: 1.3rem;
+	color: darkgrey;
+	margin-bottom: 0;
+}
+
+.hr {
+	border-top: 2px solid white;
+}
+
+.pre {
+	overflow: auto;
+	font-family: "Ubuntu Mono", monospace;
+}
+
+.strong {
+	font-weight: 800;
+}
+
+.ul {
+	list-style-type: square;
+}
+
+.link {
+	text-decoration: none;
+}
+
+.link:hover {
+	text-decoration: underline;
+}
+
+.body_link {
+	color: darkorange;
+}
+
+.body_photo {
+	width: 100%;
+	object-fit: contain;
+	border: 1px solid white;
+}
+
+.body_photo_div {
+	margin-top: 1rem;
+	display: block;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.body_alt_text {
+	margin-top: 0%;
+	font-style: italic;
+}
+
+.grey {
+	color: darkgrey !important;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.quote {
+	font-style: oblique;
+	display: block;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 1rem;
+	border-left: 3px solid darkorange;
+}
+
+.tab {
+	color: gray;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.tab:hover {
+	background-color: darkorange;
+	color: #3a404b;
+}
+
+.current_tab {
+	background-color: darkgrey;
+	color: #3a404b;
+}
+
+.p {
+	margin-top: 0;
+}
+
+.subtitle {
+	margin-bottom: 1rem;
+}
+
+.tagline {
+	font-size: 1.4rem;
+	color: darkgray;
+	margin: 0;
+}
+
+.topic_tag {
+	border-radius: 0.3rem;
+	padding: 0.1rem 0.2rem 0.1rem 0.2rem;
+	font-weight: 500;
+	margin-right: 0.7rem;
+	background-color: darkgray;
+	text-decoration: none;
+	color: #3a404b;
 }
