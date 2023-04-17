@@ -134,6 +134,24 @@ function routeSpecificPost(host, url, res) {
 	})
 }
 
+function shuffle(array) {
+	var currentIndex = array.length, temporaryValue, randomIndex;
+  
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+  
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+  
+		// And swap it with the current element.
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
+	return array;
+}
+
 function routeAbout(req, res) {
 	console.log('About page requested.')
 	fs.readFile('./posts/about/post.md', 'utf8', (err, markdown) => {
@@ -141,21 +159,30 @@ function routeAbout(req, res) {
 			console.log('Error reading ./posts/about:', error)
 			return
 		}
-		let index = parseInt(Math.random() * 10) + 3
+		let link_count = parseInt(Math.random() * 10)
+		let metadata_path = path.join(app_root, './posts/about/metadata.json')
+		let metadata = require(metadata_path)
+		let sidebar_links = metadata.links
 		let post_list = []
-		while (index > 0) {
-			post_list.push('▒'.repeat(parseInt(Math.random() * 10)))
-			index -= 1
+		while (link_count > 0) {
+			let random_number = parseInt(Math.random() * 10) + 1
+			let sidebar_string = '<a class="tab" href="' + sidebar_links[link_count] + '">'
+			sidebar_string += '▒'.repeat(random_number)
+			sidebar_string += '</a>'
+			post_list.push(sidebar_string)
+			link_count -= 1
 		}
 
+		console.log(post_list)
+
 		fs.readFile(html_path, 'utf8', (err, html) => {
-			let metadata_path = path.join(app_root, './posts/about/metadata.json')
+			
 			let page_data = {
 				html: html,
 				host: req.headers.host,
 				directory: 'about',
 				markdown: markdown,
-				metadata: require(metadata_path),
+				metadata: metadata,
 				previous_posts: post_list,
 				current_tab: 'about',
 				no_url: true

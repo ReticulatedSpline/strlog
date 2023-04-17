@@ -53,10 +53,6 @@ body {
 	overflow: hidden;
 }
 
-#sidebar {
-	font-size: 2rem;
-}
-
 #main_menu {
 	display: block;
 	padding-left: 0;
@@ -89,6 +85,7 @@ body {
 }
 
 #error {
+	color: whitesmoke;
 	display: flex;
 	align-items: center;
 	justify-content: center;
