@@ -1,6 +1,4 @@
-const { dir } = require('console')
 const fs = require('fs')
-const http = require('http')
 const https = require('http')
 const path = require('path')
 const { formatPost, formatTopic } = require('./format.js')
@@ -15,36 +13,16 @@ const html_path = 'resources/page.html'
 const error_path = 'resources/error.html'
 
 const port = process.env.PORT || 5000
-//var posts = cacheAllPosts();
-//console.log('Loaded', posts.length, 'posts.')
-
-function sortByISODate(a, b) {
-	let options = {numeric: true, sensitivity: 'base'}
-	return b.localeCompare(a, undefined, options)
-}
-
-function cacheAllPosts() {
-	let post_dirs = fs.readdirSync(path.join(app_root, 'posts'))
-	// natural sort file names (should be ISO dates!)
-	post_dirs.sort(sortByISODate)
-	// drop hidden dir names, alphabetic dir names
-	post_dirs = post_dirs.filter(item=> !/^[A-z\.].*/.test(item))
-	let index = 0
-	let posts = []
-	for (directory in post_dirs) {
-		let post = {
-
-		}
-		index += 1
-		posts.push(post)
-	}
-	return post_dirs
-}
 
 let server = https.createServer(function (req, res) {
 	const host = req.headers.host
 
 	if (req.url == '/') {
+		console.log('Redirecting to https')
+		res.writeHead(301, {"Location": "https://strlog.net"})
+		res.end()
+	}
+	else if (req.url.startsWith("https")) {
 		routeMostRecentPost(res)
 	}
 	else if (req.url.match(/\d{4}-\d{2}-\d{2}$/)) {
