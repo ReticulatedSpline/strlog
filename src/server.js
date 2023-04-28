@@ -1,4 +1,3 @@
-const { dir } = require('console')
 const fs = require('fs')
 const http = require('http')
 const path = require('path')
@@ -14,31 +13,6 @@ const html_path = 'resources/page.html'
 const error_path = 'resources/error.html'
 
 const port = process.env.PORT || 5000
-//var posts = cacheAllPosts();
-//console.log('Loaded', posts.length, 'posts.')
-
-function sortByISODate(a, b) {
-	let options = {numeric: true, sensitivity: 'base'}
-	return b.localeCompare(a, undefined, options)
-}
-
-function cacheAllPosts() {
-	let post_dirs = fs.readdirSync(path.join(app_root, 'posts'))
-	// natural sort file names (should be ISO dates!)
-	post_dirs.sort(sortByISODate)
-	// drop hidden dir names, alphabetic dir names
-	post_dirs = post_dirs.filter(item=> !/^[A-z\.].*/.test(item))
-	let index = 0
-	let posts = []
-	for (directory in post_dirs) {
-		let post = {
-
-		}
-		index += 1
-		posts.push(post)
-	}
-	return post_dirs
-}
 
 let server = http.createServer(function (req, res) {
 	const host = req.headers.host
@@ -162,7 +136,7 @@ function routeAbout(req, res) {
 		let link_count = parseInt(Math.random() * 10)
 		let metadata_path = path.join(app_root, './posts/about/metadata.json')
 		let metadata = require(metadata_path)
-		let sidebar_links = metadata.links
+		let sidebar_links = shuffle(metadata.links)
 		let post_list = []
 		while (link_count > 0) {
 			let random_number = parseInt(Math.random() * 10) + 1
