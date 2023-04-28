@@ -133,13 +133,13 @@ function routeAbout(req, res) {
 			console.log('Error reading ./posts/about:', error)
 			return
 		}
-		let link_count = parseInt(Math.random() * 10)
+		let link_count = parseInt(Math.random() * 10) + 3
 		let metadata_path = path.join(app_root, './posts/about/metadata.json')
 		let metadata = require(metadata_path)
 		let sidebar_links = shuffle(metadata.links)
 		let post_list = []
 		while (link_count > 0) {
-			let random_number = parseInt(Math.random() * 10) + 1
+			let random_number = parseInt(Math.random() * 10) + 3
 			let sidebar_string = '<a class="tab" href="' + sidebar_links[link_count] + '">'
 			sidebar_string += '▒'.repeat(random_number)
 			sidebar_string += '</a>'
