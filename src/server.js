@@ -1,6 +1,7 @@
 const { dir } = require('console')
 const fs = require('fs')
 const http = require('http')
+const https = require('http')
 const path = require('path')
 const { formatPost, formatTopic } = require('./format.js')
 
@@ -40,7 +41,7 @@ function cacheAllPosts() {
 	return post_dirs
 }
 
-let server = http.createServer(function (req, res) {
+let server = https.createServer(function (req, res) {
 	const host = req.headers.host
 
 	if (req.url == '/') {
