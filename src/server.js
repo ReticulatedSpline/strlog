@@ -1,6 +1,8 @@
 const fs = require('fs')
-const http = require('http')
 const path = require('path')
+const http = require('http')
+const https = require('https');
+
 const { formatPost, formatTopic } = require('./format.js')
 
 const CSS_MIME  = { 'Content-Type': 'text/css' }
@@ -11,8 +13,6 @@ const PNG_MIME  = { 'Content-Type': 'image/png' }
 const app_root = path.join(__dirname, '../')
 const html_path = 'resources/page.html'
 const error_path = 'resources/error.html'
-
-const port = process.env.PORT || 5000
 
 let server = http.createServer(function (req, res) {
 	const host = req.headers.host
@@ -174,40 +174,6 @@ function routeError(req, res) {
 	})
 }
 
-function getAllPostsByDate(fn) {
-	fs.readdir(path.join(app_root, 'posts'), (err, files) => {
-		if (err) {
-			console.log('Error fetching files: ', err)
-		}
-		else {
-			// natural sort file names (should be ISO dates!)
-			files.sort(function(a, b) {
-				return b.localeCompare(a, undefined, {
-					numeric: true,
-					sensitivity: 'base'
-				})
-			})
-			// drop hidden dir names, alphabetic dir names
-			files = files.filter(item=> !/^[A-z\.].*/.test(item))
-			fn(files)
-		}
-	})
-}
-
-function getMetadataFiles(dir, files_) {
-	files_ = files_ || []
-	var files = fs.readdirSync(dir)
-	for (var i in files){
-		var name = dir + '/' + files[i]
-		if (fs.statSync(name).isDirectory()) {
-			getMetadataFiles(name, files_)
-		} else if (name.endsWith('metadata.json')) {
-			files_.push(name)
-		}
-	}
-	return files_
-}
-
 function routeSpecificTopic(req, res) {
 	let topics = {}
 	let current_topic = {}
@@ -267,6 +233,40 @@ function routeAllTopics(req, res) {
 	buildTopicResponse(req, res, topics, current_topic)
 }
 
+function getAllPostsByDate(fn) {
+	fs.readdir(path.join(app_root, 'posts'), (err, files) => {
+		if (err) {
+			console.log('Error fetching files: ', err)
+		}
+		else {
+			// natural sort file names (should be ISO dates!)
+			files.sort(function(a, b) {
+				return b.localeCompare(a, undefined, {
+					numeric: true,
+					sensitivity: 'base'
+				})
+			})
+			// drop hidden dir names, alphabetic dir names
+			files = files.filter(item=> !/^[A-z\.].*/.test(item))
+			fn(files)
+		}
+	})
+}
+
+function getMetadataFiles(dir, files_) {
+	files_ = files_ || []
+	var files = fs.readdirSync(dir)
+	for (var i in files){
+		var name = dir + '/' + files[i]
+		if (fs.statSync(name).isDirectory()) {
+			getMetadataFiles(name, files_)
+		} else if (name.endsWith('metadata.json')) {
+			files_.push(name)
+		}
+	}
+	return files_
+}
+
 function buildTopicResponse(req, res, topics, current_topic) {
 	fs.readFile(html_path, 'utf8', (err, html) => {
 		page_data = {
@@ -310,5 +310,7 @@ function sendContent(content, mime, res) {
 	res.end(content)
 }
 
+// If in dyno use provided port; else default to 5000
+const port = process.env.PORT || 5000
 server.listen(port)
 console.log('Server online and listening at port ' + port)
