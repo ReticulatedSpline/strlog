@@ -12,7 +12,16 @@ body {
 	margin-top: 5rem;
 	font-weight: lighter;
 	background-color: #3a404b;
-	font-family: "Ubuntu", sans-serif;
+	font-family: ui-monospace, 
+				 Menlo, Monaco, 
+				 "Cascadia Mono", "Segoe UI Mono", 
+				 "Roboto Mono", 
+				 "Oxygen Mono", 
+				 "Ubuntu Monospace", 
+				 "Source Code Pro",
+				 "Fira Mono", 
+				 "Droid Sans Mono", 
+				 "Courier New", monospace;
 }
 
 @media (min-width: 801px) {
@@ -140,7 +149,6 @@ body {
 
 .pre {
 	overflow: auto;
-	font-family: "Ubuntu Mono", monospace;
 }
 
 .strong {
