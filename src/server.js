@@ -1,7 +1,6 @@
 const fs = require('fs')
 const path = require('path')
 const http = require('http')
-const https = require('https');
 
 const { formatPost, formatTopic } = require('./format.js')
 
@@ -10,12 +9,16 @@ const HTML_MIME = { 'Content-Type': 'text/html' }
 const ICO_MIME  = { 'Content-Type': 'image/x-icon' }
 const JPG_MIME  = { 'Content-Type': 'image/jpg' }
 const PNG_MIME  = { 'Content-Type': 'image/png' }
-const app_root = path.join(__dirname, '../')
-const html_path = 'resources/page.html'
-const error_path = 'resources/error.html'
+const APP_ROOT = path.join(__dirname, '../')
+const HTML_PATH = 'resources/page.html'
+const ERROR_PATH = 'resources/error.html'
+const IS_PROD = process.argv[2] == 'prod' ? true : false;
 
 let server = http.createServer(function (req, res) {
-	const host = req.headers.host
+	host = req.headers.host;
+	if (IS_PROD) {
+		host = 'strlog.net'
+	}
 
 	if (req.url == '/') {
 		routeMostRecentPost(res)
@@ -24,32 +27,32 @@ let server = http.createServer(function (req, res) {
 		routeSpecificPost(host, req.url, res)
 	}
 	else if (req.url.endsWith('/topics')) {
-		routeAllTopics(req, res)
+		routeAllTopics(req, res, host)
 	}
 	else if (req.url.match(/\/topics\/[A-z]+$/)) {
-		routeSpecificTopic(req, res)
+		routeSpecificTopic(req, res, host)
 	}
 	else if (req.url.endsWith('/about')) {
-		routeAbout(req, res)
+		routeAbout(req, res, host)
 	}
 	else if (req.url.endsWith('/style.css')) {
-		let uri = path.join(app_root, 'resources', 'style.css')
+		let uri = path.join(APP_ROOT, 'resources', 'style.css')
 		routeCSS(uri, res)
 	}
 	else if (req.url == '/favicon.ico') {
-		let uri = path.join(app_root, 'resources', 'favicon.ico')
+		let uri = path.join(APP_ROOT, 'resources', 'favicon.ico')
 		routeImage(uri, ICO_MIME, res)
 	}
 	else if (req.url == '/icon.png') {
-		let uri = path.join(app_root, 'resources', 'icon.png')
+		let uri = path.join(APP_ROOT, 'resources', 'icon.png')
 		routeImage(uri, PNG_MIME, res)
 	}
 	else if (req.url.endsWith('.jpg') || req.url.endsWith('.jpeg')) {
-		let uri = path.join(app_root, req.url)
+		let uri = path.join(APP_ROOT, req.url)
 		routeImage(uri, JPG_MIME, res)
 	}
 	else if (req.url.endsWith('.png')) {
-		let uri = path.join(app_root, req.url)
+		let uri = path.join(APP_ROOT, req.url)
 		routeImage(uri, PNG_MIME, res)
 	}
 	else {
@@ -70,7 +73,7 @@ function routeImage(uri, mimetype, res) {
 }
 
 function routeMostRecentPost(res) {
-	console.log('Redirecting to most recent post')
+	console.log('request: most recent post')
 	getAllPostsByDate((files) => {
 		res.writeHead(302, {'Location': files[0]})
 		res.end()
@@ -83,7 +86,7 @@ function routeSpecificPost(host, url, res) {
 		let post_index = 0
 		for (const [index, post] of files.entries()) {
 			if (post === url.substring(1)) {
-				console.log('Post', post, 'requested')
+				console.log('request: post', post)
 				post_index = index
 			}
 		}
@@ -126,15 +129,15 @@ function shuffle(array) {
 	return array;
 }
 
-function routeAbout(req, res) {
-	console.log('About page requested.')
+function routeAbout(req, res, host) {
+	console.log('request: about page')
 	fs.readFile('./posts/about/post.md', 'utf8', (err, markdown) => {
 		if (err) {
-			console.log('Error reading ./posts/about:', error)
+			console.log('error: about page\n', error)
 			return
 		}
 		let link_count = parseInt(Math.random() * 10) + 3
-		let metadata_path = path.join(app_root, './posts/about/metadata.json')
+		let metadata_path = path.join(APP_ROOT, './posts/about/metadata.json')
 		let metadata = require(metadata_path)
 		let sidebar_links = shuffle(metadata.links)
 		let post_list = []
@@ -147,13 +150,11 @@ function routeAbout(req, res) {
 			link_count -= 1
 		}
 
-		console.log(post_list)
-
-		fs.readFile(html_path, 'utf8', (err, html) => {
+		fs.readFile(HTML_PATH, 'utf8', (err, html) => {
 			
 			let page_data = {
 				html: html,
-				host: req.headers.host,
+				host: host,
 				directory: 'about',
 				markdown: markdown,
 				metadata: metadata,
@@ -168,27 +169,27 @@ function routeAbout(req, res) {
 }
 
 function routeError(req, res) {
-	console.log('Invalid route ' + req.url)
-	fs.readFile(error_path, 'utf8', (err, html) => {
+	console.log('error: invalid route\n', req.url)
+	fs.readFile(ERROR_PATH, 'utf8', (err, html) => {
 		sendContent(html, HTML_MIME, res)
 	})
 }
 
-function routeSpecificTopic(req, res) {
+function routeSpecificTopic(req, res, host) {
 	let topics = {}
 	let current_topic = {}
 	let url_parts = req.url.split('/')
 	let topic_name = url_parts[url_parts.length - 1]
-	console.log('Requested topic', topic_name)
+	console.log('request: topic ', topic_name)
 	for (file of getMetadataFiles('./posts')) {
-		metadata = require(path.join(app_root, file))
+		metadata = require(path.join(APP_ROOT, file))
 		for (topic of metadata.topics) {
 			// gross hack to grab the date string out of the path :(
 			let directory = file.split('/')[2]
 			let item = {
 				title: metadata.title,
 				tagline: metadata.tagline,
-				url: path.join(req.headers.host, directory)
+				url: path.join(host, directory)
 			}
 			if (topics[topic]) {
 				topics[topic].add(item)
@@ -202,19 +203,19 @@ function routeSpecificTopic(req, res) {
 		}
 	}
 
-	buildTopicResponse(req, res, topics, current_topic)
+	buildTopicResponse(req, res, host, topics, current_topic)
 }
 
-function routeAllTopics(req, res) {
+function routeAllTopics(req, res, host) {
 	let topics = {}
 	let current_topic = {}
-	console.log('Topic list requested')
+	console.log('request: topic list')
 	for (file of getMetadataFiles('./posts')) {
-		metadata = require(path.join(app_root, file))
+		metadata = require(path.join(APP_ROOT, file))
 		for (topic of metadata.topics) {
 			// gross hack to grab the date string out of the path :(
 			let directory = file.split('/')[2]
-			let url = path.join(req.headers.host, directory)
+			let url = path.join(host, directory)
 			let item = {
 				title: metadata.title,
 				tagline: metadata.tagline,
@@ -230,13 +231,13 @@ function routeAllTopics(req, res) {
 		}
 	}
 
-	buildTopicResponse(req, res, topics, current_topic)
+	buildTopicResponse(req, res, host, topics, current_topic)
 }
 
 function getAllPostsByDate(fn) {
-	fs.readdir(path.join(app_root, 'posts'), (err, files) => {
+	fs.readdir(path.join(APP_ROOT, 'posts'), (err, files) => {
 		if (err) {
-			console.log('Error fetching files: ', err)
+			console.log('error: post list\n', err)
 		}
 		else {
 			// natural sort file names (should be ISO dates!)
@@ -267,11 +268,11 @@ function getMetadataFiles(dir, files_) {
 	return files_
 }
 
-function buildTopicResponse(req, res, topics, current_topic) {
-	fs.readFile(html_path, 'utf8', (err, html) => {
+function buildTopicResponse(req, res, host, topics, current_topic) {
+	fs.readFile(HTML_PATH, 'utf8', (err, html) => {
 		page_data = {
 			html: html,
-			host: req.headers.host,
+			host: host,
 			topics: topics,
 			current_topic: current_topic,
 			current_tab: 'topics'
@@ -282,8 +283,8 @@ function buildTopicResponse(req, res, topics, current_topic) {
 }
 
 function buildPostResponse(host, post_dir, previous_posts, next_post, last_post, fn) {
-	const metadata_path = path.join(app_root, './posts', post_dir, 'metadata.json')
-	const markdown_path = path.join(app_root, './posts', post_dir, 'post.md')
+	const metadata_path = path.join(APP_ROOT, './posts', post_dir, 'metadata.json')
+	const markdown_path = path.join(APP_ROOT, './posts', post_dir, 'post.md')
 
 	let post_data = {
 		host: host,
@@ -291,12 +292,12 @@ function buildPostResponse(host, post_dir, previous_posts, next_post, last_post,
 		previous_posts: previous_posts,
 		last_post_url: last_post,
 		next_post_url: next_post,
-		html_dir: html_path,
+		html_dir: HTML_PATH,
 		metadata: require(metadata_path),
 		current_tab: 'posts'
 	}
 
-	fs.readFile(html_path, 'utf8', (err, html) => {
+	fs.readFile(HTML_PATH, 'utf8', (err, html) => {
 		post_data.html = html
 		fs.readFile(markdown_path, 'utf8', (err, markdown) => {
 			post_data.markdown = markdown
@@ -310,7 +311,7 @@ function sendContent(content, mime, res) {
 	res.end(content)
 }
 
-// If in dyno use provided port; else default to 5000
-const port = process.env.PORT || 5000
+const port = 5000
+mode_string = IS_PROD ? 'production' : 'local'
 server.listen(port)
-console.log('Server online and listening at port ' + port)
+console.log('server running in ' + mode_string + ' mode and listening on port ' + port)

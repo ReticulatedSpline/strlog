@@ -4,7 +4,8 @@
   "description": "a small webserver",
   "main": "server.js",
   "scripts": {
-    "start": "node src/server.js",
+    "prod": "node src/server.js prod",
+    "local": "node src/server.js local",
     "test": "node test/test.js"
   },
   "repository": {
