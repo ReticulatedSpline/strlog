@@ -86,7 +86,7 @@ function routeSpecificPost(host, url, res) {
 		let post_index = 0
 		for (const [index, post] of files.entries()) {
 			if (post === url.substring(1)) {
-				logConsole('request: post', post)
+				logConsole('request: post ' + post)
 				post_index = index
 			}
 		}
@@ -133,7 +133,7 @@ function routeAbout(req, res, host) {
 	logConsole('request: about page')
 	fs.readFile('./posts/about/post.md', 'utf8', (err, markdown) => {
 		if (err) {
-			logConsole('error: about page\n', error)
+			logConsole('error: about page ' + error)
 			return
 		}
 		let link_count = parseInt(Math.random() * 10) + 3
@@ -169,7 +169,7 @@ function routeAbout(req, res, host) {
 }
 
 function routeError(req, res) {
-	logConsole('error: invalid route\n', req.url)
+	logConsole('error: invalid route ' + req.url)
 	fs.readFile(ERROR_PATH, 'utf8', (err, html) => {
 		sendContent(html, HTML_MIME, res)
 	})
@@ -180,7 +180,7 @@ function routeSpecificTopic(req, res, host) {
 	let current_topic = {}
 	let url_parts = req.url.split('/')
 	let topic_name = url_parts[url_parts.length - 1]
-	logConsole('request: topic ', topic_name)
+	logConsole('request: topic ' + topic_name)
 	for (file of getMetadataFiles('./posts')) {
 		metadata = require(path.join(APP_ROOT, file))
 		for (topic of metadata.topics) {
@@ -237,7 +237,7 @@ function routeAllTopics(req, res, host) {
 function getAllPostsByDate(fn) {
 	fs.readdir(path.join(APP_ROOT, 'posts'), (err, files) => {
 		if (err) {
-			logConsole('error: post list\n', err)
+			logConsole('error: post list ' + err)
 		}
 		else {
 			// natural sort file names (should be ISO dates!)
