@@ -1,53 +1,96 @@
-/** tags **/
 body {
 	/** prevents white flash on reload **/
 	background: #3a404b;
 }
 
-/** ids **/
-#site_container {
-	align-items: baseline;
-	display: flex;
-	flex-wrap: nowrap;
-	margin-top: 5rem;
-	font-weight: lighter;
-	background-color: #3a404b;
-	font-family: ui-monospace, 
-				 Menlo, Monaco, 
-				 "Cascadia Mono", "Segoe UI Mono", 
-				 "Roboto Mono", 
-				 "Oxygen Mono", 
-				 "Ubuntu Monospace", 
-				 "Source Code Pro",
-				 "Fira Mono", 
-				 "Droid Sans Mono", 
-				 "Courier New", monospace;
-}
-
+/* desktop widescreen */
 @media (min-width: 801px) {
+	#site_container {
+		align-items: baseline;
+		display: flex;
+		flex-wrap: nowrap;
+		margin-top: 5rem;
+		font-weight: lighter;
+		background-color: #3a404b;
+		font-family: ui-monospace, 
+					 Menlo, Monaco, 
+					 "Cascadia Mono", "Segoe UI Mono", 
+					 "Roboto Mono", 
+					 "Oxygen Mono", 
+					 "Ubuntu Monospace", 
+					 "Source Code Pro",
+					 "Fira Mono", 
+					 "Droid Sans Mono", 
+					 "Courier New", monospace;
+	}
+	
 	#sidebar_container {
 		order: 1;
 		flex: 1 0 15%;
 		margin-left: auto;
 		max-width: fit-content;
 	}
+
+	#content_container {
+		order: 2;
+		flex: 1 0 75%;
+		padding-left: 4rem;
+		max-width: 32rem;
+		margin-right: auto;
+		color: whitesmoke;
+	}
+
+	#main_menu li {
+		list-style-type: none;
+		display: inline;
+		margin-right: 2rem;
+	}
 }
 
+/* mobile narrow */
 @media(max-width: 800px) {
+	#site_container {
+		align-items: baseline;
+		display: flex;
+		flex-wrap: nowrap;
+		margin-top: 1rem;
+		font-weight: lighter;
+		background-color: #3a404b;
+		font-family: ui-monospace, 
+					 Menlo, Monaco, 
+					 "Cascadia Mono", "Segoe UI Mono", 
+					 "Roboto Mono", 
+					 "Oxygen Mono", 
+					 "Ubuntu Monospace", 
+					 "Source Code Pro",
+					 "Fira Mono", 
+					 "Droid Sans Mono", 
+					 "Courier New", monospace;
+	}
+	
 	#sidebar_container {
 		visibility: collapse;
 		display: none;
 	}
+
+	#content_container {
+		order: 2;
+		flex: 1 0 75%;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		width: fit-content;
+		overflow: hidden;
+		color: whitesmoke;
+	}
+
+	#main_menu li {
+		list-style-type: none;
+		display: inline;
+		margin-right: 1rem;
+	}
 }
 
-#content_container {
-	order: 2;
-	flex: 1 0 75%;
-	padding-left: 4rem;
-	max-width: 32rem;
-	margin-right: auto;
-	color: whitesmoke;
-}
+
 
 #site_name {
 	text-align: right;
@@ -65,12 +108,6 @@ body {
 #main_menu {
 	display: block;
 	padding-left: 0;
-}
-
-#main_menu li {
-	list-style-type: none;
-	display: inline;
-	margin-right: 2rem;
 }
 
 #content {
