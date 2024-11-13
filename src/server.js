@@ -73,7 +73,7 @@ function routeImage(uri, mimetype, res) {
 }
 
 function routeMostRecentPost(res) {
-	console.log('request: most recent post')
+	logConsole('request: most recent post')
 	getAllPostsByDate((files) => {
 		res.writeHead(302, {'Location': files[0]})
 		res.end()
@@ -86,7 +86,7 @@ function routeSpecificPost(host, url, res) {
 		let post_index = 0
 		for (const [index, post] of files.entries()) {
 			if (post === url.substring(1)) {
-				console.log('request: post', post)
+				logConsole('request: post', post)
 				post_index = index
 			}
 		}
@@ -130,10 +130,10 @@ function shuffle(array) {
 }
 
 function routeAbout(req, res, host) {
-	console.log('request: about page')
+	logConsole('request: about page')
 	fs.readFile('./posts/about/post.md', 'utf8', (err, markdown) => {
 		if (err) {
-			console.log('error: about page\n', error)
+			logConsole('error: about page\n', error)
 			return
 		}
 		let link_count = parseInt(Math.random() * 10) + 3
@@ -169,7 +169,7 @@ function routeAbout(req, res, host) {
 }
 
 function routeError(req, res) {
-	console.log('error: invalid route\n', req.url)
+	logConsole('error: invalid route\n', req.url)
 	fs.readFile(ERROR_PATH, 'utf8', (err, html) => {
 		sendContent(html, HTML_MIME, res)
 	})
@@ -180,7 +180,7 @@ function routeSpecificTopic(req, res, host) {
 	let current_topic = {}
 	let url_parts = req.url.split('/')
 	let topic_name = url_parts[url_parts.length - 1]
-	console.log('request: topic ', topic_name)
+	logConsole('request: topic ', topic_name)
 	for (file of getMetadataFiles('./posts')) {
 		metadata = require(path.join(APP_ROOT, file))
 		for (topic of metadata.topics) {
@@ -209,7 +209,7 @@ function routeSpecificTopic(req, res, host) {
 function routeAllTopics(req, res, host) {
 	let topics = {}
 	let current_topic = {}
-	console.log('request: topic list')
+	logConsole('request: topic list')
 	for (file of getMetadataFiles('./posts')) {
 		metadata = require(path.join(APP_ROOT, file))
 		for (topic of metadata.topics) {
@@ -237,7 +237,7 @@ function routeAllTopics(req, res, host) {
 function getAllPostsByDate(fn) {
 	fs.readdir(path.join(APP_ROOT, 'posts'), (err, files) => {
 		if (err) {
-			console.log('error: post list\n', err)
+			logConsole('error: post list\n', err)
 		}
 		else {
 			// natural sort file names (should be ISO dates!)
@@ -311,7 +311,17 @@ function sendContent(content, mime, res) {
 	res.end(content)
 }
 
+function logConsole(message) {
+    date = new Date()
+	const offsetMs = date.getTimezoneOffset() * 60 * 1000
+    const msLocal =  date.getTime() - offsetMs
+    const dateLocal = new Date(msLocal)
+    const iso = dateLocal.toISOString()
+    const isoLocal = iso.slice(0, 19).replace('T', ' ')
+	console.log(isoLocal, message)
+}
+
 const port = 5000
 mode_string = IS_PROD ? 'production' : 'local'
 server.listen(port)
-console.log('server running in ' + mode_string + ' mode and listening on port ' + port)
+logConsole('server running in ' + mode_string + ' mode and listening on port ' + port)
