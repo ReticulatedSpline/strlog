@@ -8,7 +8,7 @@ function insertContent(post, post_data) {
 		post_data.metadata['topics'] = []
 	}
 
-	let body_text = '<div id="content">'
+	let body_text = '<article id="content">'
 		+ '<h1 class="h1">'+ post_data.metadata.title + '</h1>'
 		+ '<div class="subtitle">'
 		+ '<span class="tagline">' + post_data.metadata.tagline
@@ -19,7 +19,7 @@ function insertContent(post, post_data) {
 				  + topic + '</a>'
 	}
 	body_text += '</div></div>'
-	body_text += post + '</div>'
+	body_text += post + '</article>'
 	post_data.html = post_data.html.replace(/{{tagline}}/, '"'
 		+ post_data.metadata.tagline + '"')
 	post_data.html = post_data.html.replace(/{{title}}/, '"strlog: '
@@ -184,24 +184,24 @@ function stripCarriageReturns(post) {
 	return post.replace(/\r/g, '')
 }
 
-function insertHeader(post, post_data) {
-	let header = '<ul id="main_menu">'
+function insertMenu(post, post_data) {
+	let menu = '<ul id="main_menu">'
 	let tabs = ['posts', 'topics', 'about']
 	let urls = ['/', '/topics', '/about']
 	let index = 0
 	while (index < 3) {
-		header += '<li>'
+		menu += '<li>'
 		if (post_data.current_tab == tabs[index]) {
-			header += '<a class="h1 tab current_tab" '
+			menu += '<a class="h1 tab current_tab" '
 		} else {
-			header += '<a class="h1 tab" '
+			menu += '<a class="h1 tab" '
 		}
-		header += 'href="' + urls[index] + '">'
-		header += tabs[index] + '</a></li>'
+		menu += 'href="' + urls[index] + '">'
+		menu += tabs[index] + '</a></li>'
 		index += 1
 	}
-	header += "</ul>"
-	return post.replace(/{{header}}/, header)
+	menu += "</ul>"
+	return post.replace(/{{menu}}/, menu)
 }
 
 function formatPost (post_data, fn) {
@@ -223,7 +223,7 @@ function formatPost (post_data, fn) {
 	post = subRulers(post)
 	post = insertContent(post, post_data)
 	post = insertSidebar(post, post_data, true)
-	post = insertHeader(post, post_data)
+	post = insertMenu(post, post_data)
 	post = insertFooter(post, post_data.last_post_url, post_data.next_post_url)
 	fn(post)
 }
@@ -266,7 +266,7 @@ function insertTopicSidebar(page_data) {
 
 function formatTopic(page_data, fn) {
 	concatTitles(page_data)
-	page_data.html = insertHeader(page_data.html, page_data)
+	page_data.html = insertMenu(page_data.html, page_data)
 	page_data.html = insertFooter(page_data.html, null, null)
 	page_data.html = insertTopicSidebar(page_data)
 	fn(page_data.html)
