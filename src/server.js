@@ -142,7 +142,7 @@ function routeAbout(req, res, host) {
 		let sidebar_links = shuffle(metadata.links)
 		let post_list = []
 		while (link_count > 0) {
-			let random_number = parseInt(Math.random() * 8) + 3
+			let random_number = parseInt(Math.random() * 10) + 3
 			let sidebar_string = '<a class="tab" href="' + sidebar_links[link_count] + '">'
 			sidebar_string += '▒'.repeat(random_number)
 			sidebar_string += '</a>'

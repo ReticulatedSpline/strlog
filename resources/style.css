@@ -1,93 +1,100 @@
-* {
-	box-sizing: border-box;
-}
-
 body {
+	/** prevents white flash on reload **/
 	background: #3a404b;
 }
 
-body, html {
-	height: 100%;
-	padding: 0;
-	margin: 0;
-}
+/* desktop widescreen */
+@media (min-width: 801px) {
+	#site_container {
+		align-items: baseline;
+		display: flex;
+		flex-wrap: nowrap;
+		margin-top: 5rem;
+		font-weight: lighter;
+		background-color: #3a404b;
+		font-family: ui-monospace, 
+					 Menlo, Monaco, 
+					 "Cascadia Mono", "Segoe UI Mono", 
+					 "Roboto Mono", 
+					 "Oxygen Mono", 
+					 "Ubuntu Monospace", 
+					 "Source Code Pro",
+					 "Fira Mono", 
+					 "Droid Sans Mono", 
+					 "Courier New", monospace;
+	}
+	
+	#sidebar_container {
+		order: 1;
+		flex: 1 0 15%;
+		margin-left: auto;
+		max-width: fit-content;
+	}
 
-#site_container {
-	background-color: #3a404b;
-	display: grid;
-	grid-template-rows: 50px 1fr;
-	grid-template-columns: auto 1fr;
-	grid-template-areas: 
-		"sidebar header"
-		"sidebar blog";
-	height: 100%;
-	max-width: 60rem;
-	align-items: baseline;
-	font-weight: lighter;
-	font-family: "Roboto Mono", 
-				"Fira Mono", 
-				"Cascadia Mono",
-				"Segoe UI Mono", 
-				"Oxygen Mono", 
-				"Ubuntu Monospace", 
-				"Source Code Pro",
-				"Droid Sans Mono", 
-				"Courier New",
-				ui-monospace,
-				monospace;
-	margin-top: 5rem;
+	#content_container {
+		order: 2;
+		flex: 1 0 75%;
+		padding-left: 4rem;
+		max-width: 32rem;
+		margin-right: auto;
+		color: whitesmoke;
+	}
 
-	@media screen and (max-width: 699px) {
-		margin-top: 0rem;
-		grid-template-rows: 50px 50px 1fr;
-		grid-template-columns: 1fr;
-		grid-template-areas: 
-			"header"
-			"sidebar"
-			"blog";
+	#main_menu li {
+		list-style-type: none;
+		display: inline;
+		margin-right: 2rem;
 	}
 }
 
-#content_container {
-	grid-area: blog;
-	padding-left: 2rem;
-	padding-bottom: 5rem;
-	order: 3;
+/* mobile narrow */
+@media(max-width: 800px) {
+	#site_container {
+		align-items: baseline;
+		display: flex;
+		flex-wrap: nowrap;
+		margin-top: 1rem;
+		font-weight: lighter;
+		background-color: #3a404b;
+		font-family: ui-monospace, 
+					 Menlo, Monaco, 
+					 "Cascadia Mono", "Segoe UI Mono", 
+					 "Roboto Mono", 
+					 "Oxygen Mono", 
+					 "Ubuntu Monospace", 
+					 "Source Code Pro",
+					 "Fira Mono", 
+					 "Droid Sans Mono", 
+					 "Courier New", monospace;
+	}
+	
+	#sidebar_container {
+		visibility: collapse;
+		display: none;
+	}
+
+	#content_container {
+		order: 2;
+		flex: 1 0 75%;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		width: fit-content;
+		overflow: hidden;
+		color: whitesmoke;
+	}
+
+	#main_menu li {
+		list-style-type: none;
+		display: inline;
+		margin-right: 1rem;
+	}
 }
-  
+
+
+
 #site_name {
-	order: 1;
 	text-align: right;
 	margin-bottom: 2rem;
-	@media screen and (max-width: 699px) {
-		display:none;
-		visibility: collapse;
-	}
-}
-
-#menu_container {
-	order: 2;
-	@media screen and (max-width: 699px) {
-		order: 1;
-	}
-}
-
-#main_menu {
-	display: flex;
-	padding-left: 2rem;
-}
-
-#main_menu li {
-	list-style: none;
-	padding-right: 1rem;
-}
-
-#sidebar_container {
-	order: 2;
-	min-width: 16rem;
-	@media screen and (max-width: 699px) {
-		order: 2;
-	}
 }
 
 #sidebar {
@@ -96,26 +103,18 @@ body, html {
 	text-align: right;
 	font-size: 2rem;
 	overflow: hidden;
-	@media screen and (max-width: 699px) {
-		overflow: scroll;
-		text-wrap: nowrap;
-	}
 }
 
-#sidebar li {
-	@media screen and (max-width: 699px) {
-		margin-right: 1em;
-		display:inline;
-	}
+#main_menu {
+	display: block;
+	padding-left: 0;
 }
 
 #content {
 	font-size: 1.1rem;
 	line-height: 1.8;
-	color: whitesmoke;
-	max-width: 45rem;
-	order: 3;
 }
+
 
 #next {
 	float: right;
@@ -140,7 +139,7 @@ body, html {
 	height: 100vh;
 }
 
-/** general classes **/
+/** classes **/
 .h1 {
 	color: darkorange;
 }
@@ -235,6 +234,7 @@ body, html {
 .center {
 	margin-left: auto;
 	margin-right: auto;
+	display: block;
 }
 
 .quote {
