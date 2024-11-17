@@ -248,11 +248,11 @@ function concatTitles(page_data) {
 function insertTopicSidebar(page_data) {
 	let sidebar_string = '<ul id=\"sidebar\">'
 	for (topic in page_data.topics) {
-		let css = 'class = "tab '
+		let css = 'class = "tab'
 		let url = 'http://' + page_data.host + '/topics/' + topic
 
 		if (page_data.current_topic == topic) {
-			css += 'current_tab"'
+			css += ' current_tab"'
 		} else {
 			css += '"'
 		}

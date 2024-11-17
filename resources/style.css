@@ -1,5 +1,5 @@
+/** prevents white flash on reload **/
 body {
-	/** prevents white flash on reload **/
 	background: #3a404b;
 }
 
@@ -28,6 +28,7 @@ body {
 		order: 1;
 		flex: 1 0 15%;
 		margin-left: auto;
+		min-width: 20rem;
 		max-width: fit-content;
 	}
 
