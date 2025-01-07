@@ -9,12 +9,11 @@ This project serves blog posts using the built-in http module provided by the No
 - Navigate to the root directory and run `npm start local`. The server will default to port 5000.
 
 #### roadmap
-1. add /posts route
+1. add /topics route
+2. server.js cleanup
+5. single template / remove error.html
 2. all routes accessible on mobile
-3. cleaner routes
 4. linktree style homepage styled off the error route
-5. single template (remove error.html)
-6. better interface between server.js and format.js
 7. full markdown parsing 
 
 #### caveats

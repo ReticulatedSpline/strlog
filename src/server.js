@@ -4,7 +4,7 @@ const http = require('http')
 const { shuffleArray } = require('./utilities.js')
 const { formatPost,
 		formatTopic,
-		formatPostList,
+		formatHyperlinkList,
 		formatHomepage } = require('./format.js')
 require('./constants.js')
 
@@ -110,14 +110,14 @@ function routeAbout(req, res, host) {
 		let link_count = parseInt(Math.random() * 10) + 3
 		let metadata_path = path.join(APP_ROOT, './posts/about/metadata.json')
 		let metadata = require(metadata_path)
-		let sidebar_links = shuffleArray(metadata.links)
+		let navbar_links = shuffleArray(metadata.links)
 		let post_list = []
 		while (link_count > 0) {
 			let random_number = parseInt(Math.random() * 10) + 3
-			let sidebar_string = '<a class="tab" href="' + sidebar_links[link_count] + '">'
-			sidebar_string += '▒'.repeat(random_number)
-			sidebar_string += '</a>'
-			post_list.push(sidebar_string)
+			let navbar_string = '<a class="tab" href="' + navbar_links[link_count] + '">'
+			navbar_string += '▒'.repeat(random_number)
+			navbar_string += '</a>'
+			post_list.push(navbar_string)
 			link_count -= 1
 		}
 
@@ -187,7 +187,7 @@ function routeSpecificTopic(req, res, host) {
 function routeAllTopics(req, res, host) {
 	let topics = {}
 	let current_topic = {}
-	logConsole('request: topic list')
+	logConsole('request: topics')
 	for (file of getMetadataFiles('./posts')) {
 		metadata = require(path.join(APP_ROOT, file))
 		for (topic of metadata.topics) {
@@ -215,7 +215,16 @@ function routeAllTopics(req, res, host) {
 function routeAllPosts(req, res, host) {
 	logConsole('request: posts')
 	let post_list = new Array();
-	for (file of getMetadataFiles('./posts')) {
+	file_list = getMetadataFiles('./posts')
+	file_list.sort(function(a, b) {
+		return b.localeCompare(a, undefined, {
+			numeric: true,
+			sensitivity: 'base'
+		})
+	})
+	// drop about
+	file_list.shift()
+	for (file of file_list) {
 		metadata = require(path.join(APP_ROOT, file))
 		// gross hack to grab the date string out of the path :(
 		let directory = file.split('/')[2]
@@ -287,7 +296,7 @@ function buildPostListResponse(req, res, host, post_list) {
 			post_list: post_list
 		}
 		let fn = (postContent) => {sendContent(postContent, HTML_MIME, res)}
-		formatPostList(page_data, fn)
+		formatHyperlinkList(page_data, fn)
 	})
 }
 
@@ -296,22 +305,22 @@ function buildPostResponse(host, post_dir, previous_posts, next_post, last_post,
 	const metadata_path = path.join(APP_ROOT, './posts', post_dir, 'metadata.json')
 	const markdown_path = path.join(APP_ROOT, './posts', post_dir, 'post.md')
 
-	let post_data = {
+	let page_data = {
 		host: host,
 		directory: post_dir,
 		previous_posts: previous_posts,
-		last_post_url: last_post,
-		next_post_url: next_post,
+		last_post: last_post,
+		next_post: next_post,
 		html_dir: HTML_PATH,
 		metadata: require(metadata_path),
 		current_tab: 'posts'
 	}
 
 	fs.readFile(HTML_PATH, 'utf8', (err, html) => {
-		post_data.html = html
+		page_data.html = html
 		fs.readFile(markdown_path, 'utf8', (err, markdown) => {
-			post_data.markdown = markdown
-			formatPost(post_data, fn)
+			page_data.markdown = markdown
+			formatPost(page_data, fn)
 		})
 	})
 }
