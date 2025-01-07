@@ -1,18 +1,12 @@
 const fs = require('fs')
 const path = require('path')
 const http = require('http')
-
-const { formatPost, formatTopic } = require('./format.js')
-
-const CSS_MIME  = { 'Content-Type': 'text/css' }
-const HTML_MIME = { 'Content-Type': 'text/html' }
-const ICO_MIME  = { 'Content-Type': 'image/x-icon' }
-const JPG_MIME  = { 'Content-Type': 'image/jpg' }
-const PNG_MIME  = { 'Content-Type': 'image/png' }
-const APP_ROOT = path.join(__dirname, '../')
-const HTML_PATH = 'resources/page.html'
-const ERROR_PATH = 'resources/error.html'
-const IS_PROD = process.argv[2] == 'prod' ? true : false;
+const { shuffleArray } = require('./utilities.js')
+const { formatPost,
+		formatTopic,
+		formatPostList,
+		formatHomepage } = require('./format.js')
+require('./constants.js')
 
 let server = http.createServer(function (req, res) {
 	host = req.headers.host;
@@ -21,7 +15,10 @@ let server = http.createServer(function (req, res) {
 	}
 
 	if (req.url == '/') {
-		routeMostRecentPost(res)
+		routeAllPosts(req, res, host)
+	}
+	else if (req.url == '/posts') {
+		routeAllPosts(req, res, host)
 	}
 	else if (req.url.match(/\d{4}-\d{2}-\d{2}$/)) {
 		routeSpecificPost(host, req.url, res)
@@ -35,8 +32,8 @@ let server = http.createServer(function (req, res) {
 	else if (req.url.endsWith('/about')) {
 		routeAbout(req, res, host)
 	}
-	else if (req.url.endsWith('/style.css')) {
-		let uri = path.join(APP_ROOT, 'resources', 'style.css')
+	else if (req.url.endsWith('.css')) {
+		let uri = path.join(APP_ROOT, 'resources', req.url)
 		routeCSS(uri, res)
 	}
 	else if (req.url == '/favicon.ico') {
@@ -72,14 +69,6 @@ function routeImage(uri, mimetype, res) {
 	})
 }
 
-function routeMostRecentPost(res) {
-	logConsole('request: most recent post')
-	getAllPostsByDate((files) => {
-		res.writeHead(302, {'Location': files[0]})
-		res.end()
-	})
-}
-
 function routeSpecificPost(host, url, res) {
 	getAllPostsByDate((files) => {
 		// check for matching post
@@ -111,24 +100,6 @@ function routeSpecificPost(host, url, res) {
 	})
 }
 
-function shuffle(array) {
-	var currentIndex = array.length, temporaryValue, randomIndex;
-  
-	// While there remain elements to shuffle...
-	while (0 !== currentIndex) {
-  
-		// Pick a remaining element...
-		randomIndex = Math.floor(Math.random() * currentIndex);
-		currentIndex -= 1;
-  
-		// And swap it with the current element.
-		temporaryValue = array[currentIndex];
-		array[currentIndex] = array[randomIndex];
-		array[randomIndex] = temporaryValue;
-	}
-	return array;
-}
-
 function routeAbout(req, res, host) {
 	logConsole('request: about page')
 	fs.readFile('./posts/about/post.md', 'utf8', (err, markdown) => {
@@ -139,7 +110,7 @@ function routeAbout(req, res, host) {
 		let link_count = parseInt(Math.random() * 10) + 3
 		let metadata_path = path.join(APP_ROOT, './posts/about/metadata.json')
 		let metadata = require(metadata_path)
-		let sidebar_links = shuffle(metadata.links)
+		let sidebar_links = shuffleArray(metadata.links)
 		let post_list = []
 		while (link_count > 0) {
 			let random_number = parseInt(Math.random() * 10) + 3
@@ -170,6 +141,13 @@ function routeAbout(req, res, host) {
 
 function routeError(req, res) {
 	logConsole('error: invalid route ' + req.url)
+	fs.readFile(ERROR_PATH, 'utf8', (err, html) => {
+		sendContent(html, HTML_MIME, res)
+	})
+}
+
+function routeHomepage(req, res) {
+	logConsole('request: homepage')
 	fs.readFile(ERROR_PATH, 'utf8', (err, html) => {
 		sendContent(html, HTML_MIME, res)
 	})
@@ -234,6 +212,25 @@ function routeAllTopics(req, res, host) {
 	buildTopicResponse(req, res, host, topics, current_topic)
 }
 
+function routeAllPosts(req, res, host) {
+	logConsole('request: posts')
+	let post_list = new Array();
+	for (file of getMetadataFiles('./posts')) {
+		metadata = require(path.join(APP_ROOT, file))
+		// gross hack to grab the date string out of the path :(
+		let directory = file.split('/')[2]
+		let url = path.join(host, directory)
+		let item = {
+			title: metadata.title,
+			tagline: metadata.tagline,
+			url: url
+		}
+		post_list.push(item)
+	}
+
+	buildPostListResponse(req, res, host, post_list)
+}
+
 function getAllPostsByDate(fn) {
 	fs.readdir(path.join(APP_ROOT, 'posts'), (err, files) => {
 		if (err) {
@@ -282,6 +279,19 @@ function buildTopicResponse(req, res, host, topics, current_topic) {
 	})
 }
 
+function buildPostListResponse(req, res, host, post_list) {
+	fs.readFile(HTML_PATH, 'utf8', (err, html) => {
+		page_data = {
+			html: html,
+			host: host,
+			post_list: post_list
+		}
+		let fn = (postContent) => {sendContent(postContent, HTML_MIME, res)}
+		formatPostList(page_data, fn)
+	})
+}
+
+
 function buildPostResponse(host, post_dir, previous_posts, next_post, last_post, fn) {
 	const metadata_path = path.join(APP_ROOT, './posts', post_dir, 'metadata.json')
 	const markdown_path = path.join(APP_ROOT, './posts', post_dir, 'post.md')
@@ -322,6 +332,5 @@ function logConsole(message) {
 }
 
 const port = 5000
-mode_string = IS_PROD ? 'production' : 'local'
 server.listen(port)
-logConsole('server running in ' + mode_string + ' mode and listening on port ' + port)
+logConsole('server running in ' + MODE_STRING + ' mode and listening on port ' + port)

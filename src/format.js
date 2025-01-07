@@ -245,6 +245,23 @@ function concatTitles(page_data) {
 	page_data.html = page_data.html.replace(/{{content}}/, content)
 }
 
+function concatPosts(page_data) {
+	let content = '<div id="content">'
+	for (let item of page_data.post_list) {
+		content += '<h2 class = "h2">'
+		content += '<a class = "link body_link" href="http://' + item.url + '"/>'
+		content += item.title
+		content += '</a></h2>'
+		content += '<h3 class = "tagline">'
+		content += item.tagline
+		content += '</h3>'
+		content += '</br>'
+	}
+	content += '</div>'
+	content = subItalicText(content)
+	page_data.html = page_data.html.replace(/{{content}}/, content)
+}
+
 function insertTopicSidebar(page_data) {
 	let sidebar_string = '<ul id=\"sidebar\">'
 	for (topic in page_data.topics) {
@@ -272,8 +289,21 @@ function formatTopic(page_data, fn) {
 	fn(page_data.html)
 }
 
+function formatPostList(page_data, fn) {
+	concatPosts(page_data)
+	page_data.html = insertHeader(page_data.html, page_data)
+	page_data.html = insertFooter(page_data.html, null, null)
+	page_data.html = insertTopicSidebar(page_data)
+	fn(page_data.html)
+}
+
+function formatHomepage() {
+	// TODO
+}
+
 module.exports = {
-	formatPost: formatPost,
+	formatHomepage: formatHomepage,
+	formatPostList: formatPostList,
 	formatTopic: formatTopic,
-	insertContent: insertContent
+	formatPost: formatPost
 }

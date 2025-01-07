@@ -1,25 +1,26 @@
-## a tiny nodejs blog server
-This project serves blog posts using the built-in http module provided by the NodeJS standard library. In addition, it parses markdown files to provide page styling and supports a tags for organizing posts. Strlog uses its own github repository as a content repository. When setup with a CI pipeline, publishing a post is as simple as pushing a git commit.
+## strlog is a static site server
+This project serves blog posts using the built-in http module provided by the NodeJS standard library. In addition, it parses markdown files to provide page styling and supports tags for organizing posts. The github repository itself serves as a content repository. When setup with a CI pipeline, publishing a post is as simple as pushing a git commit.
 
 ![screenshot](https://imgur.com/wbTqj35.jpg "Screenshot")
 
 #### hosting your own copy:
 - Pull a release from the release branch. This branch is updated with features but purged of my own personal posts.
 - Unzip the archive.
-- Navigate to the root directory and run `npm start`. The server will default to port 5000.
-Unit tests can be run with `npm test`.
+- Navigate to the root directory and run `npm start local`. The server will default to port 5000.
 
 #### roadmap
-1. update or remove tests
-2. refactor: better interface between server.js and format.js
-4. refactor: pack globals into object
-5. refactor: better text replace method in format.js
+1. add /posts route
+2. all routes accessible on mobile
+3. cleaner routes
+4. linktree style homepage styled off the error route
+5. single template (remove error.html)
+6. better interface between server.js and format.js
 7. full markdown parsing 
 
-#### a caveat
+#### caveats
 Markdown parsing is an audacious claim for what is really just a series of regex string manipulations. It is not possible to fully cover the mardown spec this way because it is not context-aware. Sufficiently complex Markdown will break the "parser". Someday I'd love to take the time to write a real one.
 
-#### layout
+#### directory structure
 The repository contains the following important directories:
 - `./posts`: holds directories titled with the date in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601) representing a single blog post each. Two files are required:
   - A [Markdown](https://www.markdownguide.org/) file called `post.md`.
