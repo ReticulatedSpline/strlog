@@ -1,12 +1,17 @@
-const fs = require('fs')
-const path = require('path')
-const http = require('http')
-const { shuffleArray } = require('./utilities.js')
+const fs = require('fs');
+const path = require('path');
+const http = require('http');
+const { shuffleArray, 
+		getMetadataFiles,
+		getAllPostsByDate,
+		logConsole,
+		sendContent } = require('./utilities.js');
+
 const { formatPost,
-		formatTopic,
 		formatHyperlinkList,
-		formatHomepage } = require('./format.js')
-require('./constants.js')
+		formatModal } = require('./format.js');
+
+require('./constants.js');
 
 let server = http.createServer(function (req, res) {
 	host = req.headers.host;
@@ -15,7 +20,7 @@ let server = http.createServer(function (req, res) {
 	}
 
 	if (req.url == '/') {
-		routeAllPosts(req, res, host)
+		routeError(req, res, host)
 	}
 	else if (req.url == '/posts') {
 		routeAllPosts(req, res, host)
@@ -53,7 +58,7 @@ let server = http.createServer(function (req, res) {
 		routeImage(uri, PNG_MIME, res)
 	}
 	else {
-		routeError(req, res)
+		routeError(req, res, host)
 	}
 })
 
@@ -82,20 +87,37 @@ function routeSpecificPost(host, url, res) {
 	
 		const post_dir = files[post_index]
 
-		let next_post_dir = null
+		let next_post = null
 		if (post_index < files.length) {
-			next_post_dir = files[post_index + 1]
+			next_post = files[post_index + 1]
 		}
 
-		let last_post_dir = null
+		let last_post = null
 		if (post_index > 0) {
-			last_post_dir = files[post_index - 1]
+			last_post = files[post_index - 1]
 		}
 
 		let previous_posts = files.slice(0, 10)
 
-		buildPostResponse(host, post_dir, previous_posts, last_post_dir, next_post_dir, (postContent) => {
-			sendContent(postContent, HTML_MIME, res)
+		const metadata_path = path.join(APP_ROOT, './posts', post_dir, 'metadata.json')
+		const markdown_path = path.join(APP_ROOT, './posts', post_dir, 'post.md')
+	
+		let page_data = {
+			host: host,
+			directory: post_dir,
+			previous_posts: previous_posts,
+			last_post: last_post,
+			next_post: next_post,
+			html_dir: HTML_PATH,
+			metadata: require(metadata_path),
+			current_tab: 'posts'
+		}
+		
+		let fn = (page) => {sendContent(page, HTML_MIME, res)}
+		page_data.html = html_template
+		fs.readFile(markdown_path, 'utf8', (err, markdown) => {
+			page_data.markdown = markdown
+			formatPost(page_data, fn)
 		})
 	})
 }
@@ -121,21 +143,19 @@ function routeAbout(req, res, host) {
 			link_count -= 1
 		}
 
-		fs.readFile(HTML_PATH, 'utf8', (err, html) => {
 			
-			let page_data = {
-				html: html,
-				host: host,
-				directory: 'about',
-				markdown: markdown,
-				metadata: metadata,
-				previous_posts: post_list,
-				current_tab: 'about',
-				no_url: true
-			}
-			let fn = (page) => {sendContent(page, HTML_MIME, res)}
-			formatPost(page_data, fn)
-		})
+		let page_data = {
+			html: html_template,
+			host: host,
+			directory: 'about',
+			markdown: markdown,
+			metadata: metadata,
+			previous_posts: post_list,
+			current_tab: 'about',
+			no_url: true
+		}
+		let fn = (page) => {sendContent(page, HTML_MIME, res)}
+		formatPost(page_data, fn)
 	})
 }
 
@@ -181,35 +201,44 @@ function routeSpecificTopic(req, res, host) {
 		}
 	}
 
-	buildTopicResponse(req, res, host, topics, current_topic)
+	page_data = {
+		html: html_template,
+		host: host,
+		card_list: topics,
+	}
+	let fn = (postContent) => {sendContent(postContent, HTML_MIME, res)}
+	formatHyperlinkList(page_data, fn)
+
 }
 
 function routeAllTopics(req, res, host) {
-	let topics = {}
-	let current_topic = {}
-	logConsole('request: topics')
+	let topics = new Set();
+	logConsole('request: topic list')
 	for (file of getMetadataFiles('./posts')) {
 		metadata = require(path.join(APP_ROOT, file))
 		for (topic of metadata.topics) {
-			// gross hack to grab the date string out of the path :(
-			let directory = file.split('/')[2]
-			let url = path.join(host, directory)
-			let item = {
-				title: metadata.title,
-				tagline: metadata.tagline,
-				url: url
-			}
-			if (topics[topic]) {
-				topics[topic].add(item)
-			} else {
-				topics[topic] = new Set()
-				topics[topic].add(item)
-			}
-			current_topic = topic
+			topics.add(topic)
 		}
 	}
 
-	buildTopicResponse(req, res, host, topics, current_topic)
+	let card_list = []
+	for (topic of topics) {
+		let url = path.join(host, 'topics', topic)
+		let item = {
+			title: topic,
+			url: url
+		}
+		card_list.push(item)
+	}
+
+	page_data = {
+		html: html_template,
+		host: host,
+		card_list: card_list,
+		current_tab: 'topics'
+	}
+	let fn = (postContent) => {sendContent(postContent, HTML_MIME, res)}
+	formatHyperlinkList(page_data, fn)
 }
 
 function routeAllPosts(req, res, host) {
@@ -224,122 +253,33 @@ function routeAllPosts(req, res, host) {
 	})
 	// drop about
 	file_list.shift()
+
 	for (file of file_list) {
 		metadata = require(path.join(APP_ROOT, file))
 		// gross hack to grab the date string out of the path :(
 		let directory = file.split('/')[2]
-		let url = path.join(host, directory)
+		let url = path.join(host, 'posts', directory)
 		let item = {
 			title: metadata.title,
 			tagline: metadata.tagline,
-			url: url
+			url: url,
+			current_tab: 'posts'
 		}
 		post_list.push(item)
 	}
 
-	buildPostListResponse(req, res, host, post_list)
-}
-
-function getAllPostsByDate(fn) {
-	fs.readdir(path.join(APP_ROOT, 'posts'), (err, files) => {
-		if (err) {
-			logConsole('error: post list ' + err)
-		}
-		else {
-			// natural sort file names (should be ISO dates!)
-			files.sort(function(a, b) {
-				return b.localeCompare(a, undefined, {
-					numeric: true,
-					sensitivity: 'base'
-				})
-			})
-			// drop hidden dir names, alphabetic dir names
-			files = files.filter(item=> !/^[A-z\.].*/.test(item))
-			fn(files)
-		}
-	})
-}
-
-function getMetadataFiles(dir, files_) {
-	files_ = files_ || []
-	var files = fs.readdirSync(dir)
-	for (var i in files){
-		var name = dir + '/' + files[i]
-		if (fs.statSync(name).isDirectory()) {
-			getMetadataFiles(name, files_)
-		} else if (name.endsWith('metadata.json')) {
-			files_.push(name)
-		}
-	}
-	return files_
-}
-
-function buildTopicResponse(req, res, host, topics, current_topic) {
-	fs.readFile(HTML_PATH, 'utf8', (err, html) => {
-		page_data = {
-			html: html,
-			host: host,
-			topics: topics,
-			current_topic: current_topic,
-			current_tab: 'topics'
-		}
-		let fn = (postContent) => {sendContent(postContent, HTML_MIME, res)}
-		formatTopic(page_data, fn)
-	})
-}
-
-function buildPostListResponse(req, res, host, post_list) {
-	fs.readFile(HTML_PATH, 'utf8', (err, html) => {
-		page_data = {
-			html: html,
-			host: host,
-			post_list: post_list
-		}
-		let fn = (postContent) => {sendContent(postContent, HTML_MIME, res)}
-		formatHyperlinkList(page_data, fn)
-	})
-}
-
-
-function buildPostResponse(host, post_dir, previous_posts, next_post, last_post, fn) {
-	const metadata_path = path.join(APP_ROOT, './posts', post_dir, 'metadata.json')
-	const markdown_path = path.join(APP_ROOT, './posts', post_dir, 'post.md')
-
-	let page_data = {
+	page_data = {
+		html: html_template,
 		host: host,
-		directory: post_dir,
-		previous_posts: previous_posts,
-		last_post: last_post,
-		next_post: next_post,
-		html_dir: HTML_PATH,
-		metadata: require(metadata_path),
+		card_list: post_list,
 		current_tab: 'posts'
 	}
-
-	fs.readFile(HTML_PATH, 'utf8', (err, html) => {
-		page_data.html = html
-		fs.readFile(markdown_path, 'utf8', (err, markdown) => {
-			page_data.markdown = markdown
-			formatPost(page_data, fn)
-		})
-	})
+	
+	let fn = (postContent) => {sendContent(postContent, HTML_MIME, res)}
+	formatHyperlinkList(page_data, fn)
 }
 
-function sendContent(content, mime, res) {
-	res.writeHead(200, mime)
-	res.end(content)
-}
-
-function logConsole(message) {
-    date = new Date()
-	const offsetMs = date.getTimezoneOffset() * 60 * 1000
-    const msLocal =  date.getTime() - offsetMs
-    const dateLocal = new Date(msLocal)
-    const iso = dateLocal.toISOString()
-    const isoLocal = iso.slice(0, 19).replace('T', ' ')
-	console.log(isoLocal, message)
-}
-
+var html_template = fs.readFileSync(HTML_PATH, 'utf8')
 const port = 5000
 server.listen(port)
 logConsole('server running in ' + MODE_STRING + ' mode and listening on port ' + port)

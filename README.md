@@ -9,15 +9,16 @@ This project serves blog posts using the built-in http module provided by the No
 - Navigate to the root directory and run `npm start local`. The server will default to port 5000.
 
 #### roadmap
-1. add /topics route
-2. server.js cleanup
+1. move navbar to side on desktop
 5. single template / remove error.html
+3. all routes accesible on desktop
 2. all routes accessible on mobile
+2. server.js cleanup
 4. linktree style homepage styled off the error route
 7. full markdown parsing 
 
 #### caveats
-Markdown parsing is an audacious claim for what is really just a series of regex string manipulations. It is not possible to fully cover the mardown spec this way because it is not context-aware. Sufficiently complex Markdown will break the "parser". Someday I'd love to take the time to write a real one.
+Markdown parsing is an audacious claim for what is really just a series of regex string replace calls. It is not possible to fully cover the mardown spec this way because it is not context-aware. Sufficiently complex Markdown will break the "parser".
 
 #### directory structure
 The repository contains the following important directories:

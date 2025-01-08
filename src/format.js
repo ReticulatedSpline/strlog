@@ -91,7 +91,7 @@ function subImages(page_data) {
 	const image_regex = /!\[(.*?)\]\((.+?)\)/g;
 	const image_html =
 	'<div class="center body_photo_div">' +
-	'<img class="body_photo" src="' + './posts/' + page_data.directory + '/$2" alt="$1">' +
+	'<img class="body_photo" src="' + page_data.directory + '/$2" alt="$1">' +
 	'<p class="p body_alt_text">$1</p></div>';
 	page_data.markdown = page_data.markdown.replace(image_regex, image_html);
 }
@@ -202,7 +202,7 @@ function stripCarriageReturns(page_data) {
 function insertHeader(post_data) {
 	let header = '<ul id="main_menu">';
 	let tabs = ['posts', 'topics', 'about'];
-	let urls = ['/', '/topics', '/about'];
+	let urls = ['/posts', '/topics', '/about'];
 	let index = 0;
 	while (index < 3) {
 		header += '<li>';
@@ -219,33 +219,18 @@ function insertHeader(post_data) {
 	post_data.html = post_data.html.replace(/{{header}}/, header);
 }
 
-function concatTitles(page_data) {
+function insertHyperlinkList(page_data) {
 	let content = '<div id="content">'
-	for (let item of page_data.topics[page_data.current_topic]) {
+	for (let item of page_data.card_list) {
 		content += '<h2 class = "h2">'
 		content += '<a class = "link body_link" href="http://' + item.url + '"/>'
 		content += item.title
 		content += '</a></h2>'
-		content += '<h3 class = "tagline">'
-		content += item.tagline
-		content += '</h3>'
-		content += '</br>'
-	}
-	content += '</div>'
-	page_data.html = page_data.html.replace(/{{content}}/, content)
-}
-
-function concatPosts(page_data) {
-	let content = '<div id="content">'
-	for (let item of page_data.post_list) {
-		content += '<h2 class = "h2">'
-		content += '<a class = "link body_link" href="http://' + item.url + '"/>'
-		content += item.title
-		content += '</a></h2>'
-		content += '<h3 class = "tagline">'
-		content += item.tagline
-		content += '</h3>'
-		content += '</br>'
+		if (item.tagline) {
+			content += '<h3 class = "tagline">'
+			content += item.tagline
+			content += '</h3>'
+		}
 	}
 	content += '</div>'
 	page_data.html = page_data.html.replace(/{{content}}/, content)
@@ -299,30 +284,21 @@ function formatPost(page_data, fn) {
 	fn(page_data.html)
 }
 
-function formatTopic(page_data, fn) {
-	concatTitles(page_data)
-	insertHeader(page_data)
-	insertFooter(page_data)
-	insertTopicNavbar(page_data)
-	fn(page_data.html)
-}
-
 function formatHyperlinkList(page_data, fn) {
-	concatPosts(page_data)
 	insertHeader(page_data)
+	insertHyperlinkList(page_data)
 	insertFooter(page_data)
 	insertTopicNavbar(page_data)
 	fn(page_data.html)
 }
 
-function formatHomepage(page_data, fn) {
+function formatModal(page_data, fn) {
 	// TODO
 	fn(page_data)
 }
 
 module.exports = {
-	formatHomepage: formatHomepage,
+	formatModal: formatModal,
 	formatHyperlinkList: formatHyperlinkList,
-	formatTopic: formatTopic,
 	formatPost: formatPost
 }

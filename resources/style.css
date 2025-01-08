@@ -1,5 +1,5 @@
-/** prevents white flash on reload **/
-body {
+/** prevent white flash on reload **/
+body, html {
 	background: #3a404b;
 }
 

@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 function shuffleArray(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
   
@@ -16,6 +19,59 @@ function shuffleArray(array) {
     return array;
 }
 
+function getMetadataFiles(dir, files_) {
+	files_ = files_ || [];
+	var files = fs.readdirSync(dir);
+	for (var i in files){
+		var name = dir + '/' + files[i];
+		if (fs.statSync(name).isDirectory()) {
+			getMetadataFiles(name, files_);
+		} else if (name.endsWith('metadata.json')) {
+			files_.push(name);
+		}
+	}
+	return files_;
+}
+
+function getAllPostsByDate(fn) {
+	fs.readdir(path.join(APP_ROOT, 'posts'), (err, files) => {
+		if (err) {
+			logConsole('error: post list ' + err);
+		}
+		else {
+			// natural sort file names (should be ISO dates!)
+			files.sort(function(a, b) {
+				return b.localeCompare(a, undefined, {
+					numeric: true,
+					sensitivity: 'base'
+				});
+			})
+			// drop hidden dir names, alphabetic dir names
+			files = files.filter(item=> !/^[A-z\.].*/.test(item));
+			fn(files);
+		}
+	})
+}
+
+function sendContent(content, mime, res) {
+	res.writeHead(200, mime);
+	res.end(content);
+}
+
+function logConsole(message) {
+    date = new Date();
+	const offsetMs = date.getTimezoneOffset() * 60 * 1000;
+    const msLocal =  date.getTime() - offsetMs;
+    const dateLocal = new Date(msLocal);
+    const iso = dateLocal.toISOString();
+    const isoLocal = iso.slice(0, 19).replace('T', ' ');
+	console.log('[' + isoLocal + ']', message);
+}
+
 module.exports = {
 	shuffleArray: shuffleArray,
+    getMetadataFiles: getMetadataFiles,
+    getAllPostsByDate: getAllPostsByDate,
+    logConsole: logConsole,
+    sendContent: sendContent
 }
