@@ -118,6 +118,20 @@ function subBoldItalicText(page_data) {
 		.replace(bold_italic_regex, '<strong class="strong"><em>$1</em></strong>');
 }
 
+function subTitleTextEffects(page_data) {
+	const bold_italic_regex = /\*\*\*([^*]+)\*\*\*/g;
+	const bold_regex = /\*\*([^*]+)\*\*/g;
+	const italic_regex1 = /\*([^*]+)\*/g;
+	for (item of page_data.card_list) {
+		item.title = item.title
+			.replace(bold_italic_regex, '<strong class="strong"><em>$1</em></strong>');
+		item.title = item.title
+			.replace(bold_regex, '<strong class="strong">$1</strong>');
+		item.title = item.title
+			.replace(italic_regex1, '<em>$1</em>');
+	}
+}
+
 function subBoldText(page_data) {
 	const bold_regex = /\*\*([^*]+)\*\*/g;
 	page_data.markdown = page_data.markdown
@@ -286,6 +300,7 @@ function formatPost(page_data, fn) {
 
 function formatHyperlinkList(page_data, fn) {
 	insertHeader(page_data)
+	subTitleTextEffects(page_data)
 	insertHyperlinkList(page_data)
 	insertFooter(page_data)
 	insertTopicNavbar(page_data)

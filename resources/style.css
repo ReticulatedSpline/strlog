@@ -3,6 +3,11 @@ body, html {
 	background: #3a404b;
 }
 
+@font-face {
+	font-family: "epilogue";
+	src: url("./resources/fonts/Epilogue-Medium.woff2");
+}
+
 /* desktop widescreen */
 @media (min-width: 801px) {
 	#site_container {
@@ -12,16 +17,8 @@ body, html {
 		margin-top: 5rem;
 		font-weight: lighter;
 		background-color: #3a404b;
-		font-family: ui-monospace, 
-					 Menlo, Monaco, 
-					 "Cascadia Mono", "Segoe UI Mono", 
-					 "Roboto Mono", 
-					 "Oxygen Mono", 
-					 "Ubuntu Monospace", 
-					 "Source Code Pro",
-					 "Fira Mono", 
-					 "Droid Sans Mono", 
-					 "Courier New", monospace;
+		font-family: epilogue,
+					 sans-serif
 	}
 	
 	#navbar_container {
@@ -38,40 +35,34 @@ body, html {
 		padding-left: 4rem;
 		max-width: 32rem;
 		margin-right: auto;
+		align-items: right;
 		color: whitesmoke;
 	}
 
 	#main_menu li {
 		list-style-type: none;
-		display: inline;
-		margin-right: 2rem;
+		text-align: right;
+		margin-top: 1em;
+		padding: .2em;
 	}
 }
 
-/* mobile narrow */
+/* mobile or narrow displays */
 @media(max-width: 800px) {
 	#site_container {
 		align-items: baseline;
 		display: flex;
-		flex-wrap: nowrap;
+		flex-wrap: wrap;
 		margin-top: 1rem;
 		font-weight: lighter;
 		background-color: #3a404b;
-		font-family: ui-monospace, 
-					 Menlo, Monaco, 
-					 "Cascadia Mono", "Segoe UI Mono", 
-					 "Roboto Mono", 
-					 "Oxygen Mono", 
-					 "Ubuntu Monospace", 
-					 "Source Code Pro",
-					 "Fira Mono", 
-					 "Droid Sans Mono", 
-					 "Courier New", monospace;
+		font-family: epilogue,
+					 sans-serif;
 	}
-	
+
 	#navbar_container {
-		visibility: collapse;
-		display: none;
+		order: 1;
+		padding-left: 2rem;
 	}
 
 	#content_container {
@@ -82,6 +73,11 @@ body, html {
 		width: fit-content;
 		overflow: hidden;
 		color: whitesmoke;
+	}
+
+	#site_name {
+		display: none;
+		visibility: collapse;
 	}
 
 	#main_menu li {
@@ -95,7 +91,9 @@ body, html {
 
 #site_name {
 	text-align: right;
-	margin-bottom: 2rem;
+	padding-top: .2em;
+	padding-bottom: .2em;
+	padding-right: .2em;
 }
 
 #navbar {

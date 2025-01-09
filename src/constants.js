@@ -12,3 +12,4 @@ global.HTML_MIME = { 'Content-Type': 'text/html' };
 global.ICO_MIME  = { 'Content-Type': 'image/x-icon' };
 global.JPG_MIME  = { 'Content-Type': 'image/jpg' };
 global.PNG_MIME  = { 'Content-Type': 'image/png' };
+global.WOFF2_MIME  = { 'Content-Type': 'font/woff2' };
