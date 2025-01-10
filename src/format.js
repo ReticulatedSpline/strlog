@@ -1,20 +1,26 @@
 function insertContent(page_data) {
-	let body_text = '<h2 id="site_path">' + page_data.site_path + '</h2>'
+
+	let body_text = "";
+	if (page_data.current_tab == 'about') {
+		body_text += '<h2 id="site_path_post">' + page_data.site_path + '/</h2>'
+		+ '<div id="content"><br>';
+	} else {
+		body_text += '<h2 id="site_path_post">' + page_data.site_path + '/</h2>'
 		+ '<div id="content">'
 		+ '<h1 class="h1">'+ page_data.metadata.title + '</h1>'
 		+ '<div class="subtitle">'
 		+ '<span class="tagline">' + page_data.metadata.tagline
 		+ '</span><div class="topic_tags">';
-	
-	// for (topic of page_data.metadata.topics) {
-	// 	let url = page_data.host + '/topics/' + topic;
-	// 	body_text += '<a href="http://' + url + '" class="topic_tag">'
-	// 			  + topic + '</a>';
-	// }
+		// for (topic of page_data.metadata.topics) {
+		// 	let url = page_data.host + '/topics/' + topic;
+		// 	body_text += '<a href="http://' + url + '" class="topic_tag">'
+		// 			  + topic + '</a>';
+		// }
 
-	body_text += '</div></div>';
-	body_text += page_data.markdown + '</div>';
+		body_text += '</div></div>';
+	}
 	
+	body_text += page_data.markdown + '</div>';
 	page_data.html = page_data.html.replace(/{{tagline}}/, '"'
 		+ page_data.metadata.tagline + '"');
 	
@@ -81,7 +87,7 @@ function subLinks(page_data) {
 function subImages(page_data) {
 	const image_regex = /!\[(.*?)\]\((.+?)\)/g;
 	const image_html =
-	'<div class="center body_photo_div">' +
+	'<div class="body_photo_div">' +
 	'<img class="body_photo" src="' + page_data.directory + '/$2" alt="$1">' +
 	'<p class="p body_alt_text">$1</p></div>';
 	page_data.markdown = page_data.markdown.replace(image_regex, image_html);
@@ -225,8 +231,9 @@ function insertHeader(post_data) {
 }
 
 function insertHyperlinkList(page_data) {
-	let content = '<h2 id="site_path">' + page_data.site_path;
-	content += '</h2><div id="card_list">';
+	let content = '<h2 id="site_path">' + page_data.site_path + "</h2>";
+	content += '<h2 id="site_path_short">' + page_data.site_path_short + "</h2>";
+	content += '<div id="card_list">';
 	for (let item of page_data.card_list) {
 		content += '<h2 class = "h2">';
 		content += '<a class = "tab" href="http://' + item.url + '"/>';
@@ -262,7 +269,7 @@ function insertTopicNavbar(page_data) {
 }
 
 function insertSitemap(page_data) {
-	page_data.html = page_data.h
+	// TODO
 }
 
 function formatPost(page_data, fn) {

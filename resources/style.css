@@ -14,11 +14,13 @@ body, html {
 		align-items: baseline;
 		display: flex;
 		flex-wrap: nowrap;
+		width: 100%;
 		margin-top: 5rem;
-		font-weight: lighter;
+		margin-left: 0;
+		margin-right: 0;
+		overflow: hidden;
 		background-color: #3a404b;
-		font-family: suse,
-					 sans-serif
+		font-family: suse, sans-serif;
 	}
 	
 	#navbar_container {
@@ -47,6 +49,11 @@ body, html {
 		margin-top: 1rem;
 		padding: .2rem;
 	}
+
+	#site_path_short {
+		display:none;
+		visibility: collapse;
+	}	
 }
 
 /* mobile or narrow displays */
@@ -56,7 +63,6 @@ body, html {
 		display: flex;
 		flex-wrap: wrap;
 		margin-top: 1rem;
-		font-weight: lighter;
 		background-color: #3a404b;
 		font-family: suse,
 					 sans-serif;
@@ -87,6 +93,25 @@ body, html {
 		display: inline;
 		margin-right: 1rem;
 	}
+
+	#site_path {
+		display: none;
+		visibility: collapse;
+	}
+
+	#site_path_post {
+		display: none;
+		visibility: collapse;
+	}
+
+	#site_path_short {
+		color: darkorange;
+		font-size: 2rem;
+		transform: translate(-1rem);
+		margin-top: 0;
+		margin-bottom: 1rem;
+		padding-left: 1rem;
+	}
 }
 
 #site_name {
@@ -101,6 +126,13 @@ body, html {
 	font-size: 2rem;
 	transform: translate(-1rem);
 	margin-bottom: 1rem;
+}
+
+#site_path_post {
+	color: darkgrey;
+	font-size: 2rem;
+	transform: translate(-1rem);
+	margin-bottom: 0;
 }
 
 #navbar {
@@ -236,12 +268,6 @@ body, html {
 	color: darkgrey !important;
 }
 
-.center {
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-}
-
 .quote {
 	font-style: oblique;
 	display: block;
@@ -280,7 +306,6 @@ body, html {
 	font-size: 1.4rem;
 	padding-left: .2rem;
 	color: darkgray;
-
 }
 
 .topic_tag {

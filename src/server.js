@@ -114,6 +114,7 @@ function routeAllPosts(req, res, host) {
 		host: host,
 		card_list: post_list,
 		site_path: '/posts',
+		site_path_short: '',
 		current_tab: 'posts'
 	};
 	
@@ -146,6 +147,7 @@ function routeAllTopics(req, res, host) {
 		host: host,
 		card_list: card_list,
 		site_path: '/topics',
+		site_path_short: '',
 		current_tab: 'topics'
 	};
 
@@ -191,6 +193,7 @@ function routeSpecificPost(req, res, host) {
 			host: host,
 			directory: post_dir,
 			site_path: '/posts/' + post_dir,
+			site_path_short: '',
 			previous_posts: previous_posts,
 			last_post: last_post,
 			next_post: next_post,
@@ -245,6 +248,7 @@ function routeSpecificTopic(req, res, host) {
 		host: host,
 		card_list: card_list,
 		site_path: '/topics/' + topic,
+		site_path_short: topic,
 		current_tab: 'topics'
 	};
 	
@@ -278,6 +282,7 @@ function routeAbout(req, res, host) {
 			host: host,
 			directory: 'about',
 			site_path: '/about',
+			site_path_short: '',
 			markdown: markdown,
 			metadata: metadata,
 			previous_posts: post_list,

@@ -9,7 +9,8 @@ This project serves blog posts using the built-in http module provided by the No
 - Navigate to the root directory and run `npm start local`. The server will default to port 5000.
 
 #### roadmap
-2. normalize css across paths
+1. css annoyance: content-width wiggle on /topics and /posts
+2. card list alignment with tabs
 3. hyperlink list pagination
 4. single template html template (remove error.html)
 5. routing cleanup
