@@ -31,4 +31,4 @@ The repository contains the following important directories:
 - `test`: holds the unit tests.
 
 #### Licenses
-Code original to the project is licensed under AGPL with the exception of the [Epilogue font](https://github.com/Etcetera-Type-Co/epilogue), which is covered under the Open Font License.
+Code original to the project is licensed under AGPL with the exception of the [SUSE font](https://github.com/SUSE/suse-font), which is covered under the Open Font License.

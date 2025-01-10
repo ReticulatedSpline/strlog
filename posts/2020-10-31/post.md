@@ -17,18 +17,18 @@ Biden's pandemic plan is a seven point list:
 6. Rebuild and expand the defenses that Trump has dismantled to predict, prevent, and mitigate pandemic threats, including those coming from China.
 7. Implement mask mandates nationwide by working with governors and mayors and by asking the American people to do what they do best: step up in a time of crisis.
 
-A few things that stands out to me: testing is *not* mentioned to be free, though a future vaccine *is*. The jab at China in number 6 is perplexing as [China has the virus almost entirely contained](https://www.worldometers.info/coronavirus/#countries), reporting only 33 cases today against the US' nearly 9,000. Indeed, this weekend the US [set a world record for the number of newly reported cases](https://www.bbc.com/news/world-us-canada-54751759). Lastly, and most alarmingly, point 7 does not explicitly state Joe plans to set a national mask mandate; merely that he will work to set up mandates with each state. Perhaps the campaign fears a national mandate would be found unconstitutional? Regardless, this is not an issue states should be allowed choose to follow on their own.
+A few things that stands out to me: testing is *not* mentioned to be free, though a future vaccine *is*. The jab at China is comical here. Today [China claims to have the virus almost entirely contained](https://www.worldometers.info/coronavirus/#countries), reporting only 33 cases today against the US' nearly 9,000. Indeed, this weekend the US [set a world record for the number of newly reported cases](https://www.bbc.com/news/world-us-canada-54751759). However I suspect that the moment this pathogen was jetset no country on Earth had a shot at reliable contact tracing. WAstewater testing is probably our most reliable method here. Lastly, point 7 does not explicitly state Joe plans to set a national mask mandate; merely that he will work to set up mandates with each state. Perhaps the campaign fears a national mandate would be found unconstitutional? Regardless, this is not an issue states should be allowed choose to follow on their own.
 
 ### taxes
 Modest tax increases on the wealthy.
-- The plan correctly mentions Trump's current corporate tax rate of 21% is insane and proposes raising it to 28%. This in itself is fine, but I can't help but notice that is [still down 7% from the Obama administration's corporate tax rate of 35%](https://tradingeconomics.com/united-states/corporate-tax-rate).
-- Joe's plan involves a meager 2.6% bump to the top marginal income tax rate from 37% to 39.6%. This doesn't reflect the moving of tax brackets, but it is still a far cry from the [pre-Reagan era of 90+%](https://www.taxpolicycenter.org/statistics/historical-highest-marginal-income-tax-rates).
-- The idea of a minimum 15% corporate tax is nice. It also probably won't happen while the democrats continue to pretend that bipartisanship is viable.
+- The plan mentions Trump's current corporate tax rate of 21% is insane and proposes raising it to 28%. This in itself is fine, but I can't help but notice that is [still down 7% from the Obama administration's corporate tax rate of 35%](https://tradingeconomics.com/united-states/corporate-tax-rate).
+- Joe's plan involves a meager 2.6% bump to the top marginal income tax rate from 37% to 39.6%. This doesn't reflect the moving of tax brackets, but it is still a far cry from the [pre-Reagan era of 90+% in the highest bracket](https://www.taxpolicycenter.org/statistics/historical-highest-marginal-income-tax-rates).
+- The idea of a minimum 15% corporate tax is nice. It also probably won't happen as it requires viable bipartisanship.
 
 ### foreign policy
 - One stated policy is ending family separation at the southern border. This is obviously desirable, but again I feel obliged to mention that many of these kinds of policies were started under [the Obama administration, including quotas](https://en.wikipedia.org/wiki/Immigration_detention_in_the_United_States#Immigration_detention_under_Obama), and were simply accelerated under Trump.
 - Talk of ending torture but no mention of Guantanamo.
-- No mention of ending the Cuban embargo.
+- No mention of the Cuban embargo.
 - Talk of slowing nuclear proliferation, which is always humorous from the most heavily armed nation on Earth.
 - Some mentioned positives: ending the [Global Gag Rule](https://www.plannedparenthoodaction.org/communities/planned-parenthood-global/end-global-gag-rule), ending support for the Saudi genocide in Yemen, and ending the [Muslim travel ban](https://en.wikipedia.org/wiki/Executive_Order_13769).
 
@@ -62,10 +62,10 @@ This is a surprisingly aggressive timeline, even in a more authoritarian state l
 This is nice, but the [Green New Deal](https://berniesanders.com/issues/green-new-deal/) I would have preferred called for **directly** investing $16.3 trillion -- a tenfold reduction in proposed funds *before* reconciliation. He also commits to a $200 billion donation to the Green Climate Fund, which is cute. Our obligation to [countries we've literally destroyed](https://en.wikipedia.org/wiki/Highway_of_Death) in the past hundred years is hard to overstate, and $200 billion is a drop in the bucket. For a case example, take a gander at Season 1 of the [Blowback Podcast](https://blowback.show/) which details the incredible extent of the destruction of infrastructure caused by America in the Iraq war alone.
 
 They can't resist another jab a China here, and correctly note that it is the world's largest polluter. This is also mentioned in [China's latest 5 year plan](https://en.wikipedia.org/wiki/Five-year_plans_of_China#Fourteenth_plan_(2021-2025)) with goals for 2060 net neutral emissions. I'm more inclined to believe China's 2060 claim over the United States' 2050 plan for a few reasons:
-- China has more stable leadership (of course stemming from being a relatively authoritarian state)
-- China does not fear [large, disruptive infrastructure works](https://en.wikipedia.org/wiki/Three_Gorges_Dam)
+- China has more stable leadership (a neutral byproduct of being an authoritarian state)
+- China does not fear [large, disruptive infrastructure works even at the high cost of displacement](https://en.wikipedia.org/wiki/Three_Gorges_Dam)
 - The five year plans have a decent history of meeting goals (at least on paper)
 
 ---
 
-That's about all the focus group intern-speak I can handle for the time being. These proposals are milder than I'd prefer but if he actually accomplished them all it would still be an impressive feat. However, I wonder if capitulation to the right in a vain attempt to build the largest tent on Earth might get in the way.
+These proposals are milder than I'd prefer but would still be impressive feat under the least productive congress in history. However, I wonder if capitulation to the right in an attempt to build the largest tent on Earth might get in the way.

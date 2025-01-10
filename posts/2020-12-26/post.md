@@ -3,5 +3,5 @@ Earlier this year I put together a budget stereo system. I bought a pair of Cele
 I'm no hardware expert, but this unit is old enough that the electrical components are relatively large, and the solder points looked approachable even to me. The first step was trying to find new capacitors: The manufacturer, Nichicon, no longer makes the model VX(M) caps. However, I was able to find an upgrade sheet showing the upgrade path. Even better, the replacement VR(M) capacitors are $1.50 on [Digikey](https://www.digikey.com/). For that price it seemed worth a shot.
 ![Old and new capacitor comparison](comparison.jpg)
 ![The circuit board with new connections soldered](pcb.jpg)
-This yielded mixed results. The output is not perfectly clean, but hey... the box is 25 years old. It is a huge improvement so far, so we'll see if my fix holds, or if the busted capacitors were a symptom rather than a cause.
 ![Completed setup](plant-fi.jpg)
+This yielded mixed results. The output is not perfectly clean, but hey... the box is 25 years old. It is a huge improvement so far, so we'll see if my fix holds, or if the busted capacitors were a symptom rather than a cause.

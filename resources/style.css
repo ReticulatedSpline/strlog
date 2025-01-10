@@ -4,8 +4,8 @@ body, html {
 }
 
 @font-face {
-	font-family: "epilogue";
-	src: url("./resources/fonts/Epilogue-Medium.woff2");
+	font-family: "suse";
+	src: url("./resources/fonts/SUSE-Medium.woff2");
 }
 
 /* desktop widescreen */
@@ -17,7 +17,7 @@ body, html {
 		margin-top: 5rem;
 		font-weight: lighter;
 		background-color: #3a404b;
-		font-family: epilogue,
+		font-family: suse,
 					 sans-serif
 	}
 	
@@ -43,8 +43,9 @@ body, html {
 	#main_menu li {
 		list-style-type: none;
 		text-align: right;
-		margin-top: 1em;
-		padding: .2em;
+		font-size: 2rem;
+		margin-top: 1rem;
+		padding: .2rem;
 	}
 }
 
@@ -57,7 +58,7 @@ body, html {
 		margin-top: 1rem;
 		font-weight: lighter;
 		background-color: #3a404b;
-		font-family: epilogue,
+		font-family: suse,
 					 sans-serif;
 	}
 
@@ -88,23 +89,21 @@ body, html {
 	}
 }
 
-
-
 #site_name {
 	text-align: right;
-	padding-top: .2em;
-	padding-bottom: .2em;
-	padding-right: .2em;
+	padding-top: .2rem;
+	padding-bottom: .2rem;
+	padding-right: .2rem;
 }
 
 #site_path {
 	color: darkorange;
 	font-size: 2rem;
 	transform: translate(-1rem);
+	margin-bottom: 1rem;
 }
 
 #navbar {
-	margin-top: 0;
 	list-style: none;
 	text-align: right;
 	font-size: 2rem;
@@ -148,6 +147,7 @@ body, html {
 /** classes **/
 .h1 {
 	color: darkorange;
+	margin-top: 0;
 }
 
 .h1 {
@@ -183,7 +183,6 @@ body, html {
 	margin: 0;
 	font-size: 1.3rem;
 	color: darkgrey;
-	margin-bottom: 0;
 }
 
 .hr {
@@ -253,9 +252,10 @@ body, html {
 }
 
 .tab {
-	color: gray;
+	color: darkgray;
 	font-weight: bold;
 	text-decoration: none;
+	padding: .2rem;
 }
 
 .tab:hover {
@@ -278,8 +278,9 @@ body, html {
 
 .tagline {
 	font-size: 1.4rem;
+	padding-left: .2rem;
 	color: darkgray;
-	margin: 0;
+
 }
 
 .topic_tag {

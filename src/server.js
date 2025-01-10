@@ -172,14 +172,14 @@ function routeSpecificPost(req, res, host) {
 	
 		const post_dir = files[post_index];
 
-		let next_post = null;
+		let last_post = null;
 		if (post_index < files.length) {
-			next_post = files[post_index + 1];
+			last_post = files[post_index + 1];
 		}
 
-		let last_post = null;
+		let next_post = null;
 		if (post_index > 0) {
-			last_post = files[post_index - 1];
+			next_post = files[post_index - 1];
 		}
 
 		let previous_posts = files.slice(0, 10);
@@ -195,8 +195,8 @@ function routeSpecificPost(req, res, host) {
 			last_post: last_post,
 			next_post: next_post,
 			html_dir: HTML_PATH,
-			metadata: require(metadata_path),
-			current_tab: 'posts'
+			metadata: require(metadata_path)
+			//current_tab: 'posts'
 		};
 		
 		let fn = (page) => {sendContent(page, HTML_MIME, res)};

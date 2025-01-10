@@ -6,11 +6,11 @@ function insertContent(page_data) {
 		+ '<span class="tagline">' + page_data.metadata.tagline
 		+ '</span><div class="topic_tags">';
 	
-	for (topic of page_data.metadata.topics) {
-		let url = page_data.host + '/topics/' + topic;
-		body_text += '<a href="http://' + url + '" class="topic_tag">'
-				  + topic + '</a>';
-	}
+	// for (topic of page_data.metadata.topics) {
+	// 	let url = page_data.host + '/topics/' + topic;
+	// 	body_text += '<a href="http://' + url + '" class="topic_tag">'
+	// 			  + topic + '</a>';
+	// }
 
 	body_text += '</div></div>';
 	body_text += page_data.markdown + '</div>';
@@ -197,7 +197,7 @@ function insertFooter(page_data) {
 }
 
 function addEndMark(page_data) {
-	page_data.markdown = page_data.markdown + ' ▣';
+	page_data.markdown = page_data.markdown + ' 🞙';
 }
 
 function stripCarriageReturns(page_data) {
