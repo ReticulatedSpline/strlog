@@ -1,4 +1,4 @@
-Hi, I'm a 20-something living in a midwest city. I created this blog and the software behind it as something between a journal and a programming project in 2020.
+Hi, I'm a programmer, urbanist, and language enthusiast living in a midsized city in the midwestern United States. I created this blog and the software serving it as something between a journal and a programming project in 2020.
 
 ![The author](../posts/2022-04-29/cloud_forest.jpeg)
 

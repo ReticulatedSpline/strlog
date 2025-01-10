@@ -1,5 +1,5 @@
 ## strlog is a static site server
-This project serves blog posts using the built-in http module provided by the NodeJS standard library. In addition, it parses markdown files to provide page styling and supports tags for organizing posts. The github repository itself serves as a content repository. When setup with a CI pipeline, publishing a post is as simple as pushing a git commit.
+This project serves blog posts using the built-in http module provided by the NodeJS standard library. In addition, it parses markdown files to provide page styling and supports tags for organizing posts. The github repository itself serves as a content repository. When set up with a CI pipeline, publishing a post is as simple as pushing a git commit.
 
 ![screenshot](https://imgur.com/wbTqj35.jpg "Screenshot")
 
@@ -9,14 +9,11 @@ This project serves blog posts using the built-in http module provided by the No
 - Navigate to the root directory and run `npm start local`. The server will default to port 5000.
 
 #### roadmap
-0. site "path" feature displays
-1. site "path" feature is navigable
-2. normalize css on all paths
+2. normalize css across paths
 3. hyperlink list pagination
 4. single template html template (remove error.html)
-5. server.js cleanup and semicolon insertion
+5. routing cleanup
 6. linktree style homepage styled off the error route
-7. post subtitle tag css
 8. full markdown parsing 
 
 #### caveats

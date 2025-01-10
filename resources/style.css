@@ -25,7 +25,7 @@ body, html {
 		order: 1;
 		flex: 1 0 15%;
 		margin-left: auto;
-		min-width: 20rem;
+		min-width: 8rem;
 		max-width: fit-content;
 	}
 
@@ -33,6 +33,7 @@ body, html {
 		order: 2;
 		flex: 1 0 75%;
 		padding-left: 4rem;
+		min-width: 32rem;
 		max-width: 32rem;
 		margin-right: auto;
 		align-items: right;
@@ -96,6 +97,12 @@ body, html {
 	padding-right: .2em;
 }
 
+#site_path {
+	color: darkorange;
+	font-size: 2rem;
+	transform: translate(-1rem);
+}
+
 #navbar {
 	margin-top: 0;
 	list-style: none;
@@ -111,7 +118,7 @@ body, html {
 
 #content {
 	font-size: 1.1rem;
-	line-height: 1.8;
+	line-height: 1.5;
 }
 
 
@@ -276,11 +283,15 @@ body, html {
 }
 
 .topic_tag {
-	border-radius: 0.3rem;
-	padding: 0.1rem 0.2rem 0.1rem 0.2rem;
+	padding: 0.2rem;
 	font-weight: 500;
 	margin-right: 0.7rem;
 	background-color: darkgray;
 	text-decoration: none;
+	color: #3a404b;
+}
+
+.topic_tag:hover {
+	background-color: darkorange;
 	color: #3a404b;
 }

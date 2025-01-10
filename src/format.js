@@ -1,15 +1,6 @@
 function insertContent(page_data) {
-	
-	if (!page_data || !page_data.metadata) {
-		page_data = {};
-		page_data['metadata'] = {};
-		page_data['html'] = '<html><body>{{content}}</body></html>';
-		page_data.metadata['title'] = '';
-		page_data.metadata['tagline'] = '';
-		page_data.metadata['topics'] = [];
-	}
-
-	let body_text = '<div id="content">'
+	let body_text = '<h2 id="site_path">' + page_data.site_path + '</h2>'
+		+ '<div id="content">'
 		+ '<h1 class="h1">'+ page_data.metadata.title + '</h1>'
 		+ '<div class="subtitle">'
 		+ '<span class="tagline">' + page_data.metadata.tagline
@@ -234,20 +225,21 @@ function insertHeader(post_data) {
 }
 
 function insertHyperlinkList(page_data) {
-	let content = '<div id="content">'
+	let content = '<h2 id="site_path">' + page_data.site_path;
+	content += '</h2><div id="card_list">';
 	for (let item of page_data.card_list) {
-		content += '<h2 class = "h2">'
-		content += '<a class = "link body_link" href="http://' + item.url + '"/>'
-		content += item.title
-		content += '</a></h2>'
+		content += '<h2 class = "h2">';
+		content += '<a class = "tab" href="http://' + item.url + '"/>';
+		content += item.title;
+		content += '</a></h2>';
 		if (item.tagline) {
-			content += '<h3 class = "tagline">'
-			content += item.tagline
-			content += '</h3>'
+			content += '<h3 class = "tagline">';
+			content += item.tagline;
+			content += '</h3>';
 		}
 	}
-	content += '</div>'
-	page_data.html = page_data.html.replace(/{{content}}/, content)
+	content += '</div>';
+	page_data.html = page_data.html.replace(/{{content}}/, content);
 }
 
 function insertTopicNavbar(page_data) {
@@ -267,6 +259,10 @@ function insertTopicNavbar(page_data) {
 
 	navbar_string += '</ul>'
 	page_data.html = page_data.html.replace(/{{navbar}}/, navbar_string)
+}
+
+function insertSitemap(page_data) {
+	page_data.html = page_data.h
 }
 
 function formatPost(page_data, fn) {
@@ -307,13 +303,15 @@ function formatHyperlinkList(page_data, fn) {
 	fn(page_data.html)
 }
 
-function formatModal(page_data, fn) {
-	// TODO
+function formatSitemap(page_data, fn) {
+	insertHeader(page_data)
+	insertSitemap(page_data)
+	insertFooter(page_data)
 	fn(page_data)
 }
 
 module.exports = {
-	formatModal: formatModal,
+	formatSitemap: formatSitemap,
 	formatHyperlinkList: formatHyperlinkList,
 	formatPost: formatPost
 }
