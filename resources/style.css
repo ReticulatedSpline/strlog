@@ -18,7 +18,7 @@ body, html {
 		margin-top: 5rem;
 		margin-left: 0;
 		margin-right: 0;
-		overflow: hidden;
+		overflow: scroll;
 		background-color: #3a404b;
 		font-family: suse, sans-serif;
 	}
@@ -53,7 +53,7 @@ body, html {
 	#site_path_short {
 		display:none;
 		visibility: collapse;
-	}	
+	}
 }
 
 /* mobile or narrow displays */
@@ -79,7 +79,6 @@ body, html {
 		padding-left: 2rem;
 		padding-right: 2rem;
 		width: fit-content;
-		overflow: hidden;
 		color: whitesmoke;
 	}
 
@@ -112,6 +111,7 @@ body, html {
 		margin-bottom: 1rem;
 		padding-left: 1rem;
 	}
+
 }
 
 #site_name {
@@ -139,7 +139,6 @@ body, html {
 	list-style: none;
 	text-align: right;
 	font-size: 2rem;
-	overflow: hidden;
 }
 
 #main_menu {
@@ -152,6 +151,12 @@ body, html {
 	line-height: 1.5;
 }
 
+.tagline {
+	font-size: 1.4rem;
+	padding-left: .2rem;
+	color: darkgray;
+	margin-top: 0;
+}
 
 #next {
 	float: right;
@@ -298,14 +303,12 @@ body, html {
 	margin-top: 0;
 }
 
-.subtitle {
-	margin-bottom: 1rem;
+.title {
+	margin-top: 1rem;
 }
 
-.tagline {
-	font-size: 1.4rem;
-	padding-left: .2rem;
-	color: darkgray;
+.subtitle {
+	margin-bottom: 1rem;
 }
 
 .topic_tag {
