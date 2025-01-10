@@ -7,7 +7,7 @@ function insertContent(page_data) {
 	} else {
 		body_text += '<h2 id="site_path_post">' + page_data.site_path + '/</h2>'
 		+ '<div id="content">'
-		+ '<h1 class="h1">'+ page_data.metadata.title + '</h1>'
+		+ '<h1 class="h1 title">'+ page_data.metadata.title + '</h1>'
 		+ '<div class="subtitle">'
 		+ '<span class="tagline">' + page_data.metadata.tagline
 		+ '</span><div class="topic_tags">';
