@@ -11,7 +11,6 @@ This project serves blog posts using the built-in http module provided by the No
 #### roadmap
 2. card list alignment with tabs
 3. hyperlink list pagination
-4. single template html template (remove error.html)
 5. routing cleanup
 6. linktree style homepage styled off the error route
 8. full markdown parsing 

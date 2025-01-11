@@ -22,4 +22,4 @@ Setting up a static blog is an uncomplicated task at face value, but the process
 
 There's a bunch left to do -- the site is presentable on mobile (i.e. screens under 800px) but it is not fully navigable. It is not, for example, possible to browse topics. Fixing this will require a deeper rework of routing and the API so I've been putting it off for some time. Also, these posts are written in Markdown, a lightweight language for styling text. I'm serving them with my own Markdown 'parser', but it is just a series of regex replace calls rather than a context-aware parser. For this reason you'll notice the quirks and limitations until I get around to writing a fully-fledged markdown parser. One very visible one is mishandling of parentheses in URLs, which means I have to manually edit them with [percent encodings](https://developer.mozilla.org/en-US/docs/Glossary/Percent-encoding) to avoid extra parentheses from showing up.
 
-A project is never finished -- hopefully this one isn't abandoned.
+They say a project is never finished, but hopefully this one isn't abandoned.

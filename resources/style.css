@@ -15,9 +15,7 @@ body, html {
 		display: flex;
 		flex-wrap: nowrap;
 		width: 100%;
-		margin-top: 5rem;
-		margin-left: 0;
-		margin-right: 0;
+		margin: 5rem 0 2rem 0;
 		overflow: scroll;
 		background-color: #3a404b;
 		font-family: suse, sans-serif;
@@ -80,6 +78,7 @@ body, html {
 		padding-right: 2rem;
 		width: fit-content;
 		color: whitesmoke;
+		overflow: auto;
 	}
 
 	#site_name {
@@ -110,6 +109,11 @@ body, html {
 		margin-top: 0;
 		margin-bottom: 1rem;
 		padding-left: 1rem;
+	}
+
+	#rand_tab {
+		visibility: collapse;
+		display: none;
 	}
 
 }

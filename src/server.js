@@ -8,8 +8,7 @@ const { shuffleArray,
 		sendContent } = require('./utilities.js');
 
 const { formatPost,
-		formatHyperlinkList,
-		formatSitemap } = require('./format.js');
+		formatHyperlinkList } = require('./format.js');
 
 require('./constants.js');
 
@@ -29,6 +28,9 @@ let server = http.createServer(function (req, res) {
 	}
 	else if (req.url.endsWith('/topics')) {
 		routeAllTopics(req, res, host);
+	}
+	else if (req.url.endsWith('/rand')) {
+		routeRand(req, res, host);
 	}
 	else if (req.url.match(/\/topics\/[A-z]+$/)) {
 		routeSpecificTopic(req, res, host);
@@ -67,19 +69,6 @@ let server = http.createServer(function (req, res) {
 		routeError(req, res, host);
 	}
 })
-
-function routeSitemap(req, res, host) {
-	logConsole('request: sitemap');
-	
-	page_data = {
-		html: HTML_TEMPLATE,
-		host: host,
-		tabs: ['posts', 'topics', 'about'],
-	};
-
-	let fn = (postContent) => {sendContent(postContent, HTML_MIME, res)};
-	formatSitemap(page_data, fn);
-}
 
 function routeAllPosts(req, res, host) {
 	logConsole('request: posts');
@@ -263,19 +252,9 @@ function routeAbout(req, res, host) {
 			logConsole('error: about page ' + error);
 			return;
 		}
-		let link_count = parseInt(Math.random() * 10) + 3;
+
 		let metadata_path = path.join(APP_ROOT, './posts/about/metadata.json');
 		let metadata = require(metadata_path);
-		let navbar_links = shuffleArray(metadata.links);
-		let post_list = [];
-		while (link_count > 0) {
-			let random_number = parseInt(Math.random() * 10) + 3;
-			let navbar_string = '<a class="tab" href="' + navbar_links[link_count] + '">';
-			navbar_string += '▒'.repeat(random_number);
-			navbar_string += '</a>';
-			post_list.push(navbar_string);
-			link_count -= 1;
-		}
 
 		let page_data = {
 			html: HTML_TEMPLATE,
@@ -285,7 +264,6 @@ function routeAbout(req, res, host) {
 			site_path_short: '',
 			markdown: markdown,
 			metadata: metadata,
-			previous_posts: post_list,
 			current_tab: 'about',
 			no_url: true
 		};
@@ -295,17 +273,36 @@ function routeAbout(req, res, host) {
 	})
 }
 
+function routeRand(req, res, host) {
+	let index = Math.floor(Math.random() * WIKI_LINKS.length);
+	let link = WIKI_LINKS[index];
+	logConsole("request: rand, redirecting to " + link);
+	res.writeHead(302, {'Location': link});
+	res.end();
+}
+
 function routeResource(uri, mimetype, res) {
 	fs.readFile(uri, (err, data) => {
 		sendContent(data, mimetype, res);
 	})
 }
 
-function routeError(req, res) {
+function routeError(req, res, host) {
 	logConsole('error: invalid route ' + req.url);
-	fs.readFile(ERROR_PATH, 'utf8', (err, html) => {
-		sendContent(html, HTML_MIME, res);
-	})
+	let card_list = [{title: 'return to home',
+					 url: host}];
+
+	page_data = {
+		html: HTML_TEMPLATE,
+		host: host,
+		card_list: card_list,
+		site_path: '/mare_incognitum',
+		site_path_short: '',
+		current_tab: ''
+	};
+
+	let fn = (page) => {sendContent(page, HTML_MIME, res)};
+	formatHyperlinkList(page_data, fn);
 }
 
 const HTML_TEMPLATE = fs.readFileSync(HTML_PATH, 'utf8');

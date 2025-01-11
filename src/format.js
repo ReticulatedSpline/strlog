@@ -203,7 +203,7 @@ function insertFooter(page_data) {
 }
 
 function addEndMark(page_data) {
-	page_data.markdown = page_data.markdown + ' 🞙';
+	page_data.markdown = page_data.markdown + ' ※';
 }
 
 function stripCarriageReturns(page_data) {
@@ -212,16 +212,21 @@ function stripCarriageReturns(page_data) {
 
 function insertHeader(post_data) {
 	let header = '<ul id="main_menu">';
-	let tabs = ['posts', 'topics', 'about'];
-	let urls = ['/posts', '/topics', '/about'];
+	let tabs = ['posts', 'topics', 'about', 'rand'];
+	let urls = ['/posts', '/topics', '/about', '/rand'];
 	let index = 0;
-	while (index < 3) {
+	while (index < 4) {
 		header += '<li>';
 		if (post_data.current_tab == tabs[index]) {
 			header += '<a class="h1 tab current_tab" ';
 		} else {
 			header += '<a class="h1 tab" ';
 		}
+
+		if (index == 3) {
+			header += 'id="rand_tab"';
+		}
+
 		header += 'href="' + urls[index] + '">';
 		header += tabs[index] + '</a></li>';
 		index += 1;
@@ -268,10 +273,6 @@ function insertTopicNavbar(page_data) {
 	page_data.html = page_data.html.replace(/{{navbar}}/, navbar_string)
 }
 
-function insertSitemap(page_data) {
-	// TODO
-}
-
 function formatPost(page_data, fn) {
 
 	// markdown regexes (modifying state of page_data.markdown)
@@ -293,7 +294,6 @@ function formatPost(page_data, fn) {
 	
 	// html (modifying state of page_data.html)
 	insertContent(page_data);
-	insertNavbar(page_data, true);
 	insertHeader(page_data);
 	insertFooter(page_data);
 
@@ -310,15 +310,7 @@ function formatHyperlinkList(page_data, fn) {
 	fn(page_data.html)
 }
 
-function formatSitemap(page_data, fn) {
-	insertHeader(page_data)
-	insertSitemap(page_data)
-	insertFooter(page_data)
-	fn(page_data)
-}
-
 module.exports = {
-	formatSitemap: formatSitemap,
 	formatHyperlinkList: formatHyperlinkList,
 	formatPost: formatPost
 }
