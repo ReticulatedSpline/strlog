@@ -35,7 +35,7 @@ let server = http.createServer(function (req, res) {
 	else if (req.url.match(/\/topics\/[A-z]+$/)) {
 		routeSpecificTopic(req, res, host);
 	}
-	else if (req.url.match(/\d{4}-\d{2}-\d{2}$/)) {
+	else if (req.url.match(/\/posts\/\d{4}-\d{2}-\d{2}$/)) {
 		routeSpecificPost(req, res, host);
 	}
 	else if (req.url.endsWith('/about')) {
@@ -158,7 +158,8 @@ function routeSpecificPost(req, res, host) {
 		}
 
 		if (!found) {
-			routeError(req, res);
+			routeError(req, res, host);
+			return;
 		}
 	
 		const post_dir = files[post_index];
@@ -305,6 +306,7 @@ function routeError(req, res, host) {
 	formatHyperlinkList(page_data, fn);
 }
 
+logConsole('reading html template');
 const HTML_TEMPLATE = fs.readFileSync(HTML_PATH, 'utf8');
 const PORT = 5000;
 server.listen(PORT);
