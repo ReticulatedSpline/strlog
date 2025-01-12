@@ -1,5 +1,4 @@
 const path = require('path');
-const fs = require('fs');
 
 global.APP_ROOT = path.join(__dirname, '../');
 global.HTML_PATH = 'resources/page.html';
@@ -12,7 +11,8 @@ global.HTML_MIME = { 'Content-Type': 'text/html' };
 global.ICO_MIME  = { 'Content-Type': 'image/x-icon' };
 global.JPG_MIME  = { 'Content-Type': 'image/jpg' };
 global.PNG_MIME  = { 'Content-Type': 'image/png' };
-global.WOFF2_MIME  = { 'Content-Type': 'font/woff2' };
+global.TXT_MIME  = { 'Content-Type': 'text/plain'}
+global.WOFF2_MIME= { 'Content-Type': 'font/woff2' };
 
 global.WIKI_LINKS = [
     "https://en.wikipedia.org/wiki/Mono_no_aware",
@@ -51,5 +51,11 @@ global.WIKI_LINKS = [
     "https://en.wikipedia.org/wiki/Project_Sanguine",
     "https://en.wikipedia.org/wiki/Ghoti",
     "https://en.wikipedia.org/wiki/Red_mercury",
-    "https://en.wikipedia.org/wiki/Rayleigh_scattering"
+    "https://en.wikipedia.org/wiki/Rayleigh_scattering",
+    "https://en.wikipedia.org/wiki/SOSUS",
+    "https://en.wikipedia.org/wiki/USS_Thresher_(SSN-593)",
+    "https://en.wikipedia.org/wiki/Operation_Sea-Spray",
+    "https://en.wikipedia.org/wiki/Camp_Century",
+    "https://en.wikipedia.org/wiki/Perdido_Street_Station",
+    "https://en.wikipedia.org/wiki/A_Memory_Called_Empire"
 ];

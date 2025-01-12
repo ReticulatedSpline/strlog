@@ -1,8 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const http = require('http');
-const { shuffleArray, 
-		getMetadataFiles,
+const { getMetadataFiles,
 		getAllPostsByDate,
 		logConsole,
 		sendContent } = require('./utilities.js');
@@ -65,13 +64,17 @@ let server = http.createServer(function (req, res) {
 		let uri = path.join(APP_ROOT, req.url);
 		routeResource(uri, WOFF2_MIME, res);
 	}
+	else if (req.url.endsWith('robots.txt')) {
+		let uri = path.join(APP_ROOT, 'resources/robots.txt');
+		routeResource(uri, TXT_MIME, res);
+	}
 	else {
 		routeError(req, res, host);
 	}
 })
 
 function routeAllPosts(req, res, host) {
-	logConsole('request: posts');
+	logConsole('request: posts', req);
 	let post_list = new Array();
 	file_list = getMetadataFiles('./posts');
 	file_list.sort(function(a, b) {
@@ -112,7 +115,7 @@ function routeAllPosts(req, res, host) {
 }
 
 function routeAllTopics(req, res, host) {
-	logConsole('request: topic list');
+	logConsole('request: topic list', req);
 	let topics = new Set();
 	for (file of getMetadataFiles('./posts')) {
 		metadata = require(path.join(APP_ROOT, file));
@@ -151,7 +154,7 @@ function routeSpecificPost(req, res, host) {
 		let found = false;
 		for (const [index, post] of files.entries()) {
 			if (post === req.url.split('/')[2]) {
-				logConsole('request: post ' + post);
+				logConsole('request: post ' + post, req);
 				post_index = index;
 				found = true;
 			}
@@ -204,7 +207,7 @@ function routeSpecificPost(req, res, host) {
 function routeSpecificTopic(req, res, host) {
 	let url_parts = req.url.split('/');
 	let topic = url_parts[url_parts.length - 1];
-	logConsole('request: topic ' + topic);
+	logConsole('request: topic ' + topic, req);
 	file_list = getMetadataFiles('./posts');
 	file_list.sort(function(a, b) {
 		return b.localeCompare(a, undefined, {
@@ -247,10 +250,10 @@ function routeSpecificTopic(req, res, host) {
 }
 
 function routeAbout(req, res, host) {
-	logConsole('request: about page');
+	logConsole('request: about page', req);
 	fs.readFile('./posts/about/post.md', 'utf8', (err, markdown) => {
 		if (err) {
-			logConsole('error: about page ' + error);
+			logConsole('error: about page ' + error, req);
 			return;
 		}
 
@@ -277,7 +280,7 @@ function routeAbout(req, res, host) {
 function routeRand(req, res, host) {
 	let index = Math.floor(Math.random() * WIKI_LINKS.length);
 	let link = WIKI_LINKS[index];
-	logConsole("request: rand, redirecting to " + link);
+	logConsole("request: rand, redirecting to " + link, req);
 	res.writeHead(302, {'Location': link});
 	res.end();
 }
@@ -289,7 +292,7 @@ function routeResource(uri, mimetype, res) {
 }
 
 function routeError(req, res, host) {
-	logConsole('error: invalid route ' + req.url);
+	logConsole('error: invalid route ' + req.url, req);
 	let card_list = [{title: 'return to home',
 					 url: host}];
 

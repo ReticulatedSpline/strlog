@@ -9,7 +9,6 @@ This project serves blog posts using the built-in http module provided by the No
 - Navigate to the root directory and run `npm start local`. The server will default to port 5000.
 
 #### roadmap
-2. card list alignment with tabs
 3. hyperlink list pagination
 5. routing cleanup
 6. linktree style homepage styled off the error route

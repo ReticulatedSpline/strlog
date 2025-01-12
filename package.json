@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "prod": "node src/server.js prod",
-    "local": "node src/server.js local",
-    "test": "node test/test.js"
+    "local": "node src/server.js local"
   },
   "repository": {
     "type": "git",

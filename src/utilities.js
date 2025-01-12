@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+// currently unused
 function shuffleArray(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
   
@@ -58,18 +59,24 @@ function sendContent(content, mime, res) {
 	res.end(content);
 }
 
-function logConsole(message) {
+function logConsole(message, req) {
     date = new Date();
 	const offsetMs = date.getTimezoneOffset() * 60 * 1000;
     const msLocal =  date.getTime() - offsetMs;
     const dateLocal = new Date(msLocal);
     const iso = dateLocal.toISOString();
     const isoLocal = iso.slice(0, 19).replace('T', ' ');
-	console.log('[' + isoLocal + ']', message);
+	let ip = '';
+	if (req) {
+		ip = (req.headers['x-forwarded-for'] || '').split(',').pop().trim() || 
+        	  req.socket.remoteAddress
+			  console.log('[' + isoLocal + '] [' + ip + ']', message);
+	} else {
+		console.log('[' + isoLocal + ']', message);
+	}
 }
 
 module.exports = {
-	shuffleArray: shuffleArray,
     getMetadataFiles: getMetadataFiles,
     getAllPostsByDate: getAllPostsByDate,
     logConsole: logConsole,
