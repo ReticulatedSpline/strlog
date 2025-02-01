@@ -57,5 +57,9 @@ global.WIKI_LINKS = [
     "https://en.wikipedia.org/wiki/Operation_Sea-Spray",
     "https://en.wikipedia.org/wiki/Camp_Century",
     "https://en.wikipedia.org/wiki/Perdido_Street_Station",
-    "https://en.wikipedia.org/wiki/A_Memory_Called_Empire"
+    "https://en.wikipedia.org/wiki/A_Memory_Called_Empire",
+    "https://en.m.wikipedia.org/wiki/Splooting",
+    "https://en.wikipedia.org/wiki/Arcology",
+    "https://en.m.wikipedia.org/wiki/Microsoft_Bob",
+    "https://en.m.wikipedia.org/wiki/Don_Norman"
 ];

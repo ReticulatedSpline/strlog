@@ -18,7 +18,7 @@ let server = http.createServer(function (req, res) {
 	}
 
 	if (req.url == '/') {
-		logConsole("request: root, redirecting to /posts");
+		logConsole("request: root, redirecting to /posts", req);
 		res.writeHead(302, {'Location': '/posts'});
 		res.end();
 	}

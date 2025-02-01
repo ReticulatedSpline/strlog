@@ -69,8 +69,12 @@ function logConsole(message, req) {
 	let ip = '';
 	if (req) {
 		ip = (req.headers['x-forwarded-for'] || '').split(',').pop().trim() || 
-        	  req.socket.remoteAddress
-			  console.log('[' + isoLocal + '] [' + ip + ']', message);
+        	  req.socket.remoteAddress;
+		if (ip == '::ffff:127.0.0.1') {
+			ip = 'localhost';
+		}
+		console.log('[' + isoLocal + '] [' + ip + ']', message);
+		
 	} else {
 		console.log('[' + isoLocal + ']', message);
 	}
