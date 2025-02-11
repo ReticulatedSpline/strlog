@@ -252,6 +252,10 @@ function insertHyperlinkList(page_data) {
 	}
 	content += '</div>';
 	page_data.html = page_data.html.replace(/{{content}}/, content);
+
+	page_data.html = page_data.html.replace(/{{title}}/, '"strlog"');
+	page_data.html = page_data.html.replace(/{{tagline}}/, '"a blog about nothing"');
+	
 }
 
 function insertTopicNavbar(page_data) {
