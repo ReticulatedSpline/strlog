@@ -17,7 +17,7 @@ The season hinges on a spherical supercomputer built by an eccentric philosopher
 The central theme of this narrative is obvious to me; any kind of centralized action is ontologically impermissible. Mandatory vaccinations might save millions of lives but doing so is philosophically unjustifiable. In the name of ill-defined freedoms any spillage of blood or loss of life can be rationalized! In reality, I suspect that if anyone harboring these views were to actually witness death first-hand they would experience a sudden and radical shift in ideology. The masses are cavalier about the spilling of blood only when it is not their own. 
 
 ## optimistic resignation: an answer to Capitalist Realism
-Mark Fischer lays out his perceived brutal truth in the book *Capitalist Realism*: we live under an economic system so pervasive and malleable that it cannot be escaped, neither in academia nor in self described socialist nations. The idea of equivalent exchange is here to stay.
+Mark Fisher lays out his perceived brutal truth in the book *Capitalist Realism*: we live under an economic system so pervasive and malleable that it cannot be escaped, neither in academia nor in self described socialist nations. The idea of equivalent exchange is here to stay.
 
 However, humanity progresses. The true mark of progress, scientific achievement, will march forward irrespective of our current economic mode. The proof lies in history: the telescope was pioneered under cottage industry, basic space-faring under the novel economic system of the Soviet Union. Today’s [leading edge semiconductor tech](https://en.wikipedia.org/wiki/2_nm_process) is blazing forward despite capitalist contradictions spiraling out elsewhere.
 
