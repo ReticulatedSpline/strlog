@@ -61,5 +61,7 @@ global.WIKI_LINKS = [
     "https://en.m.wikipedia.org/wiki/Splooting",
     "https://en.wikipedia.org/wiki/Arcology",
     "https://en.m.wikipedia.org/wiki/Microsoft_Bob",
-    "https://en.m.wikipedia.org/wiki/Don_Norman"
+    "https://en.m.wikipedia.org/wiki/Don_Norman",
+    "https://en.wikipedia.org/wiki/Hannibal_Directive",
+    "https://en.wikipedia.org/wiki/Dahiya_doctrine"
 ];
