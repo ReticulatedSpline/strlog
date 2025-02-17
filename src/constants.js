@@ -63,5 +63,6 @@ global.WIKI_LINKS = [
     "https://en.m.wikipedia.org/wiki/Microsoft_Bob",
     "https://en.m.wikipedia.org/wiki/Don_Norman",
     "https://en.wikipedia.org/wiki/Hannibal_Directive",
-    "https://en.wikipedia.org/wiki/Dahiya_doctrine"
+    "https://en.wikipedia.org/wiki/Dahiya_doctrine",
+    "https://en.wikipedia.org/wiki/Out-of-place_artifact"
 ];

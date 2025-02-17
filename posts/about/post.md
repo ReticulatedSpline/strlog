@@ -2,7 +2,7 @@ I'm a programmer, urbanist, and language enthusiast living in a midsized city in
 
 ![Me climbing a big mountain and looking cool doing it](../posts/2022-04-29/cloud_forest.jpeg)
 
-Since then, strlog has served as dumping ground for whatever I need to get out of my head. Most posts fall under the topics of technology, politics, and media. You can send kudos, high paying job offers, and virtual cash money to my gmail below.
+Since then, strlog has served as dumping ground for whatever I need to get out of my head. Most posts fall under the topics of technology, politics, and media. You can send kudos, high paying job offers, and virtual cash money to my email below.
 
 `ennui (at) strlog (dot) net`
 
