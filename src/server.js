@@ -305,7 +305,7 @@ function routeError(req, res, host) {
 		current_tab: ''
 	};
 
-	let fn = (page) => {sendContent(page, HTML_MIME, res)};
+	let fn = (page) => {sendContent(page, HTML_MIME, res, 404)};
 	formatHyperlinkList(page_data, fn);
 }
 

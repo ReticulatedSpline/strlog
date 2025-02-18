@@ -54,8 +54,8 @@ function getAllPostsByDate(fn) {
 	})
 }
 
-function sendContent(content, mime, res) {
-	res.writeHead(200, mime);
+function sendContent(content, mime, res, code = 200) {
+	res.writeHead(code, mime);
 	res.end(content);
 }
 
