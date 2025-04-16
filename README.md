@@ -1,5 +1,5 @@
 ## strlog is a static site server
-This project serves blog posts using the built-in http module provided by the NodeJS standard library. In addition, it parses markdown files to provide page styling and supports tags for organizing posts. The github repository itself serves as a content repository. When set up with a CI pipeline, publishing a post is as simple as pushing a git commit.
+This project serves blog posts using the built-in http module provided by the NodeJS standard library. In addition, it parses markdown files to provide page styling and supports tags for organizing posts. The git repository itself serves as a content repository. When set up with a CI pipeline, publishing a post is as simple as pushing a commit.
 
 ![screenshot](https://imgur.com/wbTqj35.jpg "Screenshot")
 

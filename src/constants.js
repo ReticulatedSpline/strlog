@@ -1,8 +1,8 @@
 const path = require('path');
 
 global.APP_ROOT = path.join(__dirname, '../');
-global.HTML_PATH = 'resources/page.html';
-global.ERROR_PATH = 'resources/error.html';
+global.HTML_PATH = path.join(APP_ROOT, '/resources/page.html');
+global.ERROR_PATH = path.join(APP_ROOT, '/resources/error.html');
 global.IS_PROD = process.argv[2] == 'prod' ? true : false;
 global.MODE_STRING =  IS_PROD ? 'production' : 'local';
 

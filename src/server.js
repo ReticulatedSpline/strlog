@@ -76,7 +76,7 @@ let server = http.createServer(function (req, res) {
 function routeAllPosts(req, res, host) {
 	logConsole('request: posts', req);
 	let post_list = new Array();
-	file_list = getMetadataFiles('./posts');
+	file_list = getMetadataFiles(path.join(APP_ROOT, 'posts'));
 	file_list.sort(function(a, b) {
 		return b.localeCompare(a, undefined, {
 			numeric: true,
@@ -88,10 +88,10 @@ function routeAllPosts(req, res, host) {
 	file_list.shift();
 
 	for (file of file_list) {
-		metadata = require(path.join(APP_ROOT, file));
-		// gross hack to grab the date string out of the path :(
-		let directory = file.split('/')[2];
-		let url = path.join(host, 'posts', directory);
+		metadata = require(file);
+		let split_path = file.split('/');
+		let date_string = split_path[split_path.length - 2];
+		let url = path.join(host, 'posts', date_string);
 		let item = {
 			title: metadata.title,
 			tagline: metadata.tagline,
@@ -117,8 +117,8 @@ function routeAllPosts(req, res, host) {
 function routeAllTopics(req, res, host) {
 	logConsole('request: topic list', req);
 	let topics = new Set();
-	for (file of getMetadataFiles('./posts')) {
-		metadata = require(path.join(APP_ROOT, file));
+	for (file of getMetadataFiles(path.join(APP_ROOT, 'posts'))) {
+		metadata = require(file);
 		for (topic of metadata.topics) {
 			topics.add(topic);
 		}
@@ -179,8 +179,8 @@ function routeSpecificPost(req, res, host) {
 
 		let previous_posts = files.slice(0, 10);
 
-		const metadata_path = path.join(APP_ROOT, './posts', post_dir, 'metadata.json');
-		const markdown_path = path.join(APP_ROOT, './posts', post_dir, 'post.md');
+		const metadata_path = path.join(APP_ROOT, 'posts', post_dir, 'metadata.json');
+		const markdown_path = path.join(APP_ROOT, 'posts', post_dir, 'post.md');
 	
 		let page_data = {
 			host: host,
@@ -208,7 +208,7 @@ function routeSpecificTopic(req, res, host) {
 	let url_parts = req.url.split('/');
 	let topic = url_parts[url_parts.length - 1];
 	logConsole('request: topic ' + topic, req);
-	file_list = getMetadataFiles('./posts');
+	file_list = getMetadataFiles(path.join(APP_ROOT, 'posts'));
 	file_list.sort(function(a, b) {
 		return b.localeCompare(a, undefined, {
 			numeric: true,
@@ -220,14 +220,15 @@ function routeSpecificTopic(req, res, host) {
 	file_list.shift();
 	let card_list = [];
 	for (file of file_list) {
-		metadata = require(path.join(APP_ROOT, file));
+		metadata = require(file);
 		if (!metadata.topics.includes(topic)) {
 			continue;
 		}
 
 		// get directory name
-		let directory = file.split('/')[2];
-		let url = path.join(host, 'posts', directory);
+		let split_string = file.split('/');
+		let date_string = split_string[split_string.length - 2];
+		let url = path.join(host, 'posts', date_string);
 		let item = {
 			title: metadata.title,
 			tagline: metadata.tagline,
@@ -251,13 +252,13 @@ function routeSpecificTopic(req, res, host) {
 
 function routeAbout(req, res, host) {
 	logConsole('request: about page', req);
-	fs.readFile('./posts/about/post.md', 'utf8', (err, markdown) => {
+	fs.readFile(path.join(APP_ROOT, 'posts/about/post.md'), 'utf8', (err, markdown) => {
 		if (err) {
 			logConsole('error: about page ' + error, req);
 			return;
 		}
 
-		let metadata_path = path.join(APP_ROOT, './posts/about/metadata.json');
+		let metadata_path = path.join(APP_ROOT, 'posts/about/metadata.json');
 		let metadata = require(metadata_path);
 
 		let page_data = {
