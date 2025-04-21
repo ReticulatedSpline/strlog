@@ -54,8 +54,17 @@ body, html {
 	}
 }
 
-/* mobile or narrow displays */
+/* narrow displays, mobile */
 @media(max-width: 800px) {
+	/* disable sideways scroll on mobile */
+	body, html {
+		overflow-x: hidden;
+	}
+
+	body {
+		position: relative;
+	}
+
 	#site_container {
 		align-items: baseline;
 		display: flex;
