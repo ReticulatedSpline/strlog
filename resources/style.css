@@ -78,6 +78,7 @@ body, html {
 	#navbar_container {
 		order: 1;
 		padding-left: 2rem;
+		border-bottom: 2px solid gray;
 	}
 
 	#content_container {

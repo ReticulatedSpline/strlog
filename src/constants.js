@@ -66,6 +66,6 @@ global.WIKI_LINKS = [
     "https://en.wikipedia.org/wiki/Dahiya_doctrine",
     "https://en.wikipedia.org/wiki/Out-of-place_artifact",
     "https://en.wikipedia.org/wiki/Long-term_nuclear_waste_warning_messages",
-    "https://en.wikipedia.org/wiki/Tsunami_stone"
-
+    "https://en.wikipedia.org/wiki/Tsunami_stone",
+    "https://en.wikipedia.org/wiki/Texas_Towers"
 ];
