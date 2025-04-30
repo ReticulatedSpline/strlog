@@ -29,4 +29,4 @@ The repository contains the following important directories:
 - `config`: holds sample configuration files intended for deployment with debian-like systems with nginx and systemd
 
 #### license
-Code original to the project is licensed under AGPL with the exception of the [SUSE font](https://github.com/SUSE/suse-font), which is covered under the Open Font License.
+Code original to the project is licensed under AGPLv3 with the exception of the [SUSE font](https://github.com/SUSE/suse-font), which is covered under the Open Font License.

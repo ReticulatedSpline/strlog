@@ -67,5 +67,6 @@ global.WIKI_LINKS = [
     "https://en.wikipedia.org/wiki/Out-of-place_artifact",
     "https://en.wikipedia.org/wiki/Long-term_nuclear_waste_warning_messages",
     "https://en.wikipedia.org/wiki/Tsunami_stone",
-    "https://en.wikipedia.org/wiki/Texas_Towers"
+    "https://en.wikipedia.org/wiki/Texas_Towers",
+    "https://en.wikipedia.org/wiki/Contronym"
 ];
