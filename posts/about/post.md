@@ -6,4 +6,11 @@ Since then, strlog has served as dumping ground for whatever I need to get out o
 
 `ennui (at) strlog (dot) net`
 
-Suggestions and comments accepted on occasion.
+Suggestions and comments accepted on occasion. If you're still bored, you can visit my friends at the following seedy establishments:
+
+[burthole.com](https://burthole.com/)
+
+
+[blog.alexislours.com](https://blog.alexislours.com/)
+
+One tells the truth and the other only lies.
