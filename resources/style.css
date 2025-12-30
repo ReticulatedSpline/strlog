@@ -16,7 +16,6 @@ body, html {
 		flex-wrap: nowrap;
 		width: 100%;
 		margin: 5rem 0 2rem 0;
-		overflow: scroll;
 		background-color: #3a404b;
 		font-family: suse, sans-serif;
 	}
@@ -56,16 +55,12 @@ body, html {
 
 /* narrow displays, mobile */
 @media(max-width: 800px) {
-	/* disable sideways scroll on mobile */
-	body, html {
-		overflow-x: hidden;
-	}
-
-	body {
-		position: relative;
-	}
 
 	#site_container {
+		min-width: 0;
+        max-width: 100%;
+        width: 100%;
+		overflow-x: hidden;
 		align-items: baseline;
 		display: flex;
 		flex-wrap: wrap;
@@ -77,7 +72,7 @@ body, html {
 
 	#navbar_container {
 		order: 1;
-		padding-left: 2rem;
+		margin-left: 2rem;
 		border-bottom: 2px solid gray;
 	}
 
@@ -86,8 +81,8 @@ body, html {
 		flex: 1 0 75%;
 		padding-left: 2rem;
 		padding-right: 2rem;
-		width: fit-content;
 		color: whitesmoke;
+		width:100%;
 	}
 
 	#site_name {
@@ -120,9 +115,20 @@ body, html {
 		padding-left: 1rem;
 	}
 
-	#rand_tab {
+	/* rand_tab */
+	#main_menu > li:nth-child(4) {
 		visibility: collapse;
 		display: none;
+	}
+
+	/* trailing margin */
+	#main_menu > li:nth-child(3) {
+		margin-right: 0;
+	}
+
+	pre {
+		white-space: pre-wrap;
+        word-break: break-word;
 	}
 
 }

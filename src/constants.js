@@ -28,7 +28,6 @@ global.WIKI_LINKS = [
     "https://en.wikipedia.org/wiki/Kerckhoffs%27s_principle",
     "https://en.wikipedia.org/wiki/Stars_in_My_Pocket_Like_Grains_of_Sand",
     "https://en.wikipedia.org/wiki/Operation_Gladio",
-    "https://en.wikipedia.org/wiki/Noam_Chomsky",
     "https://en.wikipedia.org/wiki/Fred_Hampton",
     "https://en.wikipedia.org/wiki/The_Bell_Jar",
     "https://en.wikipedia.org/wiki/McKinsey_%26_Company#Controversies",
@@ -68,5 +67,6 @@ global.WIKI_LINKS = [
     "https://en.wikipedia.org/wiki/Long-term_nuclear_waste_warning_messages",
     "https://en.wikipedia.org/wiki/Tsunami_stone",
     "https://en.wikipedia.org/wiki/Texas_Towers",
-    "https://en.wikipedia.org/wiki/Contronym"
+    "https://en.wikipedia.org/wiki/Contronym",
+    "https://en.wikipedia.org/wiki/Rachel_Corrie#Revelation_of_Caterpillar_surveillance"
 ];

@@ -2,15 +2,14 @@ I'm a programmer, urbanist, and language enthusiast living in a midsized city in
 
 ![Me climbing a big mountain and looking cool doing it](../posts/2022-04-29/cloud_forest.jpeg)
 
-Since then, strlog has served as dumping ground for whatever I need to get out of my head. Most posts fall under the topics of technology, politics, and media. You can send kudos, high paying job offers, and virtual cash money to my email below.
+Since then, strlog has served as dumping ground for whatever I need to get out of my head. Most posts fall under the topics of technology, politics, and media. If you're still bored, you can visit my friends at the following seedy establishments:
+
+- [burthole.com](https://burthole.com/)
+- [blog.alexislours.com](https://blog.alexislours.com/)
+- [ttl0](https://ttl0.sh/)
+
+You can also send kudos, high paying job offers, and virtual cash money to my inbox:
 
 `ennui (at) strlog (dot) net`
 
-Suggestions and comments accepted on occasion. If you're still bored, you can visit my friends at the following seedy establishments:
-
-[burthole.com](https://burthole.com/)
-
-
-[blog.alexislours.com](https://blog.alexislours.com/)
-
-One tells the truth and the other only lies.
+Suggestions and comments accepted on occasion.
