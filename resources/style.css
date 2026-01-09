@@ -60,7 +60,6 @@ body, html {
 		min-width: 0;
         max-width: 100%;
         width: 100%;
-		overflow-x: hidden;
 		align-items: baseline;
 		display: flex;
 		flex-wrap: wrap;
@@ -68,6 +67,7 @@ body, html {
 		background-color: #3a404b;
 		font-family: suse,
 					 sans-serif;
+		overflow-x: hidden;
 	}
 
 	#navbar_container {
