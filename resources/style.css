@@ -62,12 +62,6 @@ body, html {
 		overflow-x: hidden;
 	}
 
-	/* scroll debug */
-	* {
-		outline: 1px solid red;
-	}
-
-
 	#site_container {
 		min-width: 0;
         max-width: 100%;
