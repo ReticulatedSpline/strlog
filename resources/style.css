@@ -56,10 +56,21 @@ body, html {
 /* narrow displays, mobile */
 @media(max-width: 800px) {
 
+	/* stop sideways mobile scrolling */
+	html, body {
+		max-width: 100%;
+		overflow-x: hidden;
+	}
+
+	/* scroll debug */
+	* {
+		outline: 1px solid red;
+	}
+
+
 	#site_container {
 		min-width: 0;
         max-width: 100%;
-        width: 100%;
 		align-items: baseline;
 		display: flex;
 		flex-wrap: wrap;
@@ -67,7 +78,7 @@ body, html {
 		background-color: #3a404b;
 		font-family: suse,
 					 sans-serif;
-		overflow-x: hidden;
+		overflow: hidden;
 	}
 
 	#navbar_container {
@@ -78,6 +89,7 @@ body, html {
 
 	#content_container {
 		order: 2;
+		min-width: 0;
 		flex: 1 0 75%;
 		padding-left: 2rem;
 		padding-right: 2rem;
@@ -109,7 +121,8 @@ body, html {
 	#site_path_short {
 		color: darkorange;
 		font-size: 2rem;
-		transform: translate(-1rem);
+		transform: none;
+		margin-left: -1rem;
 		margin-top: 0;
 		margin-bottom: 1rem;
 		padding-left: 1rem;
