@@ -31,8 +31,6 @@ As with all protests, it is safer with an organized group. Be aware that the fas
 - Keep an eye out overhead; the feds frequently are use drones and helicopters. Innocuous flights will be viewable by their [ADSB data](https://en.wikipedia.org/wiki/Automatic_Dependent_Surveillance%E2%80%93Broadcast), which is publicly available on [ADSB tracking sites](https://globe.adsb.fi/). At large protests you can expect State Patrol for crowd control. If you observe a helicopter but do not see it on tracking sites it means they are not transmitting ADSB data and it is probably a DHS affiliated flight doing overwatch. Even the military keeps ADSB on during training exercises.
 - Review basic first aid with resources like [Riot Medicine](https://riotmedicine.net). Unless you are a healthcare provider your *only* job is only to get patients well enough to move to safety or to call for someone with more training. And please, do not put anything but sterile water or saline in anyone's eyes!
 
-This page to update periodically.
-
 # semantics
 There is an understandable resistance to calling these under-trained "agents" fascists. Nobody wants to be the boy who cried wolf, and the United States is still missing some key tenets of fascism today. I see more parallels to the void ideology and public looting behavior of the [Porfiriato](https://en.wikipedia.org/wiki/Porfiriato) than the Third Reich, for example. However, because of the dizzying array of federal agencies involved, and because "agent" implies a level of training and professionalism that is not present, it simplifies things to call the invading force "fascists". 
 
