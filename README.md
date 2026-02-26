@@ -9,10 +9,10 @@ This project serves blog posts using the built-in http module provided by the No
 - Navigate to the root directory and run `npm start local`. The server will default to port 5000.
 
 #### roadmap
-3. hyperlink list pagination
-5. routing cleanup
-6. linktree style homepage styled off the error route
-8. full markdown parsing 
+1. hyperlink post list pagination
+2. routing cleanup
+3. linktree style homepage styled off the error route
+4. full AST markdown parsing 
 
 #### caveats
 Markdown parsing is an audacious claim for what is really just a series of regex string replace calls. It is not possible to fully cover the mardown spec this way because it is not context-aware. Sufficiently complex Markdown will break the "parser".
@@ -21,7 +21,7 @@ Markdown parsing is an audacious claim for what is really just a series of regex
 The repository contains the following important directories:
 - `./posts`: holds directories titled with the date in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601) representing a single blog post each. Two files are required:
   - A [Markdown](https://www.markdownguide.org/) file called `post.md`.
-  - A [JSON](https://en.wikipedia.org/wiki/JSON) file with three attributes: the post name, title, and an array of topics which may be empty.
+  - A [JSON](https://en.wikipedia.org/wiki/JSON) file with three attributes: the post name, title, and an array of topics which may be empty. Topics will automatically populate and sort posts on the sidebar.
   - Additionally, you may add any resources, such as photos, to this directory.
   - A special directory called "about" holds the content for the about page.
 - `resources`: holds template html files, the favicon, an icon for link embeds, fonts and CSS.
