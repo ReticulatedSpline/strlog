@@ -1,5 +1,5 @@
 ## strlog is a static site server
-This project serves blog posts using the built-in http module provided by the NodeJS standard library. In addition, it parses markdown files to provide page styling and supports tags for organizing posts. The git repository itself serves as a content repository. When set up with a CI pipeline, publishing a post is as simple as pushing a commit.
+This project serves blog posts using the built-in http module provided by the NodeJS standard library. In addition, it parses markdown files to provide page styling and supports tags for organizing posts. CSS media queries are used to resize on small screens. The git repository itself serves as a content repository, and when set up with a pipeline, publishing a post is as simple as pushing a commit.
 
 ![screenshot](https://i.imgur.com/PnMhdMi.png "Screenshot")
 
@@ -26,7 +26,8 @@ The repository contains the following important directories:
   - A special directory called "about" holds the content for the about page.
 - `resources`: holds template html files, the favicon, an icon for link embeds, fonts and CSS.
 - `src`: source code, split roughly into routing / file reading (`server.js`) and markdown parsing / html building (`format.js`).
-- `config`: holds sample configuration files intended for deployment with debian-like systems with nginx and systemd
+  - `constants.js`: Some programming constants, but also the list  of links the random "rand" redirection feature.
+- `config`: holds sample configuration files intended for deployment on debian-like systems with nginx and systemd
 
 #### license
 Code original to the project is licensed under AGPLv3 with the exception of the [SUSE font](https://github.com/SUSE/suse-font), which is covered under the Open Font License.
