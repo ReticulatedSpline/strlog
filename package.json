@@ -4,8 +4,8 @@
   "description": "a small webserver",
   "main": "server.js",
   "scripts": {
-    "start": "node src/server.js",
-    "test": "node test/test.js"
+    "prod": "node src/server.js prod",
+    "local": "node src/server.js local"
   },
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
     "blog"
   ],
   "author": "ReticulatedSpline",
-  "license": "Unlicense",
+  "license": "AGPL-3.0, OFL",
   "bugs": {
     "url": "https://github.com/ReticulatedSpline/blog/issues"
   },
