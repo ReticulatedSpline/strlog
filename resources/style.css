@@ -178,10 +178,10 @@ body, html {
 }
 
 .tagline {
-	font-size: 1.4rem;
 	padding-left: .2rem;
-	color: darkgray;
-	margin-top: 0;
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: darkgrey;
 }
 
 #next {
@@ -225,9 +225,10 @@ body, html {
 }
 
 .h3 {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	color: darkgrey;
-	margin-bottom: 0;
+	margin-top: 0;
+	margin-bottom: .7rem;
 }
 
 .h4 {

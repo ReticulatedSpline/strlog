@@ -68,5 +68,9 @@ global.WIKI_LINKS = [
     "https://en.wikipedia.org/wiki/Tsunami_stone",
     "https://en.wikipedia.org/wiki/Texas_Towers",
     "https://en.wikipedia.org/wiki/Contronym",
-    "https://en.wikipedia.org/wiki/Rachel_Corrie#Revelation_of_Caterpillar_surveillance"
+    "https://en.wikipedia.org/wiki/Rachel_Corrie#Revelation_of_Caterpillar_surveillance",
+    "https://en.wikipedia.org/wiki/Immovable_Ladder",
+    "https://en.wikipedia.org/wiki/1983_Soviet_nuclear_false_alarm_incident",
+    "https://en.wikipedia.org/wiki/Iron_harvest",
+    "https://en.wikipedia.org/wiki/Texas_City_disaster"
 ];
