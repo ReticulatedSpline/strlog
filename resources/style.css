@@ -85,8 +85,8 @@ body, html {
 		order: 2;
 		min-width: 0;
 		flex: 1 0 75%;
-		padding-left: 2rem;
-		padding-right: 2rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
 		color: whitesmoke;
 		width:100%;
 	}
