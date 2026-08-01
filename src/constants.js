@@ -72,5 +72,15 @@ global.WIKI_LINKS = [
     "https://en.wikipedia.org/wiki/Immovable_Ladder",
     "https://en.wikipedia.org/wiki/1983_Soviet_nuclear_false_alarm_incident",
     "https://en.wikipedia.org/wiki/Iron_harvest",
-    "https://en.wikipedia.org/wiki/Texas_City_disaster"
-];
+    "https://en.wikipedia.org/wiki/Texas_City_disaster",
+    "https://en.wikipedia.org/wiki/Miller%E2%80%93Urey_experiment",
+    "https://en.wikipedia.org/wiki/Salmon_of_Knowledge",
+    "https://en.wikipedia.org/wiki/Fat_pope,_thin_pope",
+    "https://en.wikipedia.org/wiki/Gongoozler",
+    "https://en.wikipedia.org/wiki/Bir_Tawil",
+    "https://en.wikipedia.org/wiki/Jevons_paradox",
+    "https://en.wikipedia.org/wiki/Long-term_nuclear_waste_warning_messages",
+    "https://en.wikipedia.org/wiki/Spark-gap_transmitter",
+    "https://en.wikipedia.org/wiki/Euthanasia_Coaster",
+    "https://en.wikipedia.org/wiki/Salmon_hat"
+]
